@@ -1,4 +1,4 @@
-[<- Volver](../README.md)
+[<- Volver](../../../)
 # Guía de configuración de entorno de trabajo
 Para esto empezaremos a configurar el entorno mas simple de trabajo según se lista a continuación:
 1. Editor de texto plano a elección.
