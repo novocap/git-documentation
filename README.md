@@ -1,7 +1,7 @@
 # Práctica documental en Markdown
 :wave: Bienvenidos al repositorio de práctica documental con Markdown en GitHub para el Team [@novocap/novocap-documentation](https://github.com/orgs/novocap/teams/novocap-documentation).
 
-A continuación se enumeran los recursos necesarios para poder efectuar las prácticas. 
+Esta documentación tiene como objetivo servir de guía de configuración del entorno, además de contar una capacitación y realizar prácticas de prueba con Git y Markdown, para incorporar los conceptos del flujo de trabajo en GitHub en un ambiente documental y/o de desarrollo de software. 
 ## 1. Configuración del entorno de trabajo
 Vamos a comenzar configurando el entorno de trabajo, el cual dependerá del Sistema Operativo y de las aplicaciones elegidas a nivel personal, según se describe en la [Guía de configuración de entorno de trabajo](docs/WORKSPACE.md).
 ## 2. Configuración del directorio y repositorio local
