@@ -1,6 +1,6 @@
 [<- Volver](../../../)
 # Guía de configuración de entorno de trabajo
-Para esto empezaremos a configurar el entorno mas simple de trabajo según se lista a continuación:
+Para comenzar, efectuaremos la parametrización mas simple del entorno de trabajo según se lista a continuación:
 1. Editor de texto plano a elección.
 1. Instalación del programa __Git__ según el sistema operativo elegido en la [página de descargas](https://git-scm.com/download).
 
