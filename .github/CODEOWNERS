@@ -1,0 +1,16 @@
+# Los cambios en los archivos de configuracion del repositorio están protegidos por:
+.github/*               @ChristianGrimberg
+.gitignore              @ChristianGrimberg
+.gitattributes          @ChristianGrimberg
+CODEOWNERS              @ChristianGrimberg
+SUPPORT.md              @ChristianGrimberg
+
+# Los cambios en los templates de documentación están protegidos por:
+*_TEMPLATE.md           @ChristianGrimberg
+
+# Los cambios en las configuraciones de los editores de código están protegidos por:
+.vscode/*               @ChristianGrimberg
+css/markdown-styles.css @ChristianGrimberg
+
+# Los cambios en los estilos CSS están protegidos por:
+*.css                   @ChristianGrimberg
