@@ -16,3 +16,5 @@ git init
 git remote add origin git@github.com:novocap/practice-markdown-documentation.git
 git pull origin master
 ```
+## 3. Efectuar cambios en el repositorio
+Para comenzar a trabajar en el repositorio documental, es necesario conocer la [sintaxis de __Markdown__](docs/MARKDOWN.md), seguido del [flujo de trabajo de __Git__](docs/GIT.md).
