@@ -1,4 +1,7 @@
-[<- Volver](../../../)
+[<- Inicio](../../../)
+
+[Tabla de Contenido](SUMMARY.md)
+
 # Guía de configuración de entorno de trabajo
 Para comenzar, efectuaremos la parametrización mas simple del entorno de trabajo según se lista a continuación:
 1. Editor de texto plano a elección.

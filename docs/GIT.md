@@ -1,4 +1,9 @@
+[<- Inicio](../../../)
+
+[Tabla de Contenido](SUMMARY.md)
+
 # Flujo de trabajo de Git
+
 El sistema de control de versiones centralizado y distribuido de __Git__, opera bajo tres estados según se muestra a continuación:
 
 ![estados de git](../img/GitFlujoTrabajoLocal.png)

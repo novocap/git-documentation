@@ -1,4 +1,7 @@
-[<- Volver](../../../)
+[<- Inicio](../../../)
+
+[Tabla de Contenido](SUMMARY.md)
+
 # Conexión SSH con GitHub/GitLab
 Para conectarnos con [GitHub](https://github.com) (esto también es válido con [GitLab](https://gitlab.com)), vamos a autenticarnos con [SSH](https://es.wikipedia.org/wiki/Secure_Shell) (Secure Shell) para tener una conexión validada entre sus servidores y nuestro equipo cliente. Si bien también podemos autenticarnos de la manera tradicional por __HTTPS__, la opción de conexión por SSH además nos dará la libertad de dejar autenticado el equipo cliente sin necesidad de ingresar usuario y contraseña cada vez que transferimos datos con esta plataforma.
 > Es importante generar conexiones SSH únicamente en aquellos equipos de nuestra confianza y que usemos habitualmente, ya que en los casos que se utilice equipos de uso público o te encuentres conectado a redes no seguras, no es recomendado utilizar una conexión SSH perpetua y es preferible conectarse con HTTPS ingresando usuario y contraseña, o clave token en su defecto.
