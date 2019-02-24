@@ -2,7 +2,7 @@
 
 [Tabla de Contenido](SUMMARY.md)
 
-# Flujo de trabajo de Git
+# Los tres estados de Git
 
 El sistema de control de versiones centralizado y distribuido de __Git__, opera bajo tres estados según se muestra a continuación:
 
@@ -12,6 +12,6 @@ __Working Directory__: Es el directorio de trabajo con los archivos los cuáles 
 
 __Staging Area__: 
 
-__Git repository__: 
+__Git Directory__: 
 
 Si una versión concreta de un archivo está en el directorio de Git, se lo considera confirmada como _committed_. Si ha sufrido cambios desde que se obtuvo del repositorio, pero ha sido añadida al área de preparación, está siendo preparada como _staged_. Y si ha sufrido cambios desde que se obtuvo del repositorio, pero no se ha preparado, está modificada como _modified_.

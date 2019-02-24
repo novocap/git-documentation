@@ -4,7 +4,7 @@
 
    #### 1. [Guía de configuración de entorno de trabajo](WORKSPACE.md)
    #### 2. [Conexión SSH con GitHub/GitLab](SSH.md)
-   #### 3. [Los 3 estados de Git](GIT.md)
+   #### 3. [Los tres estados de Git](GIT.md)
    #### 4. [Guardando `commit` firmados](GPG.md)
    #### 5. [Selección del Editor Markdown](IDE.md)
 ### [Guía de lecciones de Práctica](PRACTICE-GUIDE.md)

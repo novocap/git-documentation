@@ -15,7 +15,7 @@ Ten a mano la dirección de correo registrada en GitHub/GitLab y tu usuario (Nom
 
 Ingresar el siguiente comando para generar una llave SSH encriptada en __RSA 4096__, la cual es válida tanto en el terminal de Linux, como en la aplicación de __Git Bash__ en Windows:
 ```bash
-ssh-keygen -t rsa -b 4096 -C "tudirecciondecorreo@dominio.com"
+ssh-keygen -t rsa -b 4096 -C "tudirecciondecorreo@tudominio.com"
 ```
 Presionar la tecla _Enter_ en este paso, aceptando guardar la llave SSH en la ubicación por defecto:
 ```bash
@@ -72,7 +72,7 @@ Otro ejemplo, es al momento de agregar la referencia al repositorio remoto dentr
 ```bash
 git remote add origin git@github.com:novocap/practice-markdown-documentation.git
 ```
-En un directorio ya referenciado a un repositorio remoto se podrá observar su configuración con el siguiente comando:
+En un repositorio local ya vinculado con un repositorio remoto, se podrá observar la configuración con el siguiente comando:
 ```bash
 git remote -v
 ```
