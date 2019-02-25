@@ -1,6 +1,6 @@
 [<- Inicio](../README.md)
 
-[Tabla de Contenido](SUMMARY.md)
+[Tabla de Contenidos](SUMMARY.md)
 # Los tres estados de Git
 Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra las versiones de un directorio con la colección de todas las sub-carpetas y archivos que esta contiene, estableciendo el concepto de un repositorio. Para establecer el control con Git en un repositorio, se ejecuta por única vez un comando que indica la inicialización del mismo:
 ```git

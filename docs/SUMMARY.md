@@ -1,4 +1,4 @@
-# Tabla de Contenido
+# Tabla de Contenidos
 
 ### [Práctica documental con Markdown en GitHub](../README.md)
 
@@ -8,4 +8,4 @@
    #### 4. [Guardando `commit` firmados](GPG.md)
    #### 5. [Entorno Integrado de Desarrollo IDE](IDE.md)
 ### [Guía de lecciones de Práctica](PRACTICE-GUIDE.md)
-[Ir arriba](SUMMARY.md#Tabla-de-contenido)
+[Ir arriba](SUMMARY.md#Tabla-de-contenidos)

@@ -1,4 +1,4 @@
-[Tabla de Contenido](docs/SUMMARY.md)
+[Tabla de Contenidos](docs/SUMMARY.md)
 
 # Práctica documental con Markdown en GitHub
 

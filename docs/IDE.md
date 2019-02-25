@@ -1,6 +1,6 @@
 [<- Inicio](../README.md)
 
-[Tabla de Contenido](SUMMARY.md)
+[Tabla de Contenidos](SUMMARY.md)
 # Entorno Integrado de Desarrollo IDE
 ## Visual Studio Code
 ### Configuración del Terminal Interado
