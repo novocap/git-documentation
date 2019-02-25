@@ -73,7 +73,7 @@ Estas opciones se encuentran por ejemplo al Clonar un repositorio, que en vez de
 
 Otro ejemplo, es al momento de agregar la referencia al repositorio remoto dentro de los comandos locales de Git con la dirección SSH de clonación de GitHub/GitLab como también se mostraba en la imagen anterior. El siguiente comando sería un ejemplo con el repositorio actual:
 ```git
-git remote add origin git@github.com:novocap/practice-markdown-documentation.git
+git remote add origin git@github.com:novocap/markdown-documentation.git
 ```
 En un repositorio local ya vinculado con un repositorio remoto, se podrá observar la configuración con el siguiente comando:
 ```git
