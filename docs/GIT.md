@@ -9,7 +9,6 @@ git init
 Esta acción crea un directorio oculto `.git/` en la raíz del repositorio, donde Git gestionará y almacenará allí todas sus instántaneas. A partir de este momento, Git comienza a operar con el control de versiones por medio de tres estados, según se muestra en la imagen a continuación:
 
 ![estados de git](../img/git-flujo.png)
-
 > __Imagen 1__: _Los 3 estados de Git._
 
 Luego de contar con el repositorio inicializado, el comando para ver el estado actual de su contenido es por medio de:
@@ -21,7 +20,6 @@ De esta manera, pasamos a comprender el funcionamiento de cada uno de los estado
 Este es el estado donde se encuentran los archivos con los cuáles te encontrás trabajando en el repositorio. En este momento Git no tiene control de almacenamiento de lo archivos, ya que se encuentran en plena edición/creación por parte del usuario. Si se ejecuta el comando `git status` luego de modificar/crear archivos, Git muestra por ejemplo el siguiente mensaje:
 
 ![Working directory](../img/working-directory.png)
-
 > __Imagen 2__: _Estado Working Directory de Git._
 
 En la sección `Changes not staged for commit` podemos ver que Git informa que tiene archivos modificados posteriormente a su última versión controlada, y marca los archivos como `modified`. Más abajo en `Untracked files` se muestran aquellos archivos nuevos en el repositorio que no tienen control de versión aún.
@@ -39,7 +37,6 @@ git add docs/GIT.md
 Siguiendo el caso, Git alojó el archivo ubicado en `docs/GIT.md` al área de preparación de trabajo (_staged_), mientras que el archivo `img/working-directory.png` sigue en el estado anterior del directorio de trabajo:
 
 ![Staging area](../img/staging-area.png)
-
 > __Imagen 3:__ _Estado Staging Area de Git._
 
 Ahora bien, también podemos pasar el archivo `img/working-directory.png` al área de preparación con el comando:
@@ -82,7 +79,7 @@ De esta manera, al confirmar los cambios tendremos por ejemplo el siguiente mens
 Cada instantánea creada por Git (_como vimos con SHA-1, por medio de 40 caracteres hexadecimales irrepetibles_) pasa a formar parte del historial del sistema de control de versiones. Asimismo, la fortaleza de Git es precisamente la gestión de la integridad de la información, ya que no existen cambios, corrupción de datos o cualquier otro tipo de alteración sobre los archivos sin que Git lo tenga controlado. Esto funciona gracias a un algoritmo de verificación mediante un [`checksum`](https://es.wikipedia.org/wiki/Suma_de_verificaci%C3%B3n) al momento del almacenamiento de la información, que en resumen resulta de la suma de comprobación de la integridad de los datos en el instante que se persisten los mismos.
 
 Al ser un sistema distribuido, el flujo operativo con Git es prácticamente local, y sólo será necesario interactuar con el repositorio remoto (_el repositorio central almacenado por ejemplo en GitHub/GitLab_) según la necesidad de actualización del propio repositorio, tanto para subir los cambios, como también para descargarlos. Esto nos brinda la ventaja de poder trabajar con proyectos muy grandes, así como también de una amplia distribución entre equipos cliente.
-
+### Listado de cambios
 En el momento que necesitemos ver el historial de los cambios en git lo podemos hacer con el siguiente comando:
 ```git
 git log
@@ -90,7 +87,6 @@ git log
 Inmediatamente podremos ver los cambios confirmados en el repositorio ordenados desde el mas reciente, con la información del Autor, Fecha y Hora, Mensaje del `commit`, y lo más importante, el código `SHA-1` de 40 caracteres, el cual nos servirá para movernos en todo el historial como si estuviésemos en una máquina del tiempo.
 
 ![Git log](../img/git-log.png)
-
 > __Imagen 6__: _Historial del repositorio con `git log`_
 
 En el caso que no nos alcance la pantalla para ver todo el historial, con las flechas de arriba y abajo, y podemos salir de esta vista presionando la letra `q` seguido de un `Enter`.
@@ -102,9 +98,10 @@ git log --oneline
 Aquí podemos apreciar la lista resumida del parámetro `--oneline`:
 
 ![Git log oneline](../img/git-log-oneline.png)
+> __Imagen 7__: _Vista resumida de cambios con `--oneline`_.
 
-> __Imagen 7__: _Vista resumida de cambios con `--oneline`._
-
+### Análisis de diferencias de cambios
+#### Diferencias en Working Directory
 Ahora bien, contar con el listado de cambios también nos sirve para analizar los cambios frente los anteriores, así como también para volver para atras a un `commit` en específico. Entonces para ver las diferencias de cualquier tipo realizado, utilizaremos el siguiente comando:
 ```git
 git diff
@@ -115,9 +112,23 @@ Este comando por sí solo, solo nos muestra los cambios efectuados en el reposit
 En este modo de visualización, Git nos ayuda para identificar los cambios con colores, dejando el color de texto del terminal para aquellas líneas que no cambiaron, nos colorea con `Rojo` anteponiendo el símbolo `-` en aquellos cambios que quitamos, y coloca en `Verde` con el símbolo `+` para aquellos cambios que se agregaron. En el ejemplo que se muestra a continuación se puede apreciar esta sintaxis con el archivo ubicado en `docs/GIT.md`:
 
 ![Git diff working directory](../img/git-diff-wd.png)
-
 > __Imagen 8__: _Sintaxis de cambios en Working Directory._
 
+#### Diferencias entre diferentes `commit`
+El comando `git dif` también nos sirve para analizar las diferencias entre un `commit` y otro por medio del uso de parámteros adicionales. Igualmente tenemos dos opciones, analizar todos los archivos cambiados entre los `commit` seleccionados, o simplemente sólo ver los cambios por archivo. La cantidad de parámetros que le indiquemos a `git diff` nos permitirá trabajar con diferentes niveles de análisis.
+
+Para visualizar los cambios de un determinado `commit` al último `commit` efectuado en el repositorio, necesitaremos el códido `SHA-1` del primer `commit`, que en este caso puede ser el código de 40 caracteres que nos muestra `git log`, o también podemos utilizar solamente la cabecera que nos muestra `git log --oneline`.  Vamos a utilizar el ejemplo de la __Imagen 7__ seleccionando la cabecera de un `SHA-1` , que en este caso utilizaremos el más viejo: `2979aea`, para luego compararlo con el último `commit` de la siguiente manera:
+```git
+git diff 2979aea
+```
+Teniendo en cuenta la cantidad de cambios que hubieron desde el primer `commit` al último, probablemente los cambios que nos muestre `git diff` será muy extenso, por lo cual podemos optar por ver los cambios por archivo únicamente con el siguiente ejemplo:
+```git
+git diff 2979aea docs/SUMMARY.md
+```
+En este caso podremos realizar un análisis mas acotado, particularmente con el archivo `docs/SUMMARY.md` según se muestra en la siguiente imagen de ejemplo:
+
+![Git diff ultimo commit](../img/git-diff-last-commit.png)
+> __Imagen 9__: _Git diff con el último `commit` por archivo._
 ## Remificación del repositorio
 
 [Ir arriba](GIT.md#Los-tres-estados-de-Git)
