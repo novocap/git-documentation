@@ -147,4 +147,4 @@ Este comando nos va a permitir movernos a un `commit` en específico colocando c
 
 ¿Qué usos se le puede dar a esta función? Particularmente se puede volver el tiempo atrás cuando el código funcionaba por ejemplo, también puede servir de análisis mas profundo que el `git diff` parándonos en un momento de la historia del repositorio, aunque también uno de las funcionalidades mas utilizadas con este comando es para ramificar el código a partir de un `commit` en específico, tema que aboradaremos en la próxima sección.
 ## Remificación del repositorio
-[Ir arriba](GIT.md#Los-tres-estados-de-Git)
+[🡡 volver al inicio](GIT.md#Los-tres-estados-de-Git)

@@ -20,4 +20,4 @@ git init markdown-documentation
 git remote add origin git@github.com:novocap/markdown-documentation.git
 git pull origin master
 ```
-[Ir arriba](README.md#Práctica-documental-con-Markdown-en-GitHub)
+[🡡 volver al inicio](README.md#Práctica-documental-con-Markdown-en-GitHub)

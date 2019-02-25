@@ -19,4 +19,4 @@ git config --global user.name "Nombre Apellido"
 ```git
 git config --global user.email "username@domain.com"
 ```
-[Ir arriba](WORKSPACE.md#Guía-de-configuración-del-entorno-de-trabajo)
+[🡡 volver al inicio](WORKSPACE.md#Guía-de-configuración-del-entorno-de-trabajo)
