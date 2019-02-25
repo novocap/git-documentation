@@ -8,7 +8,7 @@ git init
 ```
 Esta acción crea un directorio oculto `.git/` en la raíz del repositorio, donde Git gestionará y almacenará allí todas sus instántaneas. A partir de este momento, Git comienza a operar con el control de versiones por medio de tres estados, según se muestra en la imagen a continuación:
 
-![estados de git](../img/GitFlujoTrabajoLocal.png)
+![estados de git](../img/git-flujo.png)
 
 > __Imagen 1__: _Los 3 estados de Git._
 
@@ -17,7 +17,7 @@ Luego de contar con el repositorio inicializado, el comando para ver el estado a
 git status
 ```
 De esta manera, pasamos a comprender el funcionamiento de cada uno de los estados de Git.
-## Working Directory
+### Working Directory
 Este es el estado donde se encuentran los archivos con los cuáles te encontrás trabajando en el repositorio. En este momento Git no tiene control de almacenamiento de lo archivos, ya que se encuentran en plena edición/creación por parte del usuario. Si se ejecuta el comando `git status` luego de modificar/crear archivos, Git muestra por ejemplo el siguiente mensaje:
 
 ![Working directory](../img/working-directory.png)
@@ -31,7 +31,7 @@ Git nos informa del uso de 2 comandos, donde uno de ellos sirve para descartar t
 git checkout docs/GIT.md
 ```
 En este ejemplo estamos descartando los cambios realizados sobre el archivo ubicado en `docs/GIT.md`. El otro comando lo usaremos para pasar al próximo estado de Git, el cual se explica a continuación.
-## Staging Area 
+### Staging Area 
 Para indicarle a Git que nos almacene el estado de los archivos creados/modificados por medio de una instantánea de los mismos, lo haremos con el comando que nos indica en el ejemplo de la __Imagen 2__ sobre uno de los archivos:
 ```git
 git add docs/GIT.md
@@ -56,13 +56,13 @@ En el caso que decidamos volver un archivo en el estado de área de preparación
 ```git
 git reset HEAD docs/GIT.md
 ```
-## Git Directory 
+### Git Directory 
 Una vez que nos encontramos con todos los cambios esperados en nuestro repositorio, habiéndolos agregado previamente al área de preparación de trabajo, podemos confirmarlos y agregar la instantánea al historial del repositorio con Git.
 
 ![Git Directory](../img/changes-to-committed.png)
 > __Imagen 4__: _Cambios listos a confirmar._
 
-La confirmación de los archivos en el estado de área de preparación, cierra el circuito de cambios dentro del historial de Git, estableciendo una etiqueta con la codificación `SHA-1` con el siguiente comando:
+En el ejemplo podemos ver que Git detecta que hubieron cambios en archivos existentes anteponiendo la marca `modified`, y cuando se agregaron nuevos archivos se marcan con `new file`. Finalmente la confirmación de los archivos en el estado de área de preparación, cierra el circuito de cambios dentro del historial de Git, estableciendo una etiqueta con la codificación `SHA-1` con el siguiente comando:
 ```git
 git commit
 ```
@@ -78,5 +78,46 @@ De esta manera, al confirmar los cambios tendremos por ejemplo el siguiente mens
 
 ![Git Directory](../img/git-directory.png)
 > __Imagen 5__: _Estado Git Directory de Git._
+## Gestión del historial de versiones
+Cada instantánea creada por Git (_como vimos con SHA-1, por medio de 40 caracteres hexadecimales irrepetibles_) pasa a formar parte del historial del sistema de control de versiones. Asimismo, la fortaleza de Git es precisamente la gestión de la integridad de la información, ya que no existen cambios, corrupción de datos o cualquier otro tipo de alteración sobre los archivos sin que Git lo tenga controlado. Esto funciona gracias a un algoritmo de verificación mediante un [`checksum`](https://es.wikipedia.org/wiki/Suma_de_verificaci%C3%B3n) al momento del almacenamiento de la información, que en resumen resulta de la suma de comprobación de la integridad de los datos en el instante que se persisten los mismos.
+
+Al ser un sistema distribuido, el flujo operativo con Git es prácticamente local, y sólo será necesario interactuar con el repositorio remoto (_el repositorio central almacenado por ejemplo en GitHub/GitLab_) según la necesidad de actualización del propio repositorio, tanto para subir los cambios, como también para descargarlos. Esto nos brinda la ventaja de poder trabajar con proyectos muy grandes, así como también de una amplia distribución entre equipos cliente.
+
+En el momento que necesitemos ver el historial de los cambios en git lo podemos hacer con el siguiente comando:
+```git
+git log
+```
+Inmediatamente podremos ver los cambios confirmados en el repositorio ordenados desde el mas reciente, con la información del Autor, Fecha y Hora, Mensaje del `commit`, y lo más importante, el código `SHA-1` de 40 caracteres, el cual nos servirá para movernos en todo el historial como si estuviésemos en una máquina del tiempo.
+
+![Git log](../img/git-log.png)
+
+> __Imagen 6__: _Historial del repositorio con `git log`_
+
+En el caso que no nos alcance la pantalla para ver todo el historial, con las flechas de arriba y abajo, y podemos salir de esta vista presionando la letra `q` seguido de un `Enter`.
+
+Otra opción de vista simplificada del historial, enfocado únicamente en los mensajes y contando con la cabecera de 7 caracteres del código `SHA-1` del `commit` (_que para Git también es válido utilizar su cabecera para identificar los cambios_) es mediante el siguiente comando:
+```git
+git log --oneline
+```
+Aquí podemos apreciar la lista resumida del parámetro `--oneline`:
+
+![Git log oneline](../img/git-log-oneline.png)
+
+> __Imagen 7__: _Vista resumida de cambios con `--oneline`._
+
+Ahora bien, contar con el listado de cambios también nos sirve para analizar los cambios frente los anteriores, así como también para volver para atras a un `commit` en específico. Entonces para ver las diferencias de cualquier tipo realizado, utilizaremos el siguiente comando:
+```git
+git diff
+```
+Este comando por sí solo, solo nos muestra los cambios efectuados en el repositorio, si los hubiere, desde el último `commit` a las modificaciones agregadas en el estado del Working Directory.
+> En el modo de visualización de cambios de Git por terminal, si los cambios que se muestran ocupan más del largo de la pantalla, nos podremos mover hacia arriba y abajo con las flechas del teclado. Para salir de este modo, se debe presionar la letra `q` seguido de la tecla `Enter`.
+
+En este modo de visualización, Git nos ayuda para identificar los cambios con colores, dejando el color de texto del terminal para aquellas líneas que no cambiaron, nos colorea con `Rojo` anteponiendo el símbolo `-` en aquellos cambios que quitamos, y coloca en `Verde` con el símbolo `+` para aquellos cambios que se agregaron. En el ejemplo que se muestra a continuación se puede apreciar esta sintaxis con el archivo ubicado en `docs/GIT.md`:
+
+![Git diff working directory](../img/git-diff-wd.png)
+
+> __Imagen 8__: _Sintaxis de cambios en Working Directory._
+
+## Remificación del repositorio
 
 [Ir arriba](GIT.md#Los-tres-estados-de-Git)

@@ -16,9 +16,7 @@ git clone git@github.com:novocap/markdown-documentation.git
 ```
 Otra forma de contar con una copia sincronizada del repositorio, es creando un directorio local (_se recomienda utilizar el mismo nombre del repositorio en GitHub_), efectuando los siguientes comandos:
 ```git
-mkdir markdown-documentation
-cd markdown-documentation
-git init
+git init markdown-documentation
 git remote add origin git@github.com:novocap/markdown-documentation.git
 git pull origin master
 ```
