@@ -114,7 +114,7 @@ En este modo de visualización, Git nos ayuda para identificar los cambios con c
 ![Git diff working directory](../img/git-diff-wd.png)
 > __Imagen 8__: _Sintaxis de cambios en Working Directory._
 
-#### Diferencias entre diferentes `commit`
+#### Diferencias entre `commit`
 El comando `git dif` también nos sirve para analizar las diferencias entre un `commit` y otro por medio del uso de parámteros adicionales. Igualmente tenemos dos opciones, analizar todos los archivos cambiados entre los `commit` seleccionados, o simplemente sólo ver los cambios por archivo. La cantidad de parámetros que le indiquemos a `git diff` nos permitirá trabajar con diferentes niveles de análisis.
 
 Para visualizar los cambios de un determinado `commit` al último `commit` efectuado en el repositorio, necesitaremos el códido `SHA-1` del primer `commit`, que en este caso puede ser el código de 40 caracteres que nos muestra `git log`, o también podemos utilizar solamente la cabecera que nos muestra `git log --oneline`.  Vamos a utilizar el ejemplo de la __Imagen 7__ seleccionando la cabecera de un `SHA-1` , que en este caso utilizaremos el más viejo: `2979aea`, para luego compararlo con el último `commit` de la siguiente manera:
@@ -129,5 +129,15 @@ En este caso podremos realizar un análisis mas acotado, particularmente con el 
 
 ![Git diff ultimo commit](../img/git-diff-last-commit.png)
 > __Imagen 9__: _Git diff con el último `commit` por archivo._
+
+Ahora bien, si necesitamos ver las diferencias entre `commit` donde ninguno de los dos sea el último, necesitamos agregar el código `SHA-1` de cada uno de ellos como parámetro, seguido del tercer parámetro opcional para limitarlo por archivo si es que así quisierámos. De esta manera el comando sería de la siguiente manera:
+```git
+git diff <-- sha-1 commit anterior --> <-- sha-1 commit posterior --> <-- archivo -->
+```
+Tomando por ejemplo la __Imagen 7__, analizamos los cambios del segundo `commit` de cabecera `0ba09b7`, contra el ante-último `commit` de cabecera `1ad8bad`, comparando sólo el archivo `README.md`, de manera tal que el comando sería:
+```git
+git diff 0ba09b7 1ad8bad README.md
+```
+#### Movernos en el historial de versiones
 ## Remificación del repositorio
 [Ir arriba](GIT.md#Los-tres-estados-de-Git)
