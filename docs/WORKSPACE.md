@@ -1,8 +1,7 @@
-[<- Inicio](../../../)
+[<- Inicio](../README.md)
 
 [Tabla de Contenido](SUMMARY.md)
-
-# Guía de configuración de entorno de trabajo
+# Guía de configuración del entorno de trabajo
 Para comenzar, efectuaremos la parametrización mas simple del entorno de trabajo según se lista a continuación:
 1. Editor de texto plano a elección.
 1. Instalación del programa __Git__ según el sistema operativo elegido en la [página de descargas](https://git-scm.com/download).
@@ -20,3 +19,4 @@ git config --global user.name "Nombre Apellido"
 ```git
 git config --global user.email "username@domain.com"
 ```
+[Ir arriba](WORKSPACE.md#Guia-de-configuracion-del-entorno-de-trabajo)
