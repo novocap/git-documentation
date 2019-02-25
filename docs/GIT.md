@@ -146,5 +146,32 @@ git checkout <--sha-1 commit-->
 Este comando nos va a permitir movernos a un `commit` en específico colocando como parámetro únicamente el código `SHA-1`, volviendo de esta manera al estado de su instantánea que simulará el viaje en el tiempo.
 
 ¿Qué usos se le puede dar a esta función? Particularmente se puede volver el tiempo atrás cuando el código funcionaba por ejemplo, también puede servir de análisis mas profundo que el `git diff` parándonos en un momento de la historia del repositorio, aunque también uno de las funcionalidades mas utilizadas con este comando es para ramificar el código a partir de un `commit` en específico, tema que aboradaremos en la próxima sección.
-## Remificación del repositorio
+## Ramificación del repositorio
+En esta sección vamos a comprender el concepto de remificación en Git, que resulta una de las funcionalidades mas increíbles de esta tecnología, la cual nos permite seguir un desarrollo no lineal que no nos obliga a seguir un camino predefinido de trabajo. Esto significa que se puede ir ampliando la funcionalidad del repositorio sin seguir una ruta lineal de desarrollo, ramificando en cualquier momento de su historia otra linea paralela que no interfiere en la ruta original, y se puede volver a adjuntar en el momento que se requiera. Esto nos da una gran libertad para derivar en varias rutas para aplicar nuevas funcionalidades, realizar correcciones, y aplicar cambios requeridos, etcétera, sin afectar la ruta principal del desarrollo, para que finalmente se adjunten los cambios a la ruta principal solamente cuando estos estén terminados, optando por hacer testeos previos, y todo el análisis que se requiera.
+
+![Git branch y merge](../img/git-branch-merge.jpg)
+> __Imagen 10__: _Ramificación con Git._
+
+El concepto de remificación en Git se gestiona por medio de la creación de _ramas_ virtuales dentro del repositorio, donde cada rama contiene sus propios `commit`, que originalmente vienen derivadas de otras ramas, tal y como se puede ver en el ejemplo de la __Imagen 10__. Esto quiere decir que en vez de trabajar en una única rama en nuestro repositorio, podemos crear una nueva rama en el momento de la historia que surja, y a partir de allí comenzar a desarrollar la nueva funcionalidad, corrección, requerimiento, etcétera. Una vez terminado de aplicar los cambios (_se recomienda testearlo también_), se pueden adjuntar los mismos a la rama de la ruta principal nuevamente.
+
+¿Como funcionan las ramas en Git? Al comenzar a trabajar con Git, este nos crea una rama por defecto denominada `master`, la cual prácticamente se ha convertido en un estándar como la rama principal del repositorio, aunque de todas maneras se le puede cambiar el nombre o utilizar otra rama como la principal sin ningún tipo de problemas. A partir de allí, cada vez que sea necesario aplicar algún cambio en el repositorio, es conveniente crear una nueva rama para tal fin, y efectuar allí todos los `commit` que sean necesarios antes de aplicarlos a la rama principal.
+### Trabajar en una nueva rama
+Ahora bien, a partir del primer `commit`, Git crea por defecto la rama `master`, y además ya podemos crear ramas en el repositorio. Para poder ver un listado de las `ramas` locales que tenemos en el repositorio lo hacemos con el comando:
+```git
+git branch -l
+```
+> La rama que tiene antepuesto un __*__ es la que indica donde Git se encuentra trabajando en ese momento.
+
+Entonces para comenzar a operar con las ramas, debemos situarnos en el `commit` donde surja la necesidad de ramificar el proyecto (_que en la mayoría de los casos es el último, aunque podemos movernos al que creamos necesario con el comando que vimos en la sección anterior_), y a partir de ese momento crear la rama en cuestión con el siguiente comando:
+```git
+git branch <--nombre-nueva-rama-->
+```
+> El nombre de la rama es indistinto, aunque no puede repetirse en el mismo repositorio y no debe tener espacios.
+
+Esta acción creó una rama a partir del `commit` que se encontraba en ese momento, y funciona de manera independiente de la rama `master`. Para comenzar a trabajar con la nueva rama, que podemos llamarla por ejemplo `test`, debemos trasladarnos a ella y ejecutar el siguiente comando:
+```git
+git checkout test
+```
+Inmediatamente podemos ejecutar el comando `git branch -l` para observar en que rama estamos trabajando.
+
 [🡡 volver al inicio](GIT.md#Los-tres-estados-de-Git)
