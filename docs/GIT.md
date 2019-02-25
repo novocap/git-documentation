@@ -130,5 +130,4 @@ En este caso podremos realizar un análisis mas acotado, particularmente con el 
 ![Git diff ultimo commit](../img/git-diff-last-commit.png)
 > __Imagen 9__: _Git diff con el último `commit` por archivo._
 ## Remificación del repositorio
-
 [Ir arriba](GIT.md#Los-tres-estados-de-Git)

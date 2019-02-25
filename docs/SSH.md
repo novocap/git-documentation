@@ -1,7 +1,7 @@
 [<- Inicio](../README.md)
 
 [Tabla de Contenido](SUMMARY.md)
-# Conexión SSH con GitHub/GitLab
+# Conexión SSH con GitHub
 Para conectarnos con [GitHub](https://github.com) (esto también es válido con [GitLab](https://gitlab.com)), vamos a autenticarnos con [SSH](https://es.wikipedia.org/wiki/Secure_Shell) (Secure Shell) para tener una conexión validada entre sus servidores y nuestro equipo cliente. Si bien también podemos autenticarnos de la manera tradicional por __HTTPS__, la opción de conexión por SSH además nos dará la libertad de dejar autenticado el equipo cliente sin necesidad de ingresar usuario y contraseña cada vez que transferimos datos con esta plataforma.
 > Es importante generar conexiones SSH únicamente en aquellos equipos de nuestra confianza y que usemos habitualmente, ya que en los casos que se utilice equipos de uso público o te encuentres conectado a redes no seguras, no es recomendado utilizar una conexión SSH perpetua y es preferible conectarse con HTTPS ingresando usuario y contraseña, o clave token en su defecto.
 
@@ -52,7 +52,6 @@ clip < ~/.ssh/id_rsa.pub
 Al cargar el portapapeles con el contenido de la llave SSH, se deberá pegar su contenido dentro de [Settings / SSH and GPG Keys / New SSH Key](https://github.com/settings/ssh/new) dentro de Github, y [Settings / SSH Key](https://gitlab.com/profile/keys) dentro de GitLab.
 
 ![SSH Keys on GitHub & GitLab](../img/add-ssh-key.png)
-
 > __Imagen 1__: _Agregar llaves SSH en GitHub y GitLab._
 
 > Al finalizar, se recomienda pegar cualquier otro tipo de texto en el portapapeles para evitar que nuestra llave SSH quede vulnerada por un determinado periodo de tiempo.
@@ -68,7 +67,6 @@ Ahora bien, ya tenemos efectuada la conexión con GitHub y GitLab por SSH, y a p
 Estas opciones se encuentran por ejemplo al Clonar un repositorio, que en vez de elegir la opción HTTPS, será preferible utilizar la opción SSH.
 
 ![Clone via SSH](../img/clone-via-ssh.png)
-
 > __Imagen 2__: _Clonar un repositorio con SSH._
 
 Otro ejemplo, es al momento de agregar la referencia al repositorio remoto dentro de los comandos locales de Git con la dirección SSH de clonación de GitHub/GitLab como también se mostraba en la imagen anterior. El siguiente comando sería un ejemplo con el repositorio actual:
@@ -79,4 +77,4 @@ En un repositorio local ya vinculado con un repositorio remoto, se podrá observ
 ```git
 git remote -v
 ```
-[Ir arriba](SSH.md#Conexión-SSH-con-GitHub-GitLab)
+[Ir arriba](SSH.md#Conexion-SSH-con-GitHub)

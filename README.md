@@ -8,7 +8,7 @@ Este repositorio tiene como objetivo servir de guía de configuración del entor
 ## 1. Configuración del entorno de trabajo
 Vamos a comenzar configurando el entorno de trabajo, el cual dependerá del Sistema Operativo y de las aplicaciones elegidas a nivel personal, según se describe en la [Guía de configuración del entorno de trabajo](docs/WORKSPACE.md).
 
-Posteriormente a la configuración del entorno de trabajo, es recomendable operar bajo un marco de seguridad entre nuestra PC y GitHub/GitLab, contando con una [Conexión SSH con GitHub/GitLab](docs/SSH.md) y verificando los cambios [Guardando `commit` firmados](docs/GPG.md).
+Posteriormente a la configuración del entorno de trabajo, es recomendable operar bajo un marco de seguridad entre nuestra PC y GitHub/GitLab, contando con una [Conexión SSH con GitHub](docs/SSH.md) y verificando los cambios [Guardando `commit` firmados](docs/GPG.md).
 ## 2. Implementación del repositorio en el entorno local
 Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía de [Los tres estados de Git](docs/GIT.md). Ni bien adoptemos su flujo de trabajo, ya podremos descargar una copia sincronizada del repositorio (_copia distribuida_) conectado por SSH con el siguiente comando:
 ```git
