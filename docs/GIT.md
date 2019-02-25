@@ -132,12 +132,19 @@ En este caso podremos realizar un análisis mas acotado, particularmente con el 
 
 Ahora bien, si necesitamos ver las diferencias entre `commit` donde ninguno de los dos sea el último, necesitamos agregar el código `SHA-1` de cada uno de ellos como parámetro, seguido del tercer parámetro opcional para limitarlo por archivo si es que así quisierámos. De esta manera el comando sería de la siguiente manera:
 ```git
-git diff <-- sha-1 commit anterior --> <-- sha-1 commit posterior --> <-- archivo -->
+git diff <--sha-1 commit anterior--> <--sha-1 commit posterior--> <--archivo-->
 ```
 Tomando por ejemplo la __Imagen 7__, analizamos los cambios del segundo `commit` de cabecera `0ba09b7`, contra el ante-último `commit` de cabecera `1ad8bad`, comparando sólo el archivo `README.md`, de manera tal que el comando sería:
 ```git
 git diff 0ba09b7 1ad8bad README.md
 ```
 #### Movernos en el historial de versiones
+Git tiene un comando muy potente que nos permite movernos en su historial de versiones, así como también de movernos entre ramas (_que veremos más adelante_), y cancelar los cambios en el estado de Working Directory. Este comando que hemos visto anteriormente es:
+```git
+git checkout <--sha-1 commit-->
+```
+Este comando nos va a permitir movernos a un `commit` en específico colocando como parámetro únicamente el código `SHA-1`, volviendo de esta manera al estado de su instantánea que simulará el viaje en el tiempo.
+
+¿Qué usos se le puede dar a esta función? Particularmente se puede volver el tiempo atrás cuando el código funcionaba por ejemplo, también puede servir de análisis mas profundo que el `git diff` parándonos en un momento de la historia del repositorio, aunque también uno de las funcionalidades mas utilizadas con este comando es para ramificar el código a partir de un `commit` en específico, tema que aboradaremos en la próxima sección.
 ## Remificación del repositorio
 [Ir arriba](GIT.md#Los-tres-estados-de-Git)
