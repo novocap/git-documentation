@@ -10,13 +10,21 @@ Al finalizar la instalación de Git, se puede comprobar la correcta versión ins
 ```git
 git --version
 ```
-Como paso siguiente, es necesario configurar el programa de Git con la información del usuario:
-* Nombre y Apellido del usuario con el comando
+Como paso siguiente, es necesario configurar Git con la información del usuario:
+El Nombre y Apellido del usuario con el siguiente comando:
 ```git
 git config --global user.name "Nombre Apellido"
 ```
-* Dirección de correo electrónico del usuario (se recomienda la misma dirección de correo del usuario de GitHub):
+La dirección de correo electrónico del usuario (_se recomienda la misma dirección de correo del usuario de GitHub_) de la siguiente manera:
 ```git
 git config --global user.email "username@domain.com"
+```
+Selección del editor por defecto para edición de mensajes de Git
+```git
+git config --global core.editor deepin-editor
+```
+Para ver las configuraciones globales de Git ya establecidas, se puede realizar de la siguiente forma:
+```git
+git config -l
 ```
 [🡡 volver al inicio](WORKSPACE.md#Guía-de-configuración-del-entorno-de-trabajo)
