@@ -231,5 +231,20 @@ Con este comando estamos borrando el vínculo al repositorio remoto llamado `ori
 git remote -v
 ```
 Aquí podremos ver los vínculos remotos, tanto de subida como de descarga, para las actualizaciones de cambios en el repositorio remoto o en el repositorio local.
+# Gestión de cambios entre Git y GitHub
+En el ejemplo que estábamos trabajando en la sección anterior, vimos algunos comandos nuevos en Git, uno de ellos es `git pull`. Este comando en realidad es la combinación de varios comandos, y para poder comprender su funcionamiento, vamos a volver a ampliar el concepto de la ramificación con Git.
+
+Anteriormente vimos que con el comando `git branch -l` podemos ver la lista de ramas que se encuentran en el repositorio, y una de ellas se encuentra marcada con el caracter especial __*__. Sin contar con un gran de nivel de detalle, esto significaría que la rama marcada es la rama activa, pero a nivel mas técnico, esta marca es el apuntador que tiene una rama oculta denominada `HEAD` hacia esa rama marcada. 
+
+![Git HEAD master](../img/git-head-master.png)
+> __Imagen 13__: _Rama `HEAD` apuntando a `master`._
+
+Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace `git checkout nombre-de-la-rama` no es cambiar la rama activa, sino que directamente cambia a que rama tiene que apuntar la rama oculta `HEAD`, dando la impresión de que se está cambiando de rama.
+
+![Git HEAD testing](../img/git-head-testing.png)
+> __Imagen 14__: _Rama `HEAD` apuntando a `testing`._
+
+Con esta introducción podremos comprender el funcionamiento de subida y descarga de cambios entre el repositorio local y el remoto, así como también la mezcla de cambios entre ramas. 
+
 
 [🡡 volver al inicio](GIT.md#El-Flujo-de-Trabajo-en-Git-y-GitHub)
