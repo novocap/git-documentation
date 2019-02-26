@@ -1,7 +1,7 @@
 [<- Inicio](../README.md)
 
 [Tabla de Contenidos](SUMMARY.md)
-# El Flujo de Trabajo en Git
+# El Flujo de Trabajo en Git y GitHub
 Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra las versiones de un directorio con la colección de todas las sub-carpetas y archivos que esta contiene, estableciendo así el concepto de un repositorio. Para establecer el control con Git en un directorio, se ejecuta por única vez un comando que indica la inicialización del mismo:
 ```git
 git init
@@ -182,5 +182,16 @@ A continuación podemos ejecutar el comando `git branch -l` para observar en que
 ```git
 git checkout -b test
 ```
+Una vez que estamos en la nueva rama, el circuito de control de cambios es exactamente el mismo que veníamos efectuando en la rama `master`, siguiendo el ciclo del flujo de los 3 estados de Git hasta que terminemos de realizar todos los cambios que consideremos necesarios. A partir de este momento, se recomienda efectuar los análisis y las pruebas que se crean convenientes antes de llevar estos cambios en la rama principal, adoptando así las buenas prácticas del desarrollo de software, con el objetivo de mantener una rama principal con los cambios debidamente controlados y aplicados.
 
-[🡡 volver al inicio](GIT.md#El-Flujo-de-Trabajo-en-Git)
+Siguiendo el ejemplo, para mezclar los cambios que hayamos realizado en la rama `test` sobre la rama `master`, primero tenemos que situarnos en la rama principal y luego traer los cambios de la rama que estuvimos modificando de la siguiente manera:
+```git
+git checkout master
+git merge test
+```
+Si no existe ningún conflicto al mezclar los cambios de `test` a la rama `master`, tendremos listo el circuito ramificación en Git. En la realidad, suelen haber confictos cuando se mezclan las ramas y existen casos donde el mismo comando `git merge` crea un nuevo `commit`, que a su vez el usuario tiene que intervenir para elegir con que cambios quiere quedarse, pero lejos de dejar una mala impresión en este tipo de situaciones, Git nos ayuda en cada paso marcándonos en que líneas debemos prestar atención, y definir así con que cambios nos quedamos.
+
+Finalmente, si bien el circuito de `git merge` es perfectamente funcional para el concepto de ramificación de Git, actualmente se deja esta función para trabajar de forma local entre ramas donde ninguna de ellas sea la principal, y se delega la tarea de mezclar los cambios a la rama principal y de forma controlada, directamente en la plataforma de Github, que veremos en las próximas secciones del documento. 
+## Vínculo a reposotorio remoto
+
+[🡡 volver al inicio](GIT.md#El-Flujo-de-Trabajo-en-Git-y-GitHub)
