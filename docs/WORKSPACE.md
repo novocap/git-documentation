@@ -25,6 +25,6 @@ git config --global core.editor deepin-editor
 ```
 Para ver las configuraciones globales de Git ya establecidas, se puede realizar de la siguiente forma:
 ```git
-git config -l
+git config --list
 ```
 [🡡 volver al inicio](WORKSPACE.md#Guía-de-configuración-del-entorno-de-trabajo)

@@ -112,7 +112,7 @@ Ahora bien, contar con el listado de cambios también nos sirve para analizar su
 ```git
 git diff
 ```
-Este comando por sí solo, únicamente nos muestra los cambios efectuados en el repositorio (_si los hubiere_), desde el último `commit` comparado con las modificaciones agregadas en el estado de Working Directory.
+Este comando por sí solo, únicamente nos muestra los cambios efectuados en el repositorio (_si los hubiere_), desde el último `commit` comparado con las modificaciones agregadas en el estado de Working Directory. En definitiva, podremos ver los cambios de los archivos que aún estamos preparando.
 > En el modo de visualización de cambios de Git por terminal, si su longitud ocupa más del largo de la pantalla, nos podremos mover hacia arriba y abajo con las flechas del teclado. Para salir de este modo, se debe presionar la letra `q` seguido de la tecla `Enter`.
 
 Aquí Git nos ayuda a identificar los cambios con colores, dejando el color de texto del terminal para aquellas líneas que no cambiaron, además nos colorea con `Rojo` anteponiendo el símbolo `-` en aquellos cambios que quitamos en la edición, y coloca en `Verde` con el símbolo `+` para aquellos cambios que agregamos. También podemos ver que esta vista se contextualiza en los cambios, y por lo general no muestra todo el archivo si no es necesario. En el ejemplo que se muestra a continuación, se puede apreciar esta sintaxis con el archivo ubicado en `docs/GIT.md`:
