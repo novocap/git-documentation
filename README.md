@@ -10,14 +10,6 @@ Vamos a comenzar configurando el entorno de trabajo, el cual dependerá del Sist
 
 Posteriormente a la configuración del entorno de trabajo, es recomendable operar bajo un marco de seguridad entre nuestra PC y GitHub/GitLab, contando con una [Conexión SSH con GitHub](docs/SSH.md) y verificando los cambios [Guardando `commit` firmados](docs/GPG.md).
 ## 2. Implementación del repositorio en el entorno local
-Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía del [Flujo de Trabajo en Git](docs/GIT.md). Ni bien adoptemos su forma de trabajar, ya podremos descargar una copia sincronizada del repositorio (_copia distribuida_) conectado por SSH con el siguiente comando:
-```git
-git clone git@github.com:novocap/markdown-documentation.git
-```
-Otra forma de contar con una copia sincronizada del repositorio, es creando un directorio local (_se recomienda utilizar el mismo nombre del repositorio en GitHub_), efectuando los siguientes comandos:
-```git
-git init markdown-documentation
-git remote add origin git@github.com:novocap/markdown-documentation.git
-git pull origin master
-```
+Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía del [Flujo de Trabajo en Git y GitHub](docs/GIT.md).
+
 [🡡 volver al inicio](README.md#Práctica-documental-con-Markdown-en-GitHub)

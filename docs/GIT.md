@@ -193,5 +193,43 @@ Si no existe ningún conflicto al mezclar los cambios de `test` a la rama `maste
 
 Finalmente, si bien el circuito de `git merge` es perfectamente funcional para el concepto de ramificación de Git, actualmente se deja esta función para trabajar de forma local entre ramas donde ninguna de ellas sea la principal, y se delega la tarea de mezclar los cambios a la rama principal y de forma controlada, directamente en la plataforma de Github, que veremos en las próximas secciones del documento. 
 ## Vínculo a reposotorio remoto
+Git nos brinda la posibilidad de definir un repositorio remoto para que todo el equipo de desarrollo se conecte para subir y bajar los cambios de forma controlada y distribuida. Igualmente, la realidad es que cada repositorio local es una copia del repositorio remoto de origen, pero no sólo se copian sus archivos con la estructura de instantáneas de Git, sinó que también cuentan con la dirección del repositorio remoto al que deben conectarse para trabajar de forma centralizada.
+
+Entonces para crear un repositorio central, se puede hacer de dos formas, creando primero el repositorio remoto y luego descargando una copia sincronizada de este en cada equipo cliente, para trabajar así de forma distribuida; o directamente subir un repositorio local ya empezado, para luego subirlo como repositorio central y distribuir las copias sincronizadas al resto.
+
+La plataforma centralizada que elegimos para mantener el repositorio central es [GitHub](https://github.com) (_también puede ser GitLab, Bitbucket, Visual Studio Team Services, servidor propio, etcétera_) y para crear un nuevo reposositorio lo haremos dentro de las opciones del símbolo __+__ ubicado a la derecha de la barra de navegación:
+
+![GitHub Nav Bar](../img/github-navbar.png)
+> __Imagen 11__: _Barra de navegación de GitHub._
+
+En nuestra cuenta de GitHub, tendremos la posibilidad de crear repositorios privados o públicos (_que dependerá del criterio personal  elegir alguna de las dos opciones_), definiendo su nombre sin espacios, y de manera opcional agregar un encabezado descriptivo del mismo, así como también la creación de la documentación principal con el archivo `README.md`, seguido de una licencia y de un archivo de configuración de GitHub denominado `.gitignore`, que al ser opcionales, también podremos agregarlos luego (_Estas opciones las conoceremos más adelante_).
+
+![GitHub nuevo repositorio](../img/github-new-repo.png)
+> __Imagen 12__: _Crear nuevo repositorio en GitHub._
+
+Una vez creado el repositorio central tenemos dos opciones, una de ellas es conectarnos directamente al repositorio en cuestión con la función de _clonación_, que significa descargar una copia del mismo con el control de versiones de Git activado y con la dirección del repositorio remoto; o en su defecto conectar un repositorio local ya existente con el repositorio creado recientemente en GitHub. Entonces, para clonar el repositorio, nos dirigimos a la cerpeta donde tenemos almacenado todos los repositorios, y de paso lo vamos a hacer con el repositorio actual de la siguiente manera:
+```git
+git clone git@github.com:novocap/markdown-documentation.git
+```
+Otra forma de hacer esto mismo, es creando un directorio local (_se recomienda utilizar el mismo nombre del repositorio en GitHub_), efectuando los siguientes comandos:
+```git
+git init markdown-documentation
+git remote add origin git@github.com:novocap/markdown-documentation.git
+git pull origin master
+```
+En estos dos ejemplos hemos utilizado otros comandos de Git no utilizados hasta el momento, uno de ellos es `git clone` que nos va a permitir descargar una copia sincronizada del repositorio remoto, y de todos aquellos que tengamos acceso, o también con repositorios públicos de cualquier usuario u organización. Después podemos ver que existe el comando `git remote` que se utiliza para vincular los repositorios locales con repositorios remotos, y podremos utilizarlo con estas variantes:
+
+```git
+git remote add origin <--direccion-git-remota-->
+```    
+Sirve para vincular el repositorio local a un repositorio remoto, donde el parámtero `origin` es el nombre por defecto que utiliza GitHub para nombrar el vínculo del repositorio remoto (_esto deriva en que un repositorio local puede tener más de un vínculo remoto_).
+```git
+git remote remove origin
+```
+Con este comando estamos borrando el vínculo al repositorio remoto llamado `origin`.
+```git
+git remote -v
+```
+Aquí podremos ver los vínculos remotos, tanto de subida como de descarga, para las actualizaciones de cambios en el repositorio remoto o en el repositorio local.
 
 [🡡 volver al inicio](GIT.md#El-Flujo-de-Trabajo-en-Git-y-GitHub)
