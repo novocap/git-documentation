@@ -10,7 +10,7 @@ Vamos a comenzar configurando el entorno de trabajo, el cual dependerá del Sist
 
 Posteriormente a la configuración del entorno de trabajo, es recomendable operar bajo un marco de seguridad entre nuestra PC y GitHub/GitLab, contando con una [Conexión SSH con GitHub](docs/SSH.md) y verificando los cambios [Guardando `commit` firmados](docs/GPG.md).
 ## 2. Implementación del repositorio en el entorno local
-Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía de [Los tres estados de Git](docs/GIT.md). Ni bien adoptemos su flujo de trabajo, ya podremos descargar una copia sincronizada del repositorio (_copia distribuida_) conectado por SSH con el siguiente comando:
+Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía del [Flujo de Trabajo en Git](docs/GIT.md). Ni bien adoptemos su forma de trabajar, ya podremos descargar una copia sincronizada del repositorio (_copia distribuida_) conectado por SSH con el siguiente comando:
 ```git
 git clone git@github.com:novocap/markdown-documentation.git
 ```
