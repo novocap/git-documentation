@@ -21,7 +21,7 @@ Luego de contar con el repositorio inicializado, el comando para ver el estado a
 ```git
 git status
 ```
-De esta manera, a continuación pasamos a comprender el funcionamiento de los estados de Git de manera detallada.
+A continuación pasamos a comprender el funcionamiento de los estados de Git de manera detallada.
 ### Working Directory
 Este es el estado donde se encuentran los archivos con los cuáles nos encontramos trabajando en el repositorio. En este momento Git no tiene control de almacenamiento de lo archivos, ya que se encuentran en plena edición/creación por parte del usuario. Si se ejecuta el comando `git status` luego de modificar/crear archivos, Git muestra por ejemplo el siguiente mensaje:
 
@@ -30,13 +30,13 @@ Este es el estado donde se encuentran los archivos con los cuáles nos encontram
 
 En la sección `Changes not staged for commit` podemos ver que Git informa que tiene archivos modificados posteriormente a su última versión controlada, y marca los archivos como `modified`. Más abajo en `Untracked files` se muestran aquellos archivos nuevos en el repositorio que no tienen control de versión aún.
 
-Git nos informa del uso de 2 comandos, donde uno de ellos sirve para descartar todos los cambios realizados desde el último `commit`, por ejemplo de la siguiente manera:
+Git nos informa del uso de dos comandos, donde uno de ellos sirve para descartar los cambios realizados desde el último `commit`, según se muestra en el siguiente comando de ejemplo:
 ```git
 git checkout docs/GIT.md
 ```
 En este ejemplo estamos descartando los cambios realizados sobre el archivo ubicado en `docs/GIT.md`. El otro comando lo usaremos para pasar al próximo estado de Git, el cual se explica a continuación.
 ### Staging Area 
-Para indicarle a Git que nos almacene el estado de los archivos creados/modificados por medio de una instantánea de los mismos, lo haremos con el comando que nos indica en el ejemplo de la __Imagen 2__ sobre uno de los archivos:
+Para indicarle a Git que nos almacene el estado de los archivos creados/modificados por medio de una instantánea, lo haremos con el comando que podemos observar en la __Imagen 2__, por ejemplo:
 ```git
 git add docs/GIT.md
 ```
@@ -65,7 +65,7 @@ Una vez que nos encontramos con todos los cambios esperados en nuestro repositor
 ![Git Directory](../img/changes-to-committed.png)
 > __Imagen 4__: _Cambios listos a confirmar._
 
-En el ejemplo podemos ver que Git detecta que hubieron cambios en archivos existentes anteponiendo la marca `modified`, y cuando se agregaron nuevos archivos se marcan con `new file`. Finalmente la confirmación de los archivos en el estado de área de preparación, cierra el circuito de cambios dentro del historial de Git, estableciendo una etiqueta con la codificación `SHA-1` con el siguiente comando:
+En el ejemplo anterior podemos ver que Git detecta que hubieron cambios en archivos existentes, anteponiendo la marca `modified`, y en el caso de los nuevos archivos se marcan con `new file`. Finalmente la confirmación de los archivos en el estado de área de preparación, cierra el circuito de cambios dentro del historial de Git, estableciendo una etiqueta de codificación `SHA-1` con el siguiente comando:
 ```git
 git commit
 ```
@@ -77,27 +77,27 @@ Preferiblemente, para firmar el `commit` verificando su identidad con la llave G
 ```git
 git commit -S -m "Mensaje personalizado firmado con la identidad."
 ```
-De esta manera, al confirmar los cambios tendremos el siguiente mensaje de Git, de acuerdo al ejemplo que venimos trabajando:
+De esta manera, al confirmar los cambios podremos ver el detalle de información que nos arroja Git con cada uno de los archivos implicados en la instantánea:
 
 ![Git Directory](../img/git-directory.png)
 > __Imagen 5__: _Estado Git Directory de Git._
 ## Gestión del historial de versiones
-Cada instantánea creada por Git (_como vimos con SHA-1, por medio de 40 caracteres hexadecimales irrepetibles_) pasa a formar parte del historial del sistema de control de versiones. Asimismo, la fortaleza de Git es la precisión con la que gestiona la integridad de la información, ya que no existen cambios, corrupción de datos o cualquier otro tipo de alteración sobre los archivos sin que Git lo tenga controlado. Esto funciona gracias a un algoritmo de verificación mediante un [`checksum`](https://es.wikipedia.org/wiki/Suma_de_verificaci%C3%B3n) al momento del almacenamiento de la información, que en resumen resulta de la suma de comprobación de la integridad de los datos en el instante que se persisten los mismos.
+Cada instantánea creada por Git (_como vimos con SHA-1, por medio de 40 caracteres hexadecimales irrepetibles_) pasa a formar parte del historial del sistema de control de versiones. Asimismo, la fortaleza de Git es la precisión con la que gestiona la integridad de la información, ya que no existen cambios, corrupción de datos o cualquier otro tipo de alteración sin que Git lo tenga controlado. Esto funciona gracias a un algoritmo de verificación mediante un [`checksum`](https://es.wikipedia.org/wiki/Suma_de_verificaci%C3%B3n) sobre el contenido de los datos al momento efectuar el almacenamiento de la información mediante una instantánea.
 
-Al ser un sistema distribuido, el flujo operativo con Git es prácticamente local, y sólo será necesario interactuar con el repositorio remoto (_el repositorio central almacenado por ejemplo en GitHub/GitLab_) según la necesidad de actualización del propio repositorio, tanto para subir los cambios, como así también para descargarlos. Esto nos brinda la ventaja de poder trabajar con proyectos muy grandes, con la flexibilidad de contar con una amplia distribución entre equipos cliente.
+Al ser un sistema distribuido, el flujo operativo de Git es en su mayoría local, y sólo será necesario interactuar con el repositorio remoto (_el repositorio central almacenado por ejemplo en GitHub/GitLab_) según la necesidad de actualización de subida y/o descargas de cambios. Esto nos brinda la ventaja de poder trabajar con proyectos muy grandes, con la flexibilidad de contar con una amplia distribución entre los equipos cliente.
 ### Listado de cambios
-En el momento que necesitemos ver el historial de los cambios en git lo podemos hacer con el siguiente comando:
+En el momento que necesitemos ver el historial de los cambios en Git lo podemos hacer con el siguiente comando:
 ```git
 git log
 ```
-Inmediatamente podremos ver los cambios confirmados en el repositorio ordenados desde el mas reciente, con la información del Autor, Fecha y Hora, Mensaje del `commit`, y lo más importante, el código `SHA-1` de 40 caracteres, el cual nos servirá para movernos en todo el historial como si estuviésemos en una máquina del tiempo.
+Inmediatamente podremos ver los cambios confirmados en el repositorio ordenados desde el mas reciente al más antiguo, con la información del Autor, Fecha y Hora, Mensaje del `commit`; y lo más relevante, el código `SHA-1` de 40 caracteres, el cual nos servirá para trasladarnos dentro de su historial como si estuviésemos en una máquina del tiempo.
 
 ![Git log](../img/git-log.png)
 > __Imagen 6__: _Historial del repositorio con `git log`_
 
 En el caso que no nos alcance la pantalla para ver todo el historial, con las flechas de arriba y abajo podemos ir recorriéndolo, y luego para salir de esta vista, es necesario presionar la letra `q` seguido de un `Enter`.
 
-Otra opción de vista simplificada del historial, enfocado únicamente en los mensajes que incluyen también la cabecera de 7 caracteres del código `SHA-1` del `commit` original (_que para Git también es válido utilizar su cabecera para identificar los cambios_), se accede mediante el siguiente comando:
+Existe otra vista mas reducida del comando `git log`, que está enfocada únicamente en los mensajes del `commit`, e incluyen una cabecera mas corta de 7 caracteres del código `SHA-1` original (_que para Git también es válida_), y se accede mediante el siguiente comando:
 ```git
 git log --oneline
 ```
@@ -115,12 +115,12 @@ git diff
 Este comando por sí solo, únicamente nos muestra los cambios efectuados en el repositorio (_si los hubiere_), desde el último `commit` comparado con las modificaciones agregadas en el estado de Working Directory.
 > En el modo de visualización de cambios de Git por terminal, si su longitud ocupa más del largo de la pantalla, nos podremos mover hacia arriba y abajo con las flechas del teclado. Para salir de este modo, se debe presionar la letra `q` seguido de la tecla `Enter`.
 
-En este modo de visualización, Git nos ayuda para identificar los cambios con colores, dejando el color de texto del terminal para aquellas líneas que no cambiaron. También nos colorea con `Rojo` anteponiendo el símbolo `-` en aquellos cambios que quitamos, y coloca en `Verde` con el símbolo `+` para aquellos cambios que se agregaron. En el ejemplo que se muestra a continuación se puede apreciar esta sintaxis con el archivo ubicado en `docs/GIT.md`:
+Aquí Git nos ayuda a identificar los cambios con colores, dejando el color de texto del terminal para aquellas líneas que no cambiaron, además nos colorea con `Rojo` anteponiendo el símbolo `-` en aquellos cambios que quitamos en la edición, y coloca en `Verde` con el símbolo `+` para aquellos cambios que agregamos. También podemos ver que esta vista se contextualiza en los cambios, y por lo general no muestra todo el archivo si no es necesario. En el ejemplo que se muestra a continuación, se puede apreciar esta sintaxis con el archivo ubicado en `docs/GIT.md`:
 
 ![Git diff working directory](../img/git-diff-wd.png)
 > __Imagen 8__: _Sintaxis de cambios en Working Directory._
 
-#### Diferencias entre `commit`
+#### Diferencias entre dos `commit`
 El comando `git diff` también nos sirve para analizar las diferencias entre un `commit` y otro por medio del uso de parámteros adicionales. Igualmente tenemos dos opciones, analizar todos los archivos modificados entre los `commit` seleccionados, o simplemente ver el detalle de los cambios por archivo. La cantidad de parámetros que le indiquemos a `git diff` nos permitirá trabajar con diferentes niveles de análisis.
 
 Para analizar los cambios de un determinado `commit` comparado con el último `commit` efectuado en el repositorio, necesitaremos el códido `SHA-1` del `commit` elegido mas antiguo, que en este caso puede ser el código de 40 caracteres que nos muestra `git log`, o también podremos utilizar solamente la cabecera que nos muestra `git log --oneline`.  Vamos a utilizar el ejemplo de la __Imagen 7__ seleccionando la cabecera de un `SHA-1`, que en este caso utilizaremos el primer commit del repositorio con el código `2979aea`, para luego compararlo con el último `commit`, simplemente de la siguiente manera:
@@ -151,16 +151,16 @@ git checkout <--sha-1 commit-->
 ```
 Entonces, esta funcionalidad nos va a permitir movernos a un `commit` en específico colocando como parámetro únicamente el código `SHA-1`, volviendo de esta manera al momento de su instantánea, que simularía ser un viaje en el tiempo.
 
-¿Qué usos se le puede dar a esta función? Particularmente se puede volver el tiempo atrás cuando por ejemplo, el código funcionaba correctamente; también se puede analizar con mas profundidad que `git diff`, parándonos en un momento de la historia del repositorio, aunque además una de las funcionalidades mas utilizadas con este comando es para ramificar el código a partir de un `commit` en específico, tema que aboradaremos en la próxima sección.
+__¿Qué usos podemos darle a esta función?__ Particularmente se puede volver el tiempo atrás en los casos donde el código deje de funcionar a partir de cualquier cambio; también al volver atrás podemos analizar con mas profundidad que con el comando `git diff`, y otra de las funcionalidades mas utilizadas con `git checkout` es para los casos de ramificación del repositorio, tema que aboradaremos en la próxima sección.
 ## Ramificación del repositorio
-En esta sección vamos a comprender el concepto de ramificación en Git, que resulta una de las funcionalidades mas increíbles de esta tecnología, la cual nos permite seguir un desarrollo no lineal que no nos obliga a mantenernos por un camino predefinido de trabajo. Esto significa que se puede ir ampliando la funcionalidad del repositorio sin seguir una ruta lineal de desarrollo, ramificando en cualquier momento de su historia, otra linea paralela que no interfiera a la ruta original, y que se pueda volver a adjuntar en el momento que se requiera. Esto nos brinda una gran libertad para derivar el proyecto en varias rutas, con el objetivo de aplicar nuevas funcionalidades, realizar cualquier tipo de correcciones, trabajar según los cambios que se requieran, etcétera, sin tener que afectar la ruta principal del desarrollo, y una vez finalizados los mismos, se adjunten a la ruta principal con la suma testeos previos por ejemplo, entre otro tipo de análisis.
+En esta sección vamos a comprender el concepto de ramificación en Git, que resulta una de las funcionalidades mas increíbles de esta tecnología, la cual nos permite seguir un desarrollo no lineal que no nos obliga a mantenernos por un camino predefinido de trabajo. Esto significa que se puede ir ampliando la funcionalidad del repositorio sin seguir una ruta lineal de desarrollo, ramificando en cualquier momento de su historia, otra linea paralela que no interfiera a la ruta original, y que se pueda volver a adjuntar en el momento que se requiera. Además nos brinda la libertad de delegar los cambios sobre el proyecto en varias rutas, con el objetivo de aplicar nuevas funciones, efectuar correcciones, aplicar nuevos requerimientos, etcétera, sin tener que afectar la ruta principal del desarrollo. Una vez finalizados estos cambios se pueden adjuntar nuevamente a la ruta principal, haciendo testeos previos por ejemplo, o las acciones que se consideren realizar.
 
 ![Git branch y merge](../img/git-branch-merge.jpg)
 > __Imagen 10__: _Ramificación con Git._
 
 El concepto de ramificación en Git se gestiona por medio de la creación de _ramas_ virtuales dentro del repositorio, donde cada una contiene sus propios `commit` que originalmente vienen derivadas de otras ramas, tal y como se puede ver en el ejemplo de la __Imagen 10__. Esto quiere decir que en vez de trabajar en una única rama en nuestro repositorio, podremos crear una nueva rama en el momento de la historia que surja, y a partir de allí comenzar a desarrollar la nueva funcionalidad, corrección, requerimiento, etcétera.
 
-¿Como funcionan las ramas en Git? Al comenzar a trabajar con Git, este nos crea una rama por defecto denominada `master`, la cual prácticamente se ha convertido en un estándar como la rama principal del repositorio, aunque de todas maneras se le puede cambiar el nombre o utilizar otra rama como la principal sin ningún tipo de problemas. A partir de allí, cada vez que sea necesario aplicar algún cambio en el repositorio, es conveniente crear una nueva rama para tal fin, y efectuar allí todos los `commit` que sean necesarios antes de aplicarlos a la rama principal.
+__¿Como funcionan las ramas en Git?__ Al comenzar a trabajar con Git, este nos crea una rama por defecto denominada `master`, la cual prácticamente se ha convertido en un estándar como la rama principal del repositorio, aunque de todas maneras se le puede cambiar el nombre o utilizar otra rama como la principal sin ningún tipo de problemas. A partir de allí, cada vez que sea necesario aplicar algún cambio en el repositorio, es conveniente crear una nueva rama para tal fin, y efectuar allí todos los `commit` que sean necesarios antes de aplicarlos a la rama principal.
 ### Trabajar en una nueva rama
 Ahora bien, a partir del primer `commit`, Git crea por defecto la rama `master`, y además ya podemos crear ramas en el repositorio. Para poder ver un listado de las `ramas` locales que tenemos en el repositorio, lo hacemos con el comando:
 ```git
@@ -178,7 +178,7 @@ Esta acción crea una rama a partir del `commit` que se encontraba en ese moment
 ```git
 git checkout test
 ```
-Inmediatamente podemos ejecutar el comando `git branch -l` para observar en que rama estamos trabajando. También se puede crear una nueva rama y trasladarnos inmediamente a ella, con el siguiente comando:
+A continuación podemos ejecutar el comando `git branch -l` para observar en que rama estamos trabajando. También podemos ahorrarnos unos pasos al crear una nueva rama y trasladarnos directamente a ella con el siguiente comando:
 ```git
 git checkout -b test
 ```
