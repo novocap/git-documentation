@@ -15,6 +15,7 @@
     <a href="#Trabajar-en-una-nueva-rama">· Trabajar en una nueva rama</a><br>
     <a href="#Gestión-con-repositorio-remoto">Gestión con repositorio remoto</a><br>
     <a href="#Actualización-entre-Git-y-GitHub">· Actualización entre Git y GitHub</a><br>
+    <a href="#Circuito-de-revisión-y-aprobación-de-cambios-en-GitHub">· Circuito de revisión y aprobación de cambios en GitHub</a><br>
 </details>
 
 # Fundamentos de Git y GitHub
@@ -301,6 +302,8 @@ Ahora bien, Git nos brinda la posibilidad de efectuar estos dos comandos en uno 
 git pull origin <--rama-a-descargar-->
 ```
 > Si tenemos conflictos bajo cualquiera de las dos opciones que elijamos al momento de descargar los cambios, Git no efectuará ningún cambio y nos va a informar cuál es el problema para que podamos resolverlo, y luego de que lo corrijamos recién podremos bajar las actualizaciones sin problemas.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 #### Subida de cambios a GitHub<!-- omit in toc -->
 Para subir cambios a GitHub, debemos tener los mismos cuidados que al bajarlos, mas allá de que si hay conflictos estaremos bloqueados para subir cualquier actualización. También, a diferencia de las descargas, las subidas de cambios a GitHub pueden bloquearse en determinadas ramas para generar un circuito de aprobación y revisión de los mismos. Este tipo de bloqueos no viene pre-configurado por defecto en GitHub, y lo que suele realizarse es bloquear como mínimo la rama principal del repositorio. Entonces, si tuvierámos bloqueda la rama principal, que podría ser la rama `master`, para subir cambios al repositorio, lo que se debe realizar antes de desarrollar cualquier tipo de cambio, es efectuar la ramificación del mismo y luego comenzar con el cambio.
 
@@ -314,5 +317,9 @@ Si no existe ningún conflicto, en GitHub se van a ver los cambios aplicados en 
 > __Imagen 16__: _Ver las ramas en GitHub._
 
 Ya contamos con los cambios en GitHub, pero la intención es que estos cambios se apliquen en la rama principal del repositorio, en este caso en la rama `master`. En la próxima sección veremos como hacerlo entrando a un circuito de revisión y aprobación de los cambios subidos.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
+### Circuito de revisión y aprobación de cambios en GitHub
+GitHub introdujo una funcionalidad muy interesante para el control de cambios con el sistema de control de versiones de Git, y este se llama vulgarmente como __Pull Request__. Esta denominación suele prestarse a confusión, ya que como vimos en las sección anterior el comando `git pull` se utiliza para actualizar datos desde un repositorio remoto, aunque en realidad este comando es la combinación de los comandos `git fetch` y `git merge`, por lo cual se podría decir que la función del __Pull Request__ es dejar los cambios en la rama oculta del repositorio oculto en GitHub, para analizarlos, revisarlos y aprobarlos, antes de continuar con la mezcla de los mismos a la rama principal.
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
