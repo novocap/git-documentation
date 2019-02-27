@@ -5,11 +5,12 @@
 <details>
     <summary>Tabla de contenido del documento</summary>
     <a href="#Fundamentos-de-Git-y-GitHub">Fundamentos de Git y GitHub</a><br>
-    <a href="GIT.md#Working-Directory">Working Directory</a><br>
+    <a href="#Working-Directory">· Working Directory</a><br>
+    <a href="#Staging-Area">· Staging Area</a><br>
 </details>
 
 # Fundamentos de Git y GitHub
-Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra las versiones de un directorio con la colección de todas las sub-carpetas y archivos que esta contiene, estableciendo así el concepto de un repositorio. Para establecer el control con Git en un directorio, se ejecuta por única vez un comando que indica la inicialización del mismo:
+Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en un código _hash_ [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra las versiones de un directorio con la colección de todas las sub-carpetas y archivos que esta contiene, estableciendo así el concepto de un repositorio. Para establecer el control con Git en un directorio, se ejecuta por única vez un comando que indica la inicialización del mismo:
 ```git
 git init
 ```
