@@ -247,7 +247,7 @@ git clone git@github.com:novocap/git-documentation.git
 ```
 Otra forma de hacer esto mismo, es creando un directorio local (_se recomienda utilizar el mismo nombre del repositorio en GitHub_), efectuando los siguientes comandos:
 ```git
-git init markdown-documentation
+git init git-documentation
 git remote add origin git@github.com:novocap/git-documentation.git
 git pull origin master
 ```
@@ -270,17 +270,36 @@ Aquí podremos ver los vínculos remotos, tanto de subida como de descarga, para
 ### Actualización entre Git y GitHub
 En el ejemplo que estábamos trabajando en la sección anterior, vimos algunos comandos nuevos en Git, uno de ellos es `git pull`. Este comando en realidad es la combinación de varios comandos, y para poder comprender su funcionamiento, vamos a volver a ampliar el concepto de la ramificación con Git.
 
-Anteriormente vimos que con el comando `git branch -l` podemos ver la lista de ramas que se encuentran en el repositorio, y una de ellas se encuentra marcada con el caracter especial __*__. Sin contar con un gran de nivel de detalle, esto significaría que la rama marcada es la rama activa, pero a nivel mas técnico, esta marca es el apuntador que tiene una rama oculta denominada `HEAD` hacia esa rama marcada. 
+Anteriormente vimos que con el comando `git branch -l` podemos ver la lista de ramas que se encuentran en el repositorio, y una de ellas se encuentra marcada con el caracter especial __*__. Sin contar con un gran de nivel de detalle, esto significaría que la rama marcada es la rama activa, pero a nivel mas técnico, esta marca es un apuntador desde una rama oculta denominada `HEAD` hacia la rama indicada. 
 
 ![Git HEAD master](../img/git-head-master.png)
 > __Imagen 13__: _Rama `HEAD` apuntando a `master`._
 
-Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace `git checkout nombre-de-la-rama` no es cambiar la rama activa, sino que directamente cambia a que rama tiene que apuntar la rama oculta `HEAD`, dando la impresión de que se está cambiando de rama.
+Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace Git cuando queremos ir a otra rama no es cambiar la rama activa, sino que directamente cambia el apuntador de la rama oculta `HEAD`, dando una impresión de que nos hemos trasladado a otra rama.
 
 ![Git HEAD testing](../img/git-head-testing.png)
 > __Imagen 14__: _Rama `HEAD` apuntando a `testing`._
 
-Con esta introducción podremos comprender el funcionamiento de subida y descarga de cambios entre el repositorio local y el remoto, así como también la mezcla de cambios entre ramas. 
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
+#### Descarga de cambios desde GitHub
+Suponiendo que nos encontramos en el caso de que nuestra copia local del repositorio está desactualizada frente a la versión más reciente existente en GitHub, entonces tenemos la tarea de actualizar nuestro repositorio local. También es importante evitar el desarrollo de nuevos cambios sobre una rama que se encuentre desactualizada, ya que vamos a generar conflictos al querer subirlos cuando estén listos. Para lograr esto, debemos estar al tanto de los cambios en el repositorio en GitHub, activando por ejemplo las notificaciones por correo electrónico en las [Configuraciones de notificación de GitHub](https://github.com/settings/notifications), según se muestra en la imagen a continuación:
 
+![GitHub email notifications](../img/github-notifications.png)
+> __Imagen 15__: _Configuraciones de notificaciones por email en GitHub._
+
+Se puede observar en la imagen que podemos tener una cuenta de email personal para las notificaciones generales de la cuenta, y una cuenta corporativa en el caso que tenegamos acceso a una organización en GitHub.
+
+Entonces para bajar los cambios de GitHub en el repositorio local, primero nos tenemos que situarnos en la rama donde necesitamos descargar los cambios, y una vez allí ejecutamos los siguientes comandos:
+```git
+git fetch origin <--rama-a-descargar-->
+git merge origin <--rama-a-descargar-->
+```
+Aquí podemos ver que tenemos el comando `git fetch`, el cual descarga primeramente los cambios del repositorio a la rama oculta `HEAD`, y luego será necesario hacer la mezcla de los cambios en nuestra rama en cuestión. De esta manera podemos ver que Git no descarga los cambios directamente a nuestro entorno de trabajo, proteginéndonos de cualquier efecto no deseado, y nos obliga a definir que queremos hacer con los cambios descargados, en este caso mezclándolos por ejemplo con la rama desactualizada.
+
+Ahora bien, Git nos brinda la posibilidad de efectuar estos dos comandos en uno sólo, es decir descargar los cambios del repositorio remoto, y hacer directamente la mezcla en nuestra rama desactualizada (_igualmente es nuestra responsabilidad de verificar previamente de que no tengamos cambios locales, para que no generemos conflitos al hacerlo_), utilizando el siguiente comando:
+```git
+git pull origin <--rama-a-descargar-->
+```
+Bajo cualquiera de las dos opciones que elijamos al momento de descargar los cambios, si tenemos conflictos Git no efectuará ningún cambio y nos va a informar cuál es el problema para que podamos resolverlo, y luego de que lo corrijamos, podremos actualizar sin problemas.
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)

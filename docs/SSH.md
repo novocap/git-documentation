@@ -60,7 +60,7 @@ Para probar la conexión, se colocar `yes` ejecutando el siguiente comando previ
 * __GitHub__: `ssh -T git@github.com`
 * __GitLab__: `ssh -T git@gitlab.com`
 
-Si salió todo bien, GitHub y GitLab les dará un mensaje de bienvenida. Si hubo algún problema, por favor sírvase informarlo creando un [Issue](https://github.com/novocap/practice-markdown-documentation/issues/new) dentro del repositorio.
+Si salió todo bien, GitHub y GitLab les dará un mensaje de bienvenida. Si hubo algún problema, por favor sírvase informarlo creando un [Issue](https://github.com/novocap/git-documentation/issues/new) dentro del repositorio.
 ## 4. Próximos pasos
 Ahora bien, ya tenemos efectuada la conexión con GitHub y GitLab por SSH, y a partir de este momento se recomienda operar con los repositorios remotos por medio de direcciones SSH.
 
