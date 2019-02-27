@@ -209,12 +209,12 @@ En nuestra cuenta de GitHub, tendremos la posibilidad de crear repositorios priv
 
 Una vez creado el repositorio central tenemos dos opciones, una de ellas es conectarnos directamente al repositorio en cuestión con la función de _clonación_, que significa descargar una copia del mismo con el control de versiones de Git activado y con la dirección del repositorio remoto; o en su defecto conectar un repositorio local ya existente con el repositorio creado recientemente en GitHub. Entonces, para clonar el repositorio, nos dirigimos a la cerpeta donde tenemos almacenado todos los repositorios, y de paso lo vamos a hacer con el repositorio actual de la siguiente manera:
 ```git
-git clone git@github.com:novocap/markdown-documentation.git
+git clone git@github.com:novocap/git-documentation.git
 ```
 Otra forma de hacer esto mismo, es creando un directorio local (_se recomienda utilizar el mismo nombre del repositorio en GitHub_), efectuando los siguientes comandos:
 ```git
 git init markdown-documentation
-git remote add origin git@github.com:novocap/markdown-documentation.git
+git remote add origin git@github.com:novocap/git-documentation.git
 git pull origin master
 ```
 En estos dos ejemplos hemos utilizado otros comandos de Git no utilizados hasta el momento, uno de ellos es `git clone` que nos va a permitir descargar una copia sincronizada del repositorio remoto, y de todos aquellos que tengamos acceso, o también con repositorios públicos de cualquier usuario u organización. Después podemos ver que existe el comando `git remote` que se utiliza para vincular los repositorios locales con repositorios remotos, y podremos utilizarlo con estas variantes:
