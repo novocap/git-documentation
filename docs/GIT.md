@@ -4,17 +4,25 @@
 
 <details>
     <summary>Tabla de contenido del documento</summary>
-    <a href="#Fundamentos-de-Git-y-GitHub">Fundamentos de Git y GitHub</a><br>
+    <a href="#Fundamentos-de-Git-y-GitHub"><strong>Fundamentos de Git y GitHub</strong></a><br>
     <a href="#Working-Directory">· Working Directory</a><br>
     <a href="#Staging-Area">· Staging Area</a><br>
+    <a href="#Git-Directory">· Git Directory</a><br>
+    <a href="#Gestión-del-historial-de-versiones">Gestión del historial de versiones</a><br>
+    <a href="#Listado-de-cambios">· Listado de cambios</a><br>
+    <a href="#Análisis-de-diferencias-de-cambios">· Análisis de diferencias de cambios</a><br>
+    <a href="#Ramificación-del-repositorio">Ramificación del repositorio</a><br>
+    <a href="#Trabajar-en-una-nueva-rama">· Trabajar en una nueva rama</a><br>
+    <a href="#Gestión-con-repositorio-remoto">Gestión con repositorio remoto</a><br>
+    <a href="#Actualización-entre-Git-y-GitHub">· Actualización entre Git y GitHub</a><br>
 </details>
 
 # Fundamentos de Git y GitHub
-Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en un código _hash_ [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra las versiones de un directorio con la colección de todas las sub-carpetas y archivos que esta contiene, estableciendo así el concepto de un repositorio. Para establecer el control con Git en un directorio, se ejecuta por única vez un comando que indica la inicialización del mismo:
+Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en un código _hash_ en [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra el historial de una colección de archivos y carpetas, introduciendo el concepto de un repositorio. Para inicializar el control de Git en un directorio, se ejecuta por única vez el siguiente comando:
 ```git
 git init
 ```
-También existe la posibilidad de que el comando de inicialización de Git realice la creación del directorio que utilizará como repositorio en un único paso, como se muestra en el ejemplo a continuación:
+También existe la posibilidad de que el comando de inicialización de Git realice la creación del directorio que utilizará como repositorio en un único paso (_saltando el paso de agregar una nueva carpeta_), como se muestra en el ejemplo a continuación:
 ```git
 git init nombre-del-repositorio
 ```
@@ -30,6 +38,8 @@ Luego de contar con el repositorio inicializado, el comando para ver el estado a
 git status
 ```
 A continuación pasamos a comprender el funcionamiento de los estados de Git de manera detallada.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Working Directory
 Este es el estado donde se encuentran los archivos con los cuáles nos encontramos trabajando en el repositorio. En este momento Git no tiene control de almacenamiento de lo archivos, ya que se encuentran en plena edición/creación por parte del usuario. Si se ejecuta el comando `git status` luego de modificar/crear archivos, Git muestra por ejemplo el siguiente mensaje:
 
@@ -43,6 +53,8 @@ Git nos informa del uso de dos comandos, donde uno de ellos sirve para descartar
 git checkout docs/GIT.md
 ```
 En este ejemplo estamos descartando los cambios realizados sobre el archivo ubicado en `docs/GIT.md`. El otro comando lo usaremos para pasar al próximo estado de Git, el cual se explica a continuación.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Staging Area 
 Para indicarle a Git que nos almacene el estado de los archivos creados/modificados por medio de una instantánea, lo haremos con el comando que podemos observar en la __Imagen 2__, por ejemplo:
 ```git
@@ -67,6 +79,7 @@ En el caso que decidamos volver un archivo en el estado de área de preparación
 ```git
 git reset HEAD docs/GIT.md
 ```
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Git Directory 
 Una vez que nos encontramos con todos los cambios esperados en nuestro repositorio, habiéndolos agregado previamente al área de preparación de trabajo, podemos confirmarlos y agregar la instantánea al historial del repositorio con Git.
 
@@ -89,10 +102,14 @@ De esta manera, al confirmar los cambios podremos ver el detalle de información
 
 ![Git Directory](../img/git-directory.png)
 > __Imagen 5__: _Estado Git Directory de Git._
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ## Gestión del historial de versiones
 Cada instantánea creada por Git (_como vimos con SHA-1, por medio de 40 caracteres hexadecimales irrepetibles_) pasa a formar parte del historial del sistema de control de versiones. Asimismo, la fortaleza de Git es la precisión con la que gestiona la integridad de la información, ya que no existen cambios, corrupción de datos o cualquier otro tipo de alteración sin que Git lo tenga controlado. Esto funciona gracias a un algoritmo de verificación mediante un [`checksum`](https://es.wikipedia.org/wiki/Suma_de_verificaci%C3%B3n) sobre el contenido de los datos al momento efectuar el almacenamiento de la información mediante una instantánea.
 
 Al ser un sistema distribuido, el flujo operativo de Git es en su mayoría local, y sólo será necesario interactuar con el repositorio remoto (_el repositorio central almacenado por ejemplo en GitHub/GitLab_) según la necesidad de actualización de subida y/o descargas de cambios. Esto nos brinda la ventaja de poder trabajar con proyectos muy grandes, con la flexibilidad de contar con una amplia distribución entre los equipos cliente.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Listado de cambios
 En el momento que necesitemos ver el historial de los cambios en Git lo podemos hacer con el siguiente comando:
 ```git
@@ -114,6 +131,7 @@ Aquí podemos apreciar la lista resumida del parámetro `--oneline`:
 ![Git log oneline](../img/git-log-oneline.png)
 > __Imagen 7__: _Vista resumida de cambios con `--oneline`_.
 
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Análisis de diferencias de cambios
 #### Diferencias en Working Directory
 Ahora bien, contar con el listado de cambios también nos sirve para analizar su historial, además de otras utilidades, como por ejemplo para volver el tiempo atras a un `commit` en específico. Entonces para ver las diferencias de cualquier tipo realizado, utilizaremos el siguiente comando:
@@ -128,6 +146,7 @@ Aquí Git nos ayuda a identificar los cambios con colores, dejando el color de t
 ![Git diff working directory](../img/git-diff-wd.png)
 > __Imagen 8__: _Sintaxis de cambios en Working Directory._
 
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 #### Diferencias entre dos `commit`
 El comando `git diff` también nos sirve para analizar las diferencias entre un `commit` y otro por medio del uso de parámteros adicionales. Igualmente tenemos dos opciones, analizar todos los archivos modificados entre los `commit` seleccionados, o simplemente ver el detalle de los cambios por archivo. La cantidad de parámetros que le indiquemos a `git diff` nos permitirá trabajar con diferentes niveles de análisis.
 
@@ -152,6 +171,7 @@ Tomando por ejemplo la __Imagen 7__, analizamos los cambios del segundo `commit`
 ```git
 git diff 0ba09b7 1ad8bad README.md
 ```
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 #### Movernos en el historial de versiones
 Git tiene una funcionalidad muy potente que nos permite movernos en su historial de versiones, así como también de trasladarnos entre ramas (_que veremos más adelante_), además de cancelar los cambios realizados del Staging Area al estado de Working Directory. Este comando que hemos visto anteriormente es:
 ```git
@@ -160,6 +180,8 @@ git checkout <--sha-1 commit-->
 Entonces, esta funcionalidad nos va a permitir movernos a un `commit` en específico colocando como parámetro únicamente el código `SHA-1`, volviendo de esta manera al momento de su instantánea, que simularía ser un viaje en el tiempo.
 
 __¿Qué usos podemos darle a esta función?__ Particularmente se puede volver el tiempo atrás en los casos donde el código deje de funcionar a partir de cualquier cambio; también al volver atrás podemos analizar con mas profundidad que con el comando `git diff`, y otra de las funcionalidades mas utilizadas con `git checkout` es para los casos de ramificación del repositorio, tema que aboradaremos en la próxima sección.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ## Ramificación del repositorio
 En esta sección vamos a comprender el concepto de ramificación en Git, que resulta una de las funcionalidades mas increíbles de esta tecnología, la cual nos permite seguir un desarrollo no lineal que no nos obliga a mantenernos por un camino predefinido de trabajo. Esto significa que se puede ir ampliando la funcionalidad del repositorio sin seguir una ruta lineal de desarrollo, ramificando en cualquier momento de su historia, otra linea paralela que no interfiera a la ruta original, y que se pueda volver a adjuntar en el momento que se requiera. Además nos brinda la libertad de delegar los cambios sobre el proyecto en varias rutas, con el objetivo de aplicar nuevas funciones, efectuar correcciones, aplicar nuevos requerimientos, etcétera, sin tener que afectar la ruta principal del desarrollo. Una vez finalizados estos cambios se pueden adjuntar nuevamente a la ruta principal, haciendo testeos previos por ejemplo, o las acciones que se consideren realizar.
 
@@ -169,6 +191,8 @@ En esta sección vamos a comprender el concepto de ramificación en Git, que res
 El concepto de ramificación en Git se gestiona por medio de la creación de _ramas_ virtuales dentro del repositorio, donde cada una contiene sus propios `commit` que originalmente vienen derivadas de otras ramas, tal y como se puede ver en el ejemplo de la __Imagen 10__. Esto quiere decir que en vez de trabajar en una única rama en nuestro repositorio, podremos crear una nueva rama en el momento de la historia que surja, y a partir de allí comenzar a desarrollar la nueva funcionalidad, corrección, requerimiento, etcétera.
 
 __¿Como funcionan las ramas en Git?__ Al comenzar a trabajar con Git, este nos crea una rama por defecto denominada `master`, la cual prácticamente se ha convertido en un estándar como la rama principal del repositorio, aunque de todas maneras se le puede cambiar el nombre o utilizar otra rama como la principal sin ningún tipo de problemas. A partir de allí, cada vez que sea necesario aplicar algún cambio en el repositorio, es conveniente crear una nueva rama para tal fin, y efectuar allí todos los `commit` que sean necesarios antes de aplicarlos a la rama principal.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Trabajar en una nueva rama
 Ahora bien, a partir del primer `commit`, Git crea por defecto la rama `master`, y además ya podemos crear ramas en el repositorio. Para poder ver un listado de las `ramas` locales que tenemos en el repositorio, lo hacemos con el comando:
 ```git
@@ -199,8 +223,10 @@ git merge test
 ```
 Si no existe ningún conflicto al mezclar los cambios de `test` a la rama `master`, tendremos listo el circuito ramificación en Git. En la realidad, suelen haber confictos cuando se mezclan las ramas y existen casos donde el mismo comando `git merge` crea un nuevo `commit`, que a su vez el usuario tiene que intervenir para elegir con que cambios quiere quedarse, pero lejos de dejar una mala impresión en este tipo de situaciones, Git nos ayuda en cada paso marcándonos en que líneas debemos prestar atención, y definir así con que cambios nos quedamos.
 
-Finalmente, si bien el circuito de `git merge` es perfectamente funcional para el concepto de ramificación de Git, actualmente se deja esta función para trabajar de forma local entre ramas donde ninguna de ellas sea la principal, y se delega la tarea de mezclar los cambios a la rama principal y de forma controlada, directamente en la plataforma de Github, que veremos en las próximas secciones del documento. 
-## Vínculo a reposotorio remoto
+Finalmente, si bien el circuito de `git merge` es perfectamente funcional para el concepto de ramificación de Git, actualmente se deja esta función para trabajar de forma local entre ramas donde ninguna de ellas sea la principal, y se delega la tarea de mezclar los cambios a la rama principal y de forma controlada, directamente en la plataforma de Github, que veremos en las próximas secciones del documento.
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
+## Gestión con repositorio remoto
 Git nos brinda la posibilidad de definir un repositorio remoto para que todo el equipo de desarrollo se conecte para subir y bajar los cambios de forma controlada y distribuida. Igualmente, la realidad es que cada repositorio local es una copia del repositorio remoto de origen, pero no sólo se copian sus archivos con la estructura de instantáneas de Git, sinó que también cuentan con la dirección del repositorio remoto al que deben conectarse para trabajar de forma centralizada.
 
 Entonces para crear un repositorio central, se puede hacer de dos formas, creando primero el repositorio remoto y luego descargando una copia sincronizada de este en cada equipo cliente, para trabajar así de forma distribuida; o directamente subir un repositorio local ya empezado, para luego subirlo como repositorio central y distribuir las copias sincronizadas al resto.
@@ -239,7 +265,9 @@ Con este comando estamos borrando el vínculo al repositorio remoto llamado `ori
 git remote -v
 ```
 Aquí podremos ver los vínculos remotos, tanto de subida como de descarga, para las actualizaciones de cambios en el repositorio remoto o en el repositorio local.
-# Gestión de cambios entre Git y GitHub
+
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
+### Actualización entre Git y GitHub
 En el ejemplo que estábamos trabajando en la sección anterior, vimos algunos comandos nuevos en Git, uno de ellos es `git pull`. Este comando en realidad es la combinación de varios comandos, y para poder comprender su funcionamiento, vamos a volver a ampliar el concepto de la ramificación con Git.
 
 Anteriormente vimos que con el comando `git branch -l` podemos ver la lista de ramas que se encuentran en el repositorio, y una de ellas se encuentra marcada con el caracter especial __*__. Sin contar con un gran de nivel de detalle, esto significaría que la rama marcada es la rama activa, pero a nivel mas técnico, esta marca es el apuntador que tiene una rama oculta denominada `HEAD` hacia esa rama marcada. 
@@ -255,4 +283,4 @@ Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace `g
 Con esta introducción podremos comprender el funcionamiento de subida y descarga de cambios entre el repositorio local y el remoto, así como también la mezcla de cambios entre ramas. 
 
 
-[🡡 volver al inicio](GIT.md#Fundamentos-de-Git-y-GitHub)
+[🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)

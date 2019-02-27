@@ -27,4 +27,4 @@ Para ver las configuraciones globales de Git ya establecidas, se puede realizar 
 ```git
 git config --list
 ```
-[🡡 volver al inicio](WORKSPACE.md#Guía-de-configuración-del-entorno-de-trabajo)
+[🡡 volver al inicio](#Guía-de-configuración-del-entorno-de-trabajo)

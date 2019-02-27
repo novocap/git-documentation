@@ -77,4 +77,4 @@ En un repositorio local ya vinculado con un repositorio remoto, se podrá observ
 ```git
 git remote -v
 ```
-[🡡 volver al inicio](SSH.md#Conexión-SSH-con-GitHub)
+[🡡 volver al inicio](#Conexión-SSH-con-GitHub)

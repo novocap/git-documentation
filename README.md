@@ -12,4 +12,4 @@ Posteriormente a la configuración del entorno de trabajo, es recomendable opera
 ## 2. Implementación del repositorio en el entorno local
 Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía de [Fundamentos de Git y GitHub](docs/GIT.md).
 
-[🡡 volver al inicio](README.md#Práctica-documental-con-Markdown-en-GitHub)
+[🡡 volver al inicio](#Práctica-documental-con-Markdown-en-GitHub)
