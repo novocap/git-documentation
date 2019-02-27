@@ -302,6 +302,17 @@ git pull origin <--rama-a-descargar-->
 ```
 > Si tenemos conflictos bajo cualquiera de las dos opciones que elijamos al momento de descargar los cambios, Git no efectuará ningún cambio y nos va a informar cuál es el problema para que podamos resolverlo, y luego de que lo corrijamos recién podremos bajar las actualizaciones sin problemas.
 #### Subida de cambios a GitHub<!-- omit in toc -->
-Para subir cambios a GitHub, debemos tener los mismos cuidados que al bajar cambios, mas allá de que todas maneras si hay conflictos estaremos bloqueados para subirlo.
+Para subir cambios a GitHub, debemos tener los mismos cuidados que al bajarlos, mas allá de que si hay conflictos estaremos bloqueados para subir cualquier actualización. También, a diferencia de las descargas, las subidas de cambios a GitHub pueden bloquearse en determinadas ramas para generar un circuito de aprobación y revisión de los mismos. Este tipo de bloqueos no viene pre-configurado por defecto en GitHub, y lo que suele realizarse es bloquear como mínimo la rama principal del repositorio. Entonces, si tuvierámos bloqueda la rama principal, que podría ser la rama `master`, para subir cambios al repositorio, lo que se debe realizar antes de desarrollar cualquier tipo de cambio, es efectuar la ramificación del mismo y luego comenzar con el cambio.
+
+En definitva, para agregar una nueva funcionalidad, corrección y/o requerimiento en el repositorio remoto, debemos comenzar por crear una nueva rama (_u otra rama ya creada si es que venimos trabajando los cambios con anterioridad_), y a partir de allí realizar todos los `commit` que sean necesarios para cumplir con el objetivo del cambio en el repositorio. El próximo paso para subir los cambios es efectuar el siguiente comando:
+```git
+git push origin <--rama-a-subir-->
+```
+Si no existe ningún conflicto, en GitHub se van a ver los cambios aplicados en la rama que hayamos creado para tal fin, según se ve en la siguiente imagen:
+
+![Ramas en GitHub](../img/github-branchs.png)
+> __Imagen 16__: _Ver las ramas en GitHub._
+
+Ya contamos con los cambios en GitHub, pero la intención es que estos cambios se apliquen en la rama principal del repositorio, en este caso en la rama `master`. En la próxima sección veremos como hacerlo entrando a un circuito de revisión y aprobación de los cambios subidos.
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
