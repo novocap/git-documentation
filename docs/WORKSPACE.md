@@ -1,6 +1,6 @@
 [<- Inicio](../README.md)
 
-[Tabla de Contenidos](SUMMARY.md)
+[Indice del Repositorio](SUMMARY.md)
 # Guía de configuración del entorno de trabajo
 Para comenzar, efectuaremos la parametrización mas simple del entorno de trabajo según se lista a continuación:
 1. Editor de texto plano a elección.

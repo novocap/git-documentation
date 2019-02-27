@@ -1,4 +1,4 @@
-[Tabla de Contenidos](docs/SUMMARY.md)
+[Indice del Repositorio](docs/SUMMARY.md)
 
 # Práctica documental con Markdown en GitHub
 
@@ -10,6 +10,6 @@ Vamos a comenzar configurando el entorno de trabajo, el cual dependerá del Sist
 
 Posteriormente a la configuración del entorno de trabajo, es recomendable operar bajo un marco de seguridad entre nuestra PC y GitHub/GitLab, contando con una [Conexión SSH con GitHub](docs/SSH.md) y verificando los cambios [Guardando `commit` firmados](docs/GPG.md).
 ## 2. Implementación del repositorio en el entorno local
-Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía del [Flujo de Trabajo en Git y GitHub](docs/GIT.md).
+Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía de [Fundamentos de Git y GitHub](docs/GIT.md).
 
 [🡡 volver al inicio](README.md#Práctica-documental-con-Markdown-en-GitHub)

@@ -1,7 +1,14 @@
 [<- Inicio](../README.md)
 
-[Tabla de Contenidos](SUMMARY.md)
-# El Flujo de Trabajo en Git y GitHub
+[Indice del Repositorio](SUMMARY.md)
+
+<details>
+    <summary>Tabla de contenido del documento</summary>
+    <a href="#Fundamentos-de-Git-y-GitHub">Fundamentos de Git y GitHub</a><br>
+    <a href="GIT.md#Working-Directory">Working Directory</a><br>
+</details>
+
+# Fundamentos de Git y GitHub
 Git es un sistema de control de versiones centralizado y distribuido, el cual administra las versiones por medio de `snapshots` (_instantáneas_) codificadas en [`SHA-1`](https://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1). Git administra las versiones de un directorio con la colección de todas las sub-carpetas y archivos que esta contiene, estableciendo así el concepto de un repositorio. Para establecer el control con Git en un directorio, se ejecuta por única vez un comando que indica la inicialización del mismo:
 ```git
 git init
@@ -247,4 +254,4 @@ Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace `g
 Con esta introducción podremos comprender el funcionamiento de subida y descarga de cambios entre el repositorio local y el remoto, así como también la mezcla de cambios entre ramas. 
 
 
-[🡡 volver al inicio](GIT.md#El-Flujo-de-Trabajo-en-Git-y-GitHub)
+[🡡 volver al inicio](GIT.md#Fundamentos-de-Git-y-GitHub)

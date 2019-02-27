@@ -1,3 +1,3 @@
 [<- Inicio](../README.md)
 
-[Tabla de Contenidos](SUMMARY.md)
+[Indice del Repositorio](SUMMARY.md)
