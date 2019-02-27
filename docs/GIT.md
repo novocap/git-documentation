@@ -330,8 +330,18 @@ Ya contamos con los cambios en GitHub, pero la intención es que estos cambios s
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Circuito de revisión y aprobación de cambios en GitHub
-GitHub introdujo una funcionalidad muy interesante para agregar un control de cambios al propio sistema de control de versiones de Git, y este se llama vulgarmente como __Pull Request__. ¿Por qué decimos esto? Bueno, justamente esta denominación suele prestarse a confusión, ya que como vimos en las sección anterior, el comando `git pull` se utiliza para actualizar datos desde un repositorio remoto a un repositorio local, aunque en realidad esta función es la combinación de los comandos `git fetch` y `git merge`, por lo cual se podría decir que la herramienta __Pull Request__ frena los cambios en el repositorio oculto de GitHub, para que sean revisardos y posteriormente aprobardos antes de continuar con la mezcla de los mismos en la rama principal (_analizando el ejemplo que estamos viendo_) del propio GitHub.
+GitHub introdujo una funcionalidad muy interesante para agregar un control de cambios al propio sistema de control de versiones de Git, y este se llama vulgarmente como __Pull Request__. ¿Por qué decimos esto? Bueno, justamente esta denominación suele prestarse a confusión, ya que como vimos en la sección anterior, el comando `git pull` se utiliza para actualizar datos desde un repositorio remoto a un repositorio local, aunque en realidad esta función es la combinación de los comandos `git fetch` y `git merge`, por lo cual se podría decir que la herramienta __Pull Request__ frena los cambios en el repositorio oculto de GitHub, para que sean revisardos y posteriormente aprobardos antes de continuar con la mezcla de los mismos en la rama principal (_analizando el ejemplo que estamos viendo_) del propio GitHub.
 
-En términos prácticos, la función __Pull Request__ realiza una comparación de cambios entre dos ramas, mostrando las diferencias acumuladas entre los últimos `commit` de cada una, y los presenta en la interfaz de GitHub, para que una persona con rol de __Revisor__ los analice y los acepte si está de acuerdo con ello. Esta herramienta también le otorga al Revisor la posibilidad de solicitar mas cambios (_explicando el motivo_), ó en el peor de los casos, directamente rechazarlos. Entonces, continuando con el ejemplo, si acepta los cambios irán a la rama principal, y si los rechaza la rama principal no se verá afectada en absoluto. 
+En términos prácticos, la función __Pull Request__ realiza una comparación de cambios entre dos ramas, mostrando las diferencias acumuladas entre los últimos `commit` de cada una, y los presenta en la interfaz de GitHub, para que una persona con rol de __Revisor__ los analice y los acepte si está de acuerdo con ello. Esta herramienta también le otorga al Revisor la posibilidad de solicitar mas cambios (_explicando el motivo_), ó en el peor de los casos, directamente rechazarlos. Entonces, continuando con el ejemplo, si acepta los cambios irán a la rama principal, y si los rechaza la rama principal no se verá afectada en absoluto.
+
+![GitHub nuevo Pull Request](../img/github-new-pull-request.png)
+> __Imagen 18__: _Opción de nuevo Pull Request en GitHub._
+
+Para crear un __Pull Request__ en GitHub necesitamos contar con los cambios subidos en una rama para tal fin, y a partir de ahí en la opción de la izquierda, seleccionar la rama a la que queremos aplicarle los cambios, y del lado derecho elegir la rama que subimos con los cambios:
+
+![GitHub comparación de Pull Request](../img/github-compare-pull-request.png)
+> __Imagen 19__: _Interfaz de seleccion de ramas en un Pull Request._
+
+A partir de aquí tendremos un título y un mensaje que completar, explicando los cambios y sus motivos, para que luego un Revisor pueda tener una guía de que se trata el __Pull Request__. Hay casos donde contemos con alguna plantilla que nos solicitará información específica a explicar, pero en los casos que no la tengamos, cuanto mas específicos podemos ser, más fácil y rápido será analizar la propuesta de cambio.
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
