@@ -133,7 +133,7 @@ Aquí podemos apreciar la lista resumida del parámetro `--oneline`:
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 ### Análisis de diferencias de cambios
-#### Diferencias en Working Directory
+#### Diferencias en Working Directory<!-- omit in toc -->
 Ahora bien, contar con el listado de cambios también nos sirve para analizar su historial, además de otras utilidades, como por ejemplo para volver el tiempo atras a un `commit` en específico. Entonces para ver las diferencias de cualquier tipo realizado, utilizaremos el siguiente comando:
 ```git
 git diff
@@ -147,7 +147,7 @@ Aquí Git nos ayuda a identificar los cambios con colores, dejando el color de t
 > __Imagen 8__: _Sintaxis de cambios en Working Directory._
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
-#### Diferencias entre dos `commit`
+#### Diferencias entre dos `commit`<!-- omit in toc -->
 El comando `git diff` también nos sirve para analizar las diferencias entre un `commit` y otro por medio del uso de parámteros adicionales. Igualmente tenemos dos opciones, analizar todos los archivos modificados entre los `commit` seleccionados, o simplemente ver el detalle de los cambios por archivo. La cantidad de parámetros que le indiquemos a `git diff` nos permitirá trabajar con diferentes niveles de análisis.
 
 Para analizar los cambios de un determinado `commit` comparado con el último `commit` efectuado en el repositorio, necesitaremos el códido `SHA-1` del `commit` elegido mas antiguo, que en este caso puede ser el código de 40 caracteres que nos muestra `git log`, o también podremos utilizar solamente la cabecera que nos muestra `git log --oneline`.  Vamos a utilizar el ejemplo de la __Imagen 7__ seleccionando la cabecera de un `SHA-1`, que en este caso utilizaremos el primer commit del repositorio con el código `2979aea`, para luego compararlo con el último `commit`, simplemente de la siguiente manera:
@@ -172,7 +172,7 @@ Tomando por ejemplo la __Imagen 7__, analizamos los cambios del segundo `commit`
 git diff 0ba09b7 1ad8bad README.md
 ```
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
-#### Movernos en el historial de versiones
+#### Movernos en el historial de versiones<!-- omit in toc -->
 Git tiene una funcionalidad muy potente que nos permite movernos en su historial de versiones, así como también de trasladarnos entre ramas (_que veremos más adelante_), además de cancelar los cambios realizados del Staging Area al estado de Working Directory. Este comando que hemos visto anteriormente es:
 ```git
 git checkout <--sha-1 commit-->
@@ -281,7 +281,7 @@ Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace Gi
 > __Imagen 14__: _Rama `HEAD` apuntando a `testing`._
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
-#### Descarga de cambios desde GitHub
+#### Descarga de cambios desde GitHub<!-- omit in toc -->
 Suponiendo que nos encontramos en el caso de que nuestra copia local del repositorio está desactualizada frente a la versión más reciente existente en GitHub, entonces tenemos la tarea de actualizar nuestro repositorio local. También es importante evitar el desarrollo de nuevos cambios sobre una rama que se encuentre desactualizada, ya que vamos a generar conflictos al querer subirlos cuando estén listos. Para lograr esto, debemos estar al tanto de los cambios en el repositorio en GitHub, activando por ejemplo las notificaciones por correo electrónico en las [Configuraciones de notificación de GitHub](https://github.com/settings/notifications), según se muestra en la imagen a continuación:
 
 ![GitHub email notifications](../img/github-notifications.png)
@@ -300,6 +300,8 @@ Ahora bien, Git nos brinda la posibilidad de efectuar estos dos comandos en uno 
 ```git
 git pull origin <--rama-a-descargar-->
 ```
-Bajo cualquiera de las dos opciones que elijamos al momento de descargar los cambios, si tenemos conflictos Git no efectuará ningún cambio y nos va a informar cuál es el problema para que podamos resolverlo, y luego de que lo corrijamos, podremos actualizar sin problemas.
+> Si tenemos conflictos bajo cualquiera de las dos opciones que elijamos al momento de descargar los cambios, Git no efectuará ningún cambio y nos va a informar cuál es el problema para que podamos resolverlo, y luego de que lo corrijamos recién podremos bajar las actualizaciones sin problemas.
+#### Subida de cambios a GitHub<!-- omit in toc -->
+Para subir cambios a GitHub, debemos tener los mismos cuidados que al bajar cambios, mas allá de que todas maneras si hay conflictos estaremos bloqueados para subirlo.
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
