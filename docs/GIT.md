@@ -344,4 +344,18 @@ Para crear un __Pull Request__ en GitHub necesitamos contar con los cambios subi
 
 A partir de aquí tendremos un título y un mensaje que completar, explicando los cambios y sus motivos, para que luego un Revisor pueda tener una guía de que se trata el __Pull Request__. Hay casos donde contemos con alguna plantilla que nos solicitará información específica a explicar, pero en los casos que no la tengamos, cuanto mas específicos podemos ser, más fácil y rápido será analizar la propuesta de cambio.
 
+Al finalizar la edición del __Pull Request__ tendremos las opciones de __Create Pull Request__ (_crear_) y __Draft Pull Request__ (_borrador_), y la diferencia entre ellas es que la segunda quedará en modo borrador sin poder analizarse por el usuario Revisor, limitando la posibilidad de mezclar los cambios en la rama destino. El usuario que creó el __Pull Request__, puede pasar a modo de revisión cuando considere que terminó de efectuar los cambios, mientras que en la primer opción, ya lo puede analizar el usuario Revisor y emitir su veredicto.
+
+![GitHub Draft Pull Request](../img/draft-pull-request.png)
+> __Imagen 20__: _Pull Request con opción en modo borrador._
+
+En el momento de la edición o cuando ya se haya creado el __Pull Request__, tendremos otras opciones a completar sobre la columna lateral derecha, ya sea elegir los usuarios revisores (_Reviewers_), quienes están asignados al mismo (_Assignees_), elegir las etiquetas para catalogarlo (_Labels_), informar a que proyectos pertenece (_Projects_), y cuáles objetivos de fechas estamos manejando (_Milestone_). Pasemos a ver un ejemplo de __Draf Pull Request__ con varias opciones cargadas, donde podremos ver debajo del mensaje que cargamos, cada uno de los `commit` involucrados, la cantidad de líneas adicionadas (_con el símbolo +_) y la cantidad de líneas descartadas (_con el símbolo -_). Este requerimiento de cambios también se convierte en una línea de conversación, y nos encontraremos en las demás pestañas con opciones avanzadas para ver en detalle cada `commit`, y los revisores pasarán a emitir los veredictos que consideren realizar. A partir de allí nos tocará intervenir cada vez que ellos lo soliciten, con el objeto de lograr que se acepte y se mezclen los cambios en la rama destino.
+
+![GitHub opciones columna lateral](../img/github-pr-added.png)
+> __Imagen 21__: _Opciones de barra lateral derecha del Pull Request._
+
+Al hacer la mezcla o al cancelarlo, podremos borrar la rama que veníamos trabajando, ya que los cambios aceptados ahora forman parte de la rama destino, y los cambios cancelados no serán aplicados.
+
+Hasta aquí hemos realizado un circuito completo de cambios en el repositorio aprovechando un gran abanico de funciones que tenemos con las plataformas de Git y Github.
+
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
