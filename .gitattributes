@@ -7,3 +7,4 @@ SUPPORT.md              export-ignore
 .github/                export-ignore
 .vscode/                export-ignore
 css/markdown-styles.css export-ignore
+css/                    linguist-vendored
