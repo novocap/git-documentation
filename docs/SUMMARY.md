@@ -1,6 +1,6 @@
-# Tabla de Contenidos
+# Indice del Repositorio
 
-### [Práctica documental con Markdown en GitHub](../README.md)
+### [Guía de aprendisaje de Git y GitHub](../README.md)
 
    #### 1. [Guía de configuración de entorno de trabajo](WORKSPACE.md)
    #### 2. [Conexión SSH con GitHub](SSH.md)
