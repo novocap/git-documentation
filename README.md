@@ -1,15 +1,14 @@
-[Indice del Repositorio](docs/SUMMARY.md)
+# Guía de aprendisaje de Git y GitHub
 
-# Práctica documental con Markdown en GitHub
+:wave: Bienvenidos al repositorio de guía y práctica de Git & GitHub.
 
-:wave: Bienvenidos al repositorio de práctica documental con Markdown y GitHub. 
+![GitHub loves Git](img/github-loves-git.jpg)
 
-Este repositorio tiene como objetivo servir de guía de configuración del entorno de trabajo con Markdown y GitHub, que incluye instructivos y lecciones para practicar con ambas tecnologías. :wink:
-## 1. Configuración del entorno de trabajo
-Vamos a comenzar configurando el entorno de trabajo, el cual dependerá del Sistema Operativo y de las aplicaciones elegidas a nivel personal, según se describe en la [Guía de configuración del entorno de trabajo](docs/WORKSPACE.md).
+Este repositorio tiene como objetivo dar los primeros pasos en Git configurando todo el entorno de trabajo necesario para trabajar de manera cómoda y eficiente. Mientras vayas practicando y experimentado el poder real de esta herramienta, seguramente tengas las mismas sensaciones que [Scott Chacon]() y [Ben Straub]() cuando dicen: _"Cuando hayas terminado, puedes sentir la necesidad de pasar un momento tranquilo ponderando cómo has vivido antes de que la ramificación de Git formara parte de tu vida."_ en su libro digital [Pro Git v2.1.6](https://git-scm.com/book/es/v2/).
+> Este repositorio se encuentra en constante confección, así como también el desarrollo de prácticas sobre Git, GitHub y Markdown. Sírvase crear un Issue para compartirnos sus comentarios y/o necesidades sobre el mismo.
 
-Posteriormente a la configuración del entorno de trabajo, es recomendable operar bajo un marco de seguridad entre nuestra PC y GitHub/GitLab, contando con una [Conexión SSH con GitHub](docs/SSH.md) y verificando los cambios [Guardando `commit` firmados](docs/GPG.md).
-## 2. Implementación del repositorio en el entorno local
-Una vez configurado el entorno de trabajo, necesitaremos comprender el funcionamiento del repositorio acuerdo a la guía de [Fundamentos de Git y GitHub](docs/GIT.md).
+Para continuar, les dejamos el [Indice del Repositorio](docs/SUMMARY.md) como ruta de aprendisaje.
 
-[🡡 volver al inicio](#Práctica-documental-con-Markdown-en-GitHub)
+__Muchas gracias, esperamos que también lo disfruten tanto como nosotros. :heart:__
+
+[🡡 volver al inicio](#Guía-de-aprendisaje-de-Git-y-GitHub)
