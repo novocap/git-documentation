@@ -3,7 +3,7 @@
 [Indice del Repositorio](SUMMARY.md)
 
 <details>
-    <summary>Tabla de contenido del documento</summary>
+    <summary>Tabla de contenido</summary>
     <a href="#Conexión-SSH-con-GitHub"><strong>Conexión SSH con GitHub</strong></a><br>
     <a href="#Generar-una-llave-SSH">· Generar una llave SSH</a><br>
     <a href="#Agregar-la-llave-SSH-al-servidor-remoto">· Agregar la llave SSH al servidor remoto</a><br>

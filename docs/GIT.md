@@ -3,7 +3,7 @@
 [Indice del Repositorio](SUMMARY.md)
 
 <details>
-    <summary>Tabla de contenido del documento</summary>
+    <summary>Tabla de contenido</summary>
     <a href="#Fundamentos-de-Git-y-GitHub"><strong>Fundamentos de Git y GitHub</strong></a><br>
     <a href="#Working-Directory">· Working Directory</a><br>
     <a href="#Staging-Area">· Staging Area</a><br>
