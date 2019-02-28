@@ -1,12 +1,24 @@
 [<- Inicio](../README.md)
 
 [Indice del Repositorio](SUMMARY.md)
+
+<details>
+    <summary>Tabla de contenido del documento</summary>
+    <a href="#Conexión-SSH-con-GitHub"><strong>Conexión SSH con GitHub</strong></a><br>
+    <a href="#Generar-una-llave-SSH">· Generar una llave SSH</a><br>
+    <a href="#Agregar-la-llave-SSH-al-servidor-remoto">· Agregar la llave SSH al servidor remoto</a><br>
+    <a href="#Conectando-por-SSH-por-primera-vez">· Conectando por SSH por primera vez</a><br>
+    <a href="#Próximos-pasos">· Próximos pasos</a><br>
+</details>
+
 # Conexión SSH con GitHub
 Para conectarnos con [GitHub](https://github.com) (esto también es válido con [GitLab](https://gitlab.com)), vamos a autenticarnos con [SSH](https://es.wikipedia.org/wiki/Secure_Shell) (Secure Shell) para tener una conexión validada entre sus servidores y nuestro equipo cliente. Si bien también podemos autenticarnos de la manera tradicional por __HTTPS__, la opción de conexión por SSH además nos dará la libertad de dejar autenticado el equipo cliente sin necesidad de ingresar usuario y contraseña cada vez que transferimos datos con esta plataforma.
 > Es importante generar conexiones SSH únicamente en aquellos equipos de nuestra confianza y que usemos habitualmente, ya que en los casos que se utilice equipos de uso público o te encuentres conectado a redes no seguras, no es recomendado utilizar una conexión SSH perpetua y es preferible conectarse con HTTPS ingresando usuario y contraseña, o clave token en su defecto.
 
 A continuación se explica paso a paso como establecer la conexión SSH tanto para las plataformas de Linux y Microsoft Windows.
-## 1. Generar una llave SSH
+
+[🡡 volver al inicio](#Conexión-SSH-con-GitHub)
+## Generar una llave SSH
 La llave SSH es un archivo encriptado de identidad el cual es utilizado para conectarse remotamente entre servidores de manera segura por el protocolo SSH. Para lograr este cometido es necesario contar con la misma llave SSH en ambos extremos de la conexión, es decir el servidor al que nos queremos conectar debe contar con nuestra llave SSH generada en nuestro equipo. Para este caso en particular, tenemos que subir la llave SSH que generemos en el equipo para luego subirlo a los servidores de GitHub/GitLab y establecer el canal de comunicación verificado y seguro.
 > Si ya tienes configurada una llave SSH en el equipo, por favor omití este paso.
 
@@ -33,7 +45,8 @@ Aquí nos mostrará el ID de Proceso de ejecución del Agente SSH. Ahora vamos a
 ```bash
 ssh-add ~/.ssh/id_rsa
 ```
-## 2. Agregar la llave SSH a GitHub/GitLab
+[🡡 volver al inicio](#Conexión-SSH-con-GitHub)
+## Agregar la llave SSH al servidor remoto
 Para agregar la clave a GitHub/GitLab, es necesario previamente copiar todo el contenido de la llave SSH en texto plano. Usaremos la herramienta `xclip` en Linux, o `clip` en Windows, para copiar en nuestro portapapeles el contenido de la llave SSH.
 > También se puede optar por utilizar un editor de texto plano para abrir el archivo ubicado en `~/.ssh/id_rsa` y copiar todo su contenido en el portapapeles.
 
@@ -55,13 +68,17 @@ Al cargar el portapapeles con el contenido de la llave SSH, se deberá pegar su 
 > __Imagen 1__: _Agregar llaves SSH en GitHub y GitLab._
 
 > Al finalizar, se recomienda pegar cualquier otro tipo de texto en el portapapeles para evitar que nuestra llave SSH quede vulnerada por un determinado periodo de tiempo.
-## 3. Conectando por SSH por primera vez con GitHub/GitLab
+
+[🡡 volver al inicio](#Conexión-SSH-con-GitHub)
+## Conectando por SSH por primera vez
 Para probar la conexión, se colocar `yes` ejecutando el siguiente comando previamente:
 * __GitHub__: `ssh -T git@github.com`
 * __GitLab__: `ssh -T git@gitlab.com`
 
 Si salió todo bien, GitHub y GitLab les dará un mensaje de bienvenida. Si hubo algún problema, por favor sírvase informarlo creando un [Issue](https://github.com/novocap/git-documentation/issues/new) dentro del repositorio.
-## 4. Próximos pasos
+
+[🡡 volver al inicio](#Conexión-SSH-con-GitHub)
+## Próximos pasos
 Ahora bien, ya tenemos efectuada la conexión con GitHub y GitLab por SSH, y a partir de este momento se recomienda operar con los repositorios remotos por medio de direcciones SSH.
 
 Estas opciones se encuentran por ejemplo al Clonar un repositorio, que en vez de elegir la opción HTTPS, será preferible utilizar la opción SSH.
