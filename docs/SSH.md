@@ -62,6 +62,10 @@ En Git Bash con Windows se realiza con el siguiente comando:
 ```bash
 clip < ~/.ssh/id_rsa.pub
 ```
+En su defecto se puede usar el siguiente comando para abrir el archivo en modo visor y de ahí seleccionar el contenido para copiarlo al portapapeles:
+```bash
+cat ~/.ssh/id_rsa.pub
+```
 Al cargar el portapapeles con el contenido de la llave SSH, se deberá pegar su contenido dentro de [Settings / SSH and GPG Keys / New SSH Key](https://github.com/settings/ssh/new) dentro de Github, y [Settings / SSH Key](https://gitlab.com/profile/keys) dentro de GitLab.
 
 ![SSH Keys on GitHub & GitLab](../img/add-ssh-key.png)
