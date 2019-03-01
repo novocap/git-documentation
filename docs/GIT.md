@@ -366,6 +366,11 @@ En el momento de la edición o cuando ya se haya creado el __Pull Request__, ten
 
 Al hacer la mezcla o al cancelarlo, podremos borrar la rama que veníamos trabajando, ya que los cambios aceptados ahora forman parte de la rama destino, y los cambios cancelados no serán aplicados.
 
+Un punto importante a verificar con el propietario del repositorio en GitHub/GitLab, es si cuenta con la rama principal protegida, ya que esto implicará que no se podrá realizar el __Merge Pull Request__ hasta que cumpla con ciertas consideraciones, como por ejemplo que cuente con una cantidad determinada de aprobaciones de Revisores, que todos los cambios estén firmados (_se recomienda seguir la [Confirmación de cambios firmados en Git](GPG.md)_), y por ejemplo quienes pueden aceptar los cambios del __Pull Request__, entre otras opciones. Aquí podemos ver un ejemplo de algunas de reglas de proteccion por rama:
+
+![GitHub branch protection rules](../img/github-protection-branch.png)
+> __Imagen 23__: _Ejemplo de reglas de protección de ramas en GitHub._
+
 Hasta aquí hemos realizado un circuito completo de cambios en el repositorio aprovechando un gran abanico de funciones que tenemos con las plataformas de Git y Github.
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
