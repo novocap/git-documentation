@@ -8,6 +8,8 @@
     <a href="#Encabezados-y-títulos">· Encabezados y títulos</a><br>
     <a href="#Párrafos-y-estilo-normal">· Párrafos y estilo normal</a><br>
     <a href="#Tipos-de-listas">· Tipos de listas</a><br>
+    <a href="#Vínculos-internos-y-externos">· Vínculos internos y externos</a><br>
+    <a href="#Inserción-de-imágenes-estáticas-o-en-movimiento">· Inserción de imágenes estáticas o en movimiento</a><br>
     <a href="#Sintaxis-HTML-y-CSS-en-Markdown">· Sintaxis HTML y CSS en Markdown</a><br>
     <a href="#">· </a><br>
 </details>
@@ -25,7 +27,7 @@ Sinceramente la lista es interminable y además se suman opciones día tras día
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Encabezados y títulos
-Markdown gestiona de los encabezados y títulos en seis niveles de la misma forma que la sintaxis del _lenguaje de marcado en hypertexto_ de [HTML](https://es.wikipedia.org/wiki/HTML). A coniinuación podemos ver su sintaxis con la analogía de sus etiquetas en HTML:
+Markdown gestiona de los encabezados y títulos en seis niveles de la misma forma que la sintaxis del _lenguaje de marcado en hypertexto_ de [HTML](https://es.wikipedia.org/wiki/HTML). A continuación podemos ver su sintaxis con la analogía de sus etiquetas en HTML:
 ```md
 # Encabezado 1 <h1>
 ## Encabezado 2 <h2>
@@ -124,6 +126,34 @@ Esta lista se ve de la siguiente manera:
 - [ ] Casilla sin verificar
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Vínculos internos y externos
+Markdown puede gestionar varios tipos de referencias de similar forma que HTML con la etiqueta `<href>`. Lo que se hace es encerrar la descripción a la que queremos agregar el hypervínculo con los símbolos de corchetes de apertura `[` y de cierre `]`, seguido y sin espacios de los símbolos de paréntesis de apertura `(` y de cierre `)` para colocar allí el vínculo donde queremos que el lector se dirija. 
+### Vínculos internos en el documento<!-- omit in toc -->
+Para esto vamos a empezar a ver un ejemplo con un vínculo interno al documento, por ejemplo, que al hacer click o presionar sobre una frase nos dirija al inicio de este documento. Sólo podremos hacer esto con títulos o encabezados en Markdown, y se realiza de la siguiente manera:
+```md
+Vamos al [inicio del documento](#Sintaxis-documental-con-Markdown) para empezar
+```
+Renderizado quedaría de la siguiente manera:
+
+Vamos al [inicio del documento](#Sintaxis-documental-con-Markdown) para empezar
+
+Entonces aquí vemos que para hacer una referencia a un título (_o subtítulo_), dentro de los paréntesis debemos agregar el título reemplazando los espacios por guiones `-` y anteponemos el símbolo `#` sin dejar ningún tipo de espacio.
+> Es una buena práctica en la gestión de direcciones electrónicas, nos manejemos sin espacios, haciendo uso símbolos en su defecto, para que cualquier sistema que soporte hypervínculos los gestione sin problemas.
+
+Ahora bien, vimos que podemos aplicar un hypervínculo a una frase, pero también lo podemos hacer sobre una palabra, o cualquier otro tipo de contenido en Markdown, mientras respetemos la sintaxis de encerrar ese contenido en corchetes y seguido del vínculo entre paréntesis, no tendremos ningún tipo de inconveniente.
+### Vínculos relativos o absolutos<!-- omit in toc -->
+
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Inserción de imágenes estáticas o en movimiento
+Dentro de un documento Markdown, se puede insertar imagenes. Siempre tienen que estar dentro del proyecto, para poder referenciarlo en la linea:
+
+> ![Descripcion](path Imagen)
+
+_Ejemplo:_ 
+
+        ![ImagenDePrueba](../img/professortocat.png)
+
+![ImagenDePrueba](../img/professortocat.png)
 ## Generacion de tablas
 
 Tenemos la posibilidad de generar tablas dentro de MarkDown, tenemos que tener en cuenta que el tamaño de cada columna varia segun el texto que este contenga.
@@ -142,39 +172,6 @@ ColumnaA | ColumnaB | ColumnaC
 ---------|----------|----------
 Fila1A   | Fila1B   | Fila1C
 Fila2A   | Fila2B   | Fila2C
-
-
-## Insertar Imagenes
-
-Dentro de un documento Markdown, se puede insertar imagenes. Siempre tienen que estar dentro del proyecto, para poder referenciarlo en la linea:
-
-> ![Descripcion](path Imagen)
-
-_Ejemplo:_ 
-
-        ![ImagenDePrueba](../img/professortocat.png)
-
-![ImagenDePrueba](../img/professortocat.png)
-
-## Hipervínculos
-
-Dentro de un documento Markdown, se puede insertar hipervinculos hacia paginas Web.
-
-* Agregar hipervinculo a un URL: "[Descripcion](_Direccion URL_)"
-
-_Ejemplo:_
-
-        [GitHub](https://www.github.com)
-[GitHub](https://www.github.com)
-
-Dentro de un documento Markdown, se puede insertar hipervinculos hacia otros ducumentos que esten en el mismo proyecto.
-
-* Agregar hipervinculo a otro documento: "[Descripcion](_Path Docuumento_)"
-
-_Ejemplo:_
-
-        [Documento Referencia](SUMMARY.md)
-[Documento Referencia](SUMMARY.md)
 
 
 ## Alineación de columnas en tablas
