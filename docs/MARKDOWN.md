@@ -138,7 +138,6 @@ Renderizado quedaría de la siguiente manera:
 Vamos al [inicio del documento](#Sintaxis-documental-con-Markdown) para empezar
 
 Entonces aquí vemos que para hacer una referencia a un título (_o subtítulo_), dentro de los paréntesis debemos agregar el título reemplazando los espacios por guiones `-` y anteponemos el símbolo `#` sin dejar ningún tipo de espacio.
-> Es una buena práctica en la gestión de direcciones electrónicas, nos manejemos sin espacios, haciendo uso símbolos en su defecto, para que cualquier sistema que soporte hypervínculos los gestione sin problemas.
 
 Ahora bien, vimos que podemos aplicar un hypervínculo a una frase, pero también lo podemos hacer sobre una palabra, o cualquier otro tipo de contenido en Markdown, mientras respetemos la sintaxis de encerrar ese contenido en corchetes y seguido del vínculo entre paréntesis, no tendremos ningún tipo de inconveniente.
 ### Vínculos absolutos o relativos<!-- omit in toc -->
