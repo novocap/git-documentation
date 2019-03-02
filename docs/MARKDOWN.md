@@ -2,13 +2,25 @@
 
 [Indice del Repositorio](SUMMARY.md)
 
-# __Sintaxis MarkDown__
+<details>
+    <summary>Tabla de contenido del documento</summary>
+    <a href="#Sintaxis-documental-con-Markdown"><strong>Sintaxis documental con Markdown</strong></a><br>
+    <a href="#">· </a><br>
+</details>
 
-Markdown es un lenguaje de marcado que facilita la aplicación de formato a un texto empleando una serie de caracteres de una forma especial. 
-Este tipo de formato siempre será compatible con todas las plataformas que utilices, así que utilizar Markdown es una manera de mantener todo tu contenido siempre accesible desde cualquier dispositivo (smartphones, computadoras personales, tablets…), ya que en cualquiera de ellas siempre encontrarás las aplicaciones adecuadas para leer y editar este tipo de contenido.
-En este documento se explicara con ejemplos las diferentes sintaxis dentro de MarkDown.  
+# Sintaxis documental con Markdown
+Markdown es un [Lenguaje de Marcado](https://es.wikipedia.org/wiki/Lenguaje_de_marcado) que es utilizado para dar un formato documental utilizando texto plano de forma ligera y simplificada. Fue creado con el objetivo de conseguir una plataforma práctica de redacción de documentos, con un formato legible y de fácil publicación. Es un sistema ampliamente adoptado en [Sistemas de Gestión de Contenidos (CMS)](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos), como ser Blogs, Wiki, Foros, Microblogging, Publicaciones Digitales, E-learning, Sistemas de Mesajería Instantánea etcétera.
 
-## __Generacion de Titulos__
+El secreto de Markdown se basa en la creación de archivos de extensión `*.md` desde cualquier editor de texto plano, siguiendo las reglas de la sintaxis que se desarrollan en las demás secciones del documento. No hace falta nada más que eso para la redacción, y en el caso de su legibilidad necesitaremos contar con una herramienta que lo renderice, ya sea local o en línea, contando con una gran cantidad de opciones tales como:
+
+* IDE's con soporte a Markdown tales como [Visual Studio Code](https://code.visualstudio.com), [Atom](https://atom.io/), [Brackets](http://brackets.io/), [Eclipse](https://www.eclipse.org/ide/), etcétera.
+* Herramientas locales como [Typora](https://typora.io/), [MindForger](https://www.mindforger.com/), [BoostNote](https://boostnote.io/), [Joplin](https://joplin.cozic.net/), [PileMd](https://pilemd.com/), etcétera.
+* Plataformas de edición en línea, tales como [GitHub](https://github.com), [GitLab](https://gitlab.com), [GitBook](https://gitbook.com), [Sharepoint](https://products.office.com/es-ar/sharepoint/collaboration), [StackEdit](https://stackedit.io), [Dillinger](https://dillinger.io/), etcétera.
+
+Sinceramente la lista es interminable y además se suman opciones día tras día, debido a la gran adopción de la comunidad de desarrollo y del abanico de los sistemas CMS, convirtiendo a Markdown en un estándar prácticamente.
+
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Generacion de Títulos
 Todo título o subtítulo debe comenzar con símbolo de numeral "#". 
 
 _Ejemplo:_ 
@@ -22,11 +34,11 @@ _Ejemplo:_
 ### Sub titulo formato pequeño
 
 
-## __Escritura normal__
+## Escritura normal
 
 Como cualquier editor de texto, la escritura es libre, con la posibilidad de darle un formato. Esto se explicara luego con otros ejemplos. 
 
-## __Salto de linea__
+## Salto de linea
 
 Los salto de linea se generar con guiones medios.
 
@@ -35,7 +47,7 @@ _Ejemplo:_
         -----
 -----
 
-## __Formato de texto__
+## Formato de texto
 
 Tenemos la posibilidad de darle formato a los textos que agregamos. Cursiva, Negrita, Tachado
 
@@ -54,7 +66,7 @@ _Ejemplo:_
   * Tachado: ~~Oracion tachada, no se tiene que dejar espacio al inicio y final de la palaba y oración.~~
 
 
-## __Viñetas y Numeración__
+## Viñetas y Numeración
 
 Tenemos las posibilidad de generar un listado con viñetas o numerado. 
 Las viñetas se generan con * seguidos uno debajo de otro. 
@@ -79,7 +91,7 @@ _Ejemplo:_
 1. Ejemplo tercera linea viñeta numerada. 
 
 
-### __Sub Listas__
+### Sub Listas
 
 _Ejemplo:_
 
@@ -93,7 +105,7 @@ _Ejemplo:_
     1. Prueba dentro de viñeta dos.
     1. Prueba dentro de viñeta tres. 
 
-## __Comentarios__
+## Comentarios
 
  La generación de comentario comienza con el signo ">" al inicio. 
 
@@ -101,7 +113,7 @@ _Ejemplo:_
 
 > Esto es un ejemplo de generación de comentarios dentro de Markdown
 
-## __Generacion de tablas__
+## Generacion de tablas
 
 Tenemos la posibilidad de generar tablas dentro de MarkDown, tenemos que tener en cuenta que el tamaño de cada columna varia segun el texto que este contenga.
 
@@ -121,7 +133,7 @@ Fila1A   | Fila1B   | Fila1C
 Fila2A   | Fila2B   | Fila2C
 
 
-## __Insertar Imagenes__
+## Insertar Imagenes
 
 Dentro de un documento Markdown, se puede insertar imagenes. Siempre tienen que estar dentro del proyecto, para poder referenciarlo en la linea:
 
@@ -133,7 +145,7 @@ _Ejemplo:_
 
 ![ImagenDePrueba](../img/professortocat.png)
 
-## __Hipervínculos__
+## Hipervínculos
 
 Dentro de un documento Markdown, se puede insertar hipervinculos hacia paginas Web.
 
@@ -154,7 +166,7 @@ _Ejemplo:_
 [Documento Referencia](SUMMARY.md)
 
 
-## __Alineación de columnas en tablas__
+## Alineación de columnas en tablas
 
 Dentro de las tablas, tenemos la posibilidad de darle formato a la alineacion de cada columna. El mismo se configura en la segunda linea, luego de la generación del encabezado. 
 
@@ -175,7 +187,7 @@ Fila1A    | Fila1B   | Fila1C
 Fila2A    | Fila2B   | Fila2C
 
 
-## __Comentarios tipo codigo__ 
+## Comentarios tipo codigo 
 
 Se puede generar comentarios con formato de codigo. El mismo tienen que estar contenido dento de ``` con la descripción del tipo lenguaje que estamos insertando. 
 
@@ -199,3 +211,5 @@ FROM   nombretabla1 AS A
          ON A.campo_id = B.campo_id 
 WHERE  A.numero = 1 
 ```
+
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
