@@ -7,6 +7,7 @@
     <a href="#Sintaxis-documental-con-Markdown"><strong>Sintaxis documental con Markdown</strong></a><br>
     <a href="#Encabezados-y-títulos">· Encabezados y títulos</a><br>
     <a href="#Párrafos-y-estilo-normal">· Párrafos y estilo normal</a><br>
+    <a href="#Viñetas-y-Numeración">· Viñetas y Numeración</a><br>
     <a href="#">· </a><br>
 </details>
 
@@ -43,36 +44,35 @@ Renderizado se vería de esta forma:
 ###### Encabezado 6<!-- omit in toc -->
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Párrafos y estilo normal
-Como cualquier editor de texto, la escritura es libre, con la posibilidad de darle un formato. Esto se explicara luego con otros ejemplos. 
+Siguiendo la analogía con HTML, donde los párrafos se encienrran entre etiquetas `<p>`, en el caso de Markdown los párrafos se escriben sin ninguna sintaxis en especial. Para separar los párrafos, debe existir dos entradas de teclado de tipo `Enter`.
 
-## Salto de linea
+En el caso de los caracteres especiales utilizados para Markdown por su sintaxis, si queremos evitar su formateado debemos anteponer la barra invertida `\` antes del mismo, por ejemplo:
+```md
+\#
+\*
+\`
+\_
+\>
+```
+### Salto de línea<!-- omit in toc -->
+Se pueden agregar saltos de línea en Markdown similiar a la etiqueta `<hr>` en HTML, de la siguiente manera:
+```md
+-----
+```
+Así puede verse según el ejemplo:
 
-Los salto de linea se generar con guiones medios.
-
-_Ejemplo:_
-
-        -----
 -----
 
-## Formato de texto
+### Formato de texto<!-- omit in toc -->
+Tenemos la posibilidad de darle formato especial al texto que agreguemos, es decir con formato _Cursiva_, __Negrita__ y ~~Tachado~~, haciéndolo de la siguiente manera:
+```md
+_Cursiva_
+__Negrita__
+~~Tachado~~
+```
+Análogamente en HMTL tenemos las etiquetas `<strong>` para __Negrita__, `<em>` para _Cursiva_ y `<strike>` para ~~Tachado~~.
 
-Tenemos la posibilidad de darle formato a los textos que agregamos. Cursiva, Negrita, Tachado
-
-* __Cursiva:__ Se genera colocando GUION BAJO (_) al comienzo y al final de la palabra u oración. 
-* __Negrita:__ Se genera colocando DOBLE GUION BAJO (__) al comienzo y al final de la palabra u oración. 
-* __Tachado:__ Se genera colocando DOBLE SIMBOLO ~ al comienzo y al final de la palabra u oración. 
-
-_Ejemplo:_
-
-        * Cursiva: _Oracion en cursiva, no se tiene que dejar espacio al inicio y final de la palaba y oración._
-        * Negrita: __Oracion en negrita, no se tiene que dejar espacio al inicio y final de la palaba y oración.__
-        * Tachado: ~~Oracion tachada, no se tiene que dejar espacio al inicio y final de la palaba y oración.~~
-
-  * Cursiva: _Oracion en cursiva, no se tiene que dejar espacio al inicio y final de la palaba y oración._
-  * Negrita: __Oracion en negrita, no se tiene que dejar espacio al inicio y final de la palaba y oración.__
-  * Tachado: ~~Oracion tachada, no se tiene que dejar espacio al inicio y final de la palaba y oración.~~
-
-
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Viñetas y Numeración
 
 Tenemos las posibilidad de generar un listado con viñetas o numerado. 
