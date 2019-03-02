@@ -141,7 +141,40 @@ Entonces aquí vemos que para hacer una referencia a un título (_o subtítulo_)
 > Es una buena práctica en la gestión de direcciones electrónicas, nos manejemos sin espacios, haciendo uso símbolos en su defecto, para que cualquier sistema que soporte hypervínculos los gestione sin problemas.
 
 Ahora bien, vimos que podemos aplicar un hypervínculo a una frase, pero también lo podemos hacer sobre una palabra, o cualquier otro tipo de contenido en Markdown, mientras respetemos la sintaxis de encerrar ese contenido en corchetes y seguido del vínculo entre paréntesis, no tendremos ningún tipo de inconveniente.
-### Vínculos relativos o absolutos<!-- omit in toc -->
+### Vínculos absolutos o relativos<!-- omit in toc -->
+En este punto necesitamos comprender el concepto de las rutas absolutas y las rutas relativas, __tema fundamental__ para saber donde estamos y a donde queremos ir en cualquier tipo de software que opere con hypervínculos.
+#### Rutas absolutas<!-- omit in toc -->
+Las rutas absolutas son aquellas que tienen la dirección completa de la ubicación desde la raíz del sistema. Por ejemplo, si queremos acceder a una carpeta dentro del directorio de nuestro disco, que se encuentra dentro de otra carpeta, y así en los niveles del árbol del directorio que se encuentre, lo hacemos de la siguiente manera:
+```bash
+/usr/bin/git
+
+C:\Program Files\Git\bin
+```
+Aquí podemos ver las rutas absolutas del directorio donde se encuentra instalado Git en el sistema operativo de Linux y Git Bash en Windows, iniciando desde el directorio raíz de los sistemas de archivos.
+
+Ahora bien, rara vez utilizaremos este tipo de rutas en nuestros repositorios de Git, ya que si estamos trabajando en equipo y apuntamos a rutas absolutas de nuestra propia PC, sólo nos funcionará a nosotros. Hay casos que seguramente vamos a utilizar rutas compartidas de red, que no son rutas absolutas, sino mas bien rutas que dependen de este y que se puede acceder desde varios lugares en la red. Aquí no podemos dar un ejemplo generalizado, ya que los sistemas pueden utilizar varias formas de establecer rutas compartidas, y también va a depender de cada sistema y de la compatibilidad de las mismas hacia otros sistemas.
+#### Rutas relativas<!-- omit in toc -->
+Este tipo de rutas son las mas frecuentes en el uso de repositorios compartidos, sitios en internet entre otros, dado su amplia compatibilidad en diferentes sistemas. Por lo tanto, debemos tener bien claro este concepto para manejarnos con soltura al vincular sus elementos. Una ruta relativa es entonces, la ruta del directorio donde estoy parado en este momento. Por ejemplo, nosotros nos encontramos dentro de la carpeta `docs/` y para ir por ejemplo al directorio de arriba, o del nivel anterior debemos ejecutar el siguiente comando:
+```bash
+cd ../
+```
+> En el caso del sistema de Microsoft Windows, posiblemente no interprete correctamente la barra lateral `/`, ya que es el único sistema que gestiona las rutas entre carpetas con la barra invertida `\`. El resto de los sistemas, ya sea Linux, MAC, sitios en internet, celulares, etcétera, utilizan la barra lateral, por lo que tendremos una amplia compatibilidad entre ellos. :-1: Mal por Microsoft.
+
+Si queremos dirigirnos a una sub-carpeta desde donde estamos, ejecutamos el mismo comando con el nombre de la carpeta, seguida de la barra lateral, de la siguiente forma:
+```bash
+cd nombre-subcarpeta/
+```
+> Se debe tener en cuenta para tener una amplia compatibilidad entre los sistemas, de usar la rutas relativas con sensibilidad a mayúsculas y minúsculas, así como también evitar el uso de espacios al definirlas. De esta manera, por ejemplo la comunidad de desarrollo nombra a sus directorios y archivos en minúsculas y sin espacios, reemplazando a estos últimos con símbolos.
+
+Ahora bien, vamos a poner otro ejemplo en donde necesitamos ir a una carpeta que está en el mismo nivel que `docs/` en este repositorio, que puede ser `img/` utilizando un caso existente. Entonces para ir la carpeta `img/` lo hacemos así:
+```bash
+cd ../img/
+```
+Aquí podemos ver que fuimos primero al nivel anterior con `../` y de ahí fuimos al directorio `img/`. Si quisiéramos ir a otro nivel más arriba aún, tenemos que concatenar otra vez `../`, y así tantas veces necesitemos subir de nivel, por ejemplo, simulamos que vamos dentro de una carpeta que esta a dos niveles hacia arriba de donde estamos y luego desde ahí nos dirigimos a una carpeta llamada `ejemplo`:
+```bash
+cd ../../ejemplo/
+```
+Seguramente para comprender bien este concepto es necesario practicar así podemos tenerlo bien incorporado.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Inserción de imágenes estáticas o en movimiento
