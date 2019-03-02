@@ -7,7 +7,8 @@
     <a href="#Sintaxis-documental-con-Markdown"><strong>Sintaxis documental con Markdown</strong></a><br>
     <a href="#Encabezados-y-títulos">· Encabezados y títulos</a><br>
     <a href="#Párrafos-y-estilo-normal">· Párrafos y estilo normal</a><br>
-    <a href="#Viñetas-y-Numeración">· Viñetas y Numeración</a><br>
+    <a href="#Tipos-de-listas">· Tipos de listas</a><br>
+    <a href="#Sintaxis-HTML-y-CSS-en-Markdown">· Sintaxis HTML y CSS en Markdown</a><br>
     <a href="#">· </a><br>
 </details>
 
@@ -71,24 +72,27 @@ __Negrita__
 ~~Tachado~~
 ```
 Análogamente en HMTL tenemos las etiquetas `<strong>` para __Negrita__, `<em>` para _Cursiva_ y `<strike>` para ~~Tachado~~.
+### Uso de comentarios<!-- omit in toc -->
+Tenemos la posibilidad de formatear párrafos de tipo comentario en Markdown de la misma forma que HTML con la etiqueta `<blockquote>`, aunque es importante aclarar que no es un comentario de tipo cita porque no tiene una referencia, y tampoco es un comentario de omisión de tipo código (_el cual veremos más adelante_). Para realizar un comentario, lo haremos anteponiendo el śimbolo `>` seguido de un espacio, como podemos ver en el siguiente ejemplo:
+```md
+> Esto es un párrafo de tipo comentario.
+```
+Se aprecia de la siguiente manera:
+> Esto es un párrafo de tipo comentario.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
-## Viñetas y Numeración
+## Tipos de listas
+Tenemos las posibilidad de generar un listado con viñetas o auto-numeradas, tal y como lo hacemos con las etiquetas HTML `<ul>` y `<ol>` respectivamente. Cada párrafo de las viñetas se generan anteponiendo el símbolo `*` seguido de un espacio, y de la misma forma se usan las listas numeradas, anteponiendo siempre la sintaxis `1.` seguido de un espacio (_no hace falta numerar la lista por nuestra cuenta, ya que colocando la sintaxis mencionada, la numeracion se genera automáticamente_).
+```md
+* Agregar una viñeta con un astericos al principio. 
+* Ejemplos segunda linea de viñeta.
+* Ejemplo tercera linea de viñeta.
 
-Tenemos las posibilidad de generar un listado con viñetas o numerado. 
-Las viñetas se generan con * seguidos uno debajo de otro. 
-La numeración se genera siempre con el número 1., la numeracion se genera automaticamente. 
-
-_Ejemplo:_ 
-
-    * Agregar una viñeta con un astericos al principio. 
-    * Ejemplos segunda linea de viñeta.
-    * Ejemplo tercera linea de viñeta.
-
-    1. Agrega una viñeta numerada con el numero 1.
-    1. Ejemplo segunda linea viñeta numerada.
-    1. Ejemplo tercera linea viñeta numerada. 
-
+1. Agrega una viñeta numerada con el numero 1.
+1. Ejemplo segunda linea viñeta numerada.
+1. Ejemplo tercera linea viñeta numerada.
+```
+Se vería de la siguiente manera:
 * Agregar una viñeta con un astericos al principio. 
 * Ejemplos segunda linea de viñeta.
 * Ejemplo tercera linea de viñeta.
@@ -97,29 +101,29 @@ _Ejemplo:_
 1. Ejemplo segunda linea viñeta numerada.
 1. Ejemplo tercera linea viñeta numerada. 
 
+Para realizar sub-listas, debemos mantener tabularlas para que Markdown las interprete en niveles, por ejemplo:
+```md
+* Viñeta en nivel 1.
+    1. Lista numerada 1 en nivel 2.
+    1. Lista numerada 2 en nivel 2.
+    1. Lista numerada 3 en nivel 2.
+```
+Se verán de la siguiente manera:
+* Viñeta en nivel 1.
+    1. Lista numerada 1 en nivel 2.
+    1. Lista numerada 2 en nivel 2.
+    1. Lista numerada 3 en nivel 2.
 
-### Sub Listas
+También podremos realizar un listado de tipo [Casillas de verificación](https://es.wikipedia.org/wiki/Casilla_de_verificaci%C3%B3n) (_este listado no se puede nivelar_), utilizando la siguiente sintaxis:
+```md
+- [x] Casilla verificada
+- [ ] Casilla sin verificar
+```
+Esta lista se ve de la siguiente manera:
+- [x] Casilla verificada
+- [ ] Casilla sin verificar
 
-_Ejemplo:_
-
-        * Viñetas común.
-            1. Prueba dentro de viñeta.
-            1. Prueba dentro de viñeta dos.
-            1. Prueba dentro de viñeta tres. 
-
-* Viñetas común.
-    1. Prueba dentro de viñeta.
-    1. Prueba dentro de viñeta dos.
-    1. Prueba dentro de viñeta tres. 
-
-## Comentarios
-
- La generación de comentario comienza con el signo ">" al inicio. 
-
-        > Esto es un ejemplo de generación de comentarios dentro de Markdown 
-
-> Esto es un ejemplo de generación de comentarios dentro de Markdown
-
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Generacion de tablas
 
 Tenemos la posibilidad de generar tablas dentro de MarkDown, tenemos que tener en cuenta que el tamaño de cada columna varia segun el texto que este contenga.
@@ -218,5 +222,10 @@ FROM   nombretabla1 AS A
          ON A.campo_id = B.campo_id 
 WHERE  A.numero = 1 
 ```
+
+## Sintaxis HTML y CSS en Markdown
+Durante todo el documento estuvimos viendo la analogía de Markdown con HMTL, y por lo cierto, no fue un capricho. Esto sucede porque Markdown también puede interpretar sintaxis HTML, pero como no es un estándar definido dentro de Markdown, no todos los rederizadores lo interpretan correctamente, ó directamente no lo interpretan. Esta mezcla de sintaxis suele utilizarse cuando Markdown no nos alcanza para lo que queremos realizar, por lo que se hace uso de esta alternativa con HTML. Si bien no vamos a ver ejemplos del tema en esta sección, es importante tenerlo en cuenta e investigar del tema por si el día de mañana lo necesitemos o nos topemos con documentos de esta manera.
+
+También soporta parte del estándar CSS dentro del documento o vinculando estilos con archivos externos `css`, pero aquí la limitación es aún mas grande que con HTML, y sólo se recomienda su uso en casos muy particulares.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
