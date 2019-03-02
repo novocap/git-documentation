@@ -5,6 +5,8 @@
 <details>
     <summary>Tabla de contenido del documento</summary>
     <a href="#Sintaxis-documental-con-Markdown"><strong>Sintaxis documental con Markdown</strong></a><br>
+    <a href="#Encabezados-y-títulos">· Encabezados y títulos</a><br>
+    <a href="#Párrafos-y-estilo-normal">· Párrafos y estilo normal</a><br>
     <a href="#">· </a><br>
 </details>
 
@@ -20,22 +22,27 @@ El secreto de Markdown se basa en la creación de archivos de extensión `*.md` 
 Sinceramente la lista es interminable y además se suman opciones día tras día, debido a la gran adopción de la comunidad de desarrollo y del abanico de los sistemas CMS, convirtiendo a Markdown en un estándar prácticamente.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
-## Generacion de Títulos
-Todo título o subtítulo debe comenzar con símbolo de numeral "#". 
+## Encabezados y títulos
+Markdown gestiona de los encabezados y títulos en seis niveles de la misma forma que la sintaxis del _lenguaje de marcado en hypertexto_ de [HTML](https://es.wikipedia.org/wiki/HTML). A coniinuación podemos ver su sintaxis con la analogía de sus etiquetas en HTML:
+```md
+# Encabezado 1 <h1>
+## Encabezado 2 <h2>
+### Encabezado 3 <h3>
+#### Encabezado 4 <h4>
+##### Encabezado 5 <h5>
+###### Encabezado 6 <h6>
+```
+> Se puede observar que se debe colocar un espacio luego del símbolo `#`.
 
-_Ejemplo:_ 
-
-        # Titulo formato grande
-        ## Sub titulo formato mediano
-        ### Sub titulo formato pequeño
-
-# Titulo formato grande
-## Sub titulo formato mediano
-### Sub titulo formato pequeño
-
-
-## Escritura normal
-
+Renderizado se vería de esta forma:
+# Encabezado 1<!-- omit in toc -->
+## Encabezado 2<!-- omit in toc -->
+### Encabezado 3<!-- omit in toc -->
+#### Encabezado 4<!-- omit in toc -->
+##### Encabezado 5<!-- omit in toc -->
+###### Encabezado 6<!-- omit in toc -->
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Párrafos y estilo normal
 Como cualquier editor de texto, la escritura es libre, con la posibilidad de darle un formato. Esto se explicara luego con otros ejemplos. 
 
 ## Salto de linea
