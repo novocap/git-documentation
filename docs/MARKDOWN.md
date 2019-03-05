@@ -8,8 +8,10 @@
     <a href="#Encabezados-y-títulos">· Encabezados y títulos</a><br>
     <a href="#Párrafos-y-estilo-normal">· Párrafos y estilo normal</a><br>
     <a href="#Tipos-de-listas">· Tipos de listas</a><br>
-    <a href="#Vínculos-internos-y-externos">· Vínculos internos y externos</a><br>
-    <a href="#Inserción-de-imágenes-estáticas-o-en-movimiento">· Inserción de imágenes estáticas o en movimiento</a><br>
+    <a href="#Vínculos">· Vínculos</a><br>
+    <a href="#Inserción-de-imágenes-mediante-vínculos">· Inserción de imágenes mediante vínculos</a><br>
+    <a href="#Tablas-con-formato">· Tablas con formato</a><br>
+    <a href="#Archivo-README">· Archivo README</a><br>
     <a href="#Sintaxis-HTML-y-CSS-en-Markdown">· Sintaxis HTML y CSS en Markdown</a><br>
     <a href="#">· </a><br>
 </details>
@@ -126,7 +128,7 @@ Esta lista se ve de la siguiente manera:
 - [ ] Casilla sin verificar
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
-## Vínculos internos y externos
+## Vínculos
 Markdown puede gestionar varios tipos de referencias de similar forma que HTML con la etiqueta `<href>`. Lo que se hace es encerrar la descripción a la que queremos agregar el hypervínculo con los símbolos de corchetes de apertura `[` y de cierre `]`, seguido y sin espacios de los símbolos de paréntesis de apertura `(` y de cierre `)` para colocar allí el vínculo donde queremos que el lector se dirija. 
 ### Vínculos internos en el documento<!-- omit in toc -->
 Para esto vamos a empezar a ver un ejemplo con un vínculo interno al documento, por ejemplo, que al hacer click o presionar sobre una frase nos dirija al inicio de este documento. Sólo podremos hacer esto con títulos o encabezados en Markdown, y se realiza de la siguiente manera:
@@ -173,21 +175,53 @@ Aquí podemos ver que fuimos primero al nivel anterior con `../` y de ahí fuimo
 ```bash
 cd ../../ejemplo/
 ```
-Seguramente para comprender bien este concepto es necesario practicar así podemos tenerlo bien incorporado.
+> Seguramente para comprender bien este concepto es necesario practicar así podemos tenerlo bien incorporado.
+
+Habiendo comprendido el concepto de vínculos relativos, podremos crear vínculos a rutas o archivos dentro del repositorio que estamos trabajando. Nuestro marco de trabajo siempre será relativo partiendo desde donde estamos, y colocando la dirección relativa hacia donde queremos ir. Actualmente estamos parados dentro de la carpeta `docs`, y si queremos movernos dentro del propio repositorio, tenemos que colocar su ruta relativa a nosotros. Analicemos los siguientes ejemplos:
+```md
+[Este es un vínculo](../img) a una ruta relativa.
+[Este es un vínculo](../README.md) a un archivo relativo.
+```
+En el primer caso, tenemos una ruta relativa a una carpeta o directorio llamada `img` que se encuentra en un nivel superior de donde estamos. En el segundo caso, nos movimos a un archivo que se encuentra en un nivel superior de donde estamos.
+> Para utilizar de forma correcta las rutas relativas, siempre debemos tener presente los límites de nuestro repositorio, es decir evitar crear rutas relativas fuera de este, ya que las copias del repositorio tanto locales como remotos serán fieles entre ellas mientras se mantengan actualizadas.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
-## Inserción de imágenes estáticas o en movimiento
-Dentro de un documento Markdown, se puede insertar imagenes. Siempre tienen que estar dentro del proyecto, para poder referenciarlo en la linea:
+### Vínculos externos<!-- omit in toc -->
+Los vínculos externos, son aquellas rutas compartidas que estuvimos analizando anteriormente, donde se tiene acceso desde diferentes lugares. Este tipo de vínculos se utilizan en su mayoría para vínculos de internet con un amplia compatibilidad entre dispositivos y sistemas, y también nos servirá para vinculos en una red privada (_aquí es recomendable generar vínculos para poder acceder sin problemas desde diferentes sistemas y/o ubicaciones_).
 
-> ![Descripcion](path Imagen)
+Veamos el siguiente ejemplo:
+```md
+Ir a la página de [Google Argentina](https://www.google.com.ar)
+```
+Acá podemos ver el caso de un sitio web público que prácticamente se tiene acceso desde cualquier red y dispositivo conectados a internet. También podemos agregar referencias a un correo electrónico en particular de la siguiente forma:
+```md
+Pueden enviarme un [correo](mailto:correo@ejemplo.com)
+```
+En definitiva podemos ver que la referencia a vínculos externos es smiliar a la tecnología HTML, y la lista de opciones que tenemos es extensa.
+> Dentro de la plataforma de GitHub, podemos gestionar referencias al historial del propio proyecto, a los Issues, Pull Request, Teams, etcétera, lo cuáles serán últiles a la hora de comunicarnos dentro de la propia plataforma.
 
-_Ejemplo:_ 
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Inserción de imágenes mediante vínculos
+Dentro de un documento Markdown también se puede insertar imágenes estáticas o en movimiento desde un vínculo en particular, tales como PNG, JPG, GIF, entre otras. Las imágenes pueden estar dentro de nuestro repositorio como así también fuera de este, y lo que necesitaremos para esto es dirección relativa o externa dependiendo del caso.
 
-        ![ImagenDePrueba](../img/professortocat.png)
-
+La sintaxis de inserción de una imagen es idéntica a la de un vínculo, salvo que hay que anteponer el símbolo de exclamación `!` antes de los corchetes:
+```md
 ![ImagenDePrueba](../img/professortocat.png)
-## Generacion de tablas
 
+![Imagen externa](https://octodex.github.com/images/hula_loop_octodex03.gif)
+```
+En este ejemplo podemos ver la inserción de un imagen de nuestro repositorio mediante una refencia relativa, y luego podemos ver una imagen en movimiento desde un vínculo externo en internet. Dentro de los corchetes se colocar una descripción resumida de la imagen, que se mostrará si el vínculo está roto, es decir si la imagen no existe en la dirección que le indicamos.
+
+A continuación vemos como quedan las imágenes insertadas a través de vínculos.
+
+![Imagen interna](../img/professortocat.png)
+
+![Imagen externa](https://octodex.github.com/images/hula_loop_octodex03.gif)
+
+> Debemos tener en cuenta que nos podemos redimensionar los tamaños de las imágenes, y si necesitamos hacerlo debemos aplicarle los cambios directamente a la imagen, o utilizar el recurso de la sintaxis HTML que hablaremos más adelante.
+
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Tablas con formato
 Tenemos la posibilidad de generar tablas dentro de MarkDown, tenemos que tener en cuenta que el tamaño de cada columna varia segun el texto que este contenga.
 
 _Ejemplo:_
@@ -252,6 +286,8 @@ FROM   nombretabla1 AS A
 WHERE  A.numero = 1 
 ```
 
+## Archivo README
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Sintaxis HTML y CSS en Markdown
 Durante todo el documento estuvimos viendo la analogía de Markdown con HMTL, y por lo cierto, no fue un capricho. Esto sucede porque Markdown también puede interpretar sintaxis HTML, pero como no es un estándar definido dentro de Markdown, no todos los rederizadores lo interpretan correctamente, ó directamente no lo interpretan. Esta mezcla de sintaxis suele utilizarse cuando Markdown no nos alcanza para lo que queremos realizar, por lo que se hace uso de esta alternativa con HTML. Si bien no vamos a ver ejemplos del tema en esta sección, es importante tenerlo en cuenta e investigar del tema por si el día de mañana lo necesitemos o nos topemos con documentos de esta manera.
 
