@@ -11,9 +11,9 @@
     <a href="#Vínculos">· Vínculos</a><br>
     <a href="#Inserción-de-imágenes-mediante-vínculos">· Inserción de imágenes mediante vínculos</a><br>
     <a href="#Tablas-con-formato">· Tablas con formato</a><br>
+    <a href="#Líneas-de-código">· Líneas de código</a><br>
     <a href="#Archivo-README">· Archivo README</a><br>
-    <a href="#Sintaxis-HTML-y-CSS-en-Markdown">· Sintaxis HTML y CSS en Markdown</a><br>
-    <a href="#">· </a><br>
+    <a href="#Sintaxis-HTML-y-CSS-en-Markdown">· Sintaxis HTML y CSS en Markdown</a><br>    
 </details>
 
 # Sintaxis documental con Markdown
@@ -270,19 +270,39 @@ Fila2A    | Fila2B  | Fila2C
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Líneas de código
-Se puede generar comentarios con formato de codigo. El mismo tienen que estar contenido dento de ``` con la descripción del tipo lenguaje que estamos insertando. 
+En la mayoría de los sistemas, para mostrar líneas de código se suele emplear el uso del texto sin formato. En este caso Markdown no es la excepción, pero si es digno de destacar que nos brinda la posibilidad de aplicar un formato de resaltado de sintaxis de código según el lenguaje utilizado.
+> Cuando hablamos de texto sin formato, en realidad es una forma de declararlo, ya que la realidad es que el texto si tiene un formato, con un determinado tipo de letra, tamaño, espaciado, interlineado, etcétera; y lo que se busca es verdad es contar con un formato parecido a como si estuviéramos trabajando dentro de una consola de comandos de diferentes sistemas operativos.
 
-_Ejemplo:_
+Ahora bien, el texto sin formato no se utiliza solamente para mostrar ejemplos de código, sinó que también lo podemos utilizar en deterinadas palabras u oraciones dentro de un párrafo. Para hacerlo debemos encerrar el texto entre comilllas simples invertidas \` de la siguiente forma:
+```md
+Este es un párrafo con una `palabra` sin formato.
+```
+Aplicando el estilo de Markdown se vería de la siguiente forma:
 
-        ```sql
-        SELECT A.nombre, 
-            A.numerodocumento, 
-            B.descripcion 
-        FROM   nombretabla1 AS A 
-            JOIN nombretabla2 AS B 
-                ON A.campo_id = B.campo_id 
-        WHERE  A.numero = 1 
-        ```
+Este es un párrafo con una `palabra` sin formato.
+
+Supongamos que ahora necesitemos mostrar una porción de código dentro de Markdown, y para ello debemos encerrarlo por una línea con sólo tres comillas simples invertidas al principio, y otra línea de la misma manera al final del código:
+```
+    ```
+    ejemplo de líneas de código
+    .....
+    .....
+    .....
+    ```
+```
+Tomando una porción de código de ejemplo, en este caso con el lenguaje SQL, le podemos aplicar el resaltado del sintaxis agregando el nombre del lenguaje al lado de los marcadores de bloque de código de triple comillas simples invertidas: 
+```
+    ```sql
+    SELECT A.nombre, 
+        A.numerodocumento, 
+        B.descripcion 
+    FROM   nombretabla1 AS A 
+        JOIN nombretabla2 AS B 
+            ON A.campo_id = B.campo_id 
+    WHERE  A.numero = 1 
+    ```
+```
+Cuando Markdown lo renderiza, ya no muestra el nombre del lenguaje, y le brinda un formato de resaltado de sintaxis tal y como se muestra con el ejemplo que venimos trabajando a continuación:
 ```sql
 SELECT A.nombre, 
        A.numerodocumento, 
@@ -292,6 +312,17 @@ FROM   nombretabla1 AS A
          ON A.campo_id = B.campo_id 
 WHERE  A.numero = 1 
 ```
+> Es importante tener en claro que característica dependerá del renderizador de Markdown que utilicemos y puede que existan variaciones entre ellos.
+
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+### Ocultar líneas en Markdown<!-- omit in toc -->
+Con Markdown podremos ocultar una oración, párrafo, o palabras aplicando la misma sintaxis que se utiliza con HTML para ocultar su código al momento de su interpretación por parte de un navedador web. Entonces, HTML utiliza el juego de caracteres de `<!--` para declarar que a partir de ese momento lo que se escriba allí no se renderice ni se muestre en el navegador, hasta que encuentre los caracteres de `-->` para indicar que hasta allí no lo tendrá en cuenta. Markdown adoptó esta misma sintaxis, y con el siguiente ejemplo buscaremos dejar mas claro este concepto:
+```md
+<!-- Estas líneas de aquí
+van a estar ocultas en un visor de Markdown,
+y sólo serán visibles al momento de editarlas -->
+```
+> Se puede notar que existe un espacio entre los juegos de caracteres de apertura y cierre para no tener problemas de compatibilidad con ningún renderizador de Markdown. 
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Archivo README
