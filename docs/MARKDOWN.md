@@ -326,6 +326,13 @@ y sólo serán visibles al momento de editarlas -->
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Archivo README
+Los sitios tales como GitHub, GitLab, entre otros, adoptaron también con Markdown la visulización directa de un archivo por defecto al acceder a cualquier directorio/carpeta, en otras palabras, en cualquier repositorio remoto, podremos hacer uso de este recurso colocando un archivo nomenclado como `README.md` en cada carpeta contenida, y este se muestre al final de la lista de archivos.
+
+Por ejemplo, cada vez que estemos creando un repositorio en GitHub, este nos ofrecerá crear un archivo `README.md` en su raíz, para que de alguna manera podamos explicar de que se trata lo que estamos haciendo en el repositorio, también como se utiliza, o como aplicarlo en diferentes sistemas, etcétera. Esto no sólo nos sirve de guía al lector para acceder a cualquier repositorio en esta plataforma (_como cualquier otra que hace uso de este recurso_), sino que también podemos explicar el contenido de cada sub-carpeta colocando en cada una de ellas un archivo `README.md` que sea visible con solo acceder a ella. Además también nos sirve para acortar determinadas rutas relativas si queremos aprovechar este recurso documental de archivo predeterminado con Markdown, colocando únicamente la dirección relativa de la carpeta, y este nos mostrará el archivo `README.md` de esa carpeta, luego de la lista de archivos contenidos.
+
+![GitHub Visual Studio Extension](../img/github-readme-folder.png)
+> En este ejemplo podemos ver como GitHub hace uso de este recurso, colocando un archivo `README.md` dentro de la carpeta `docs/developer/` para que al acceder al ella, debajo de los archivos nos muestre la documentación de la misma.
+
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Sintaxis HTML y CSS en Markdown
 Durante todo el documento estuvimos viendo la analogía de Markdown con HMTL, y por lo cierto, no fue un capricho. Esto sucede porque la idea original de Markdown partió desde la simpleza del formato estándar de HTML. Además, tenemos la posibilidad de sumar funcionalidad utilizando gran parte de la sintaxis HTML dentro de los propios documentos con Markdown. Ahora bien, la sintaxis HTML no está definida claramente dentro del estándar de Markdown, por lo cual no todos los rederizadores lo interpretan correctamente (_ó directamente no lo interpretan_).
