@@ -224,47 +224,52 @@ A continuación vemos como quedan las imágenes insertadas a través de vínculo
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Tablas con formato
-Tenemos la posibilidad de generar tablas dentro de MarkDown, tenemos que tener en cuenta que el tamaño de cada columna varia segun el texto que este contenga.
+Con Markdown tenemos la posibilidad de generar tablas formateadas solamente con texto plano. El formato distingue los encabezados de los registros que carguemos en ellas y la sintaxis sería de la siguiente manera:
 
-_Ejemplo:_
-
-* Las columnas se generan con "|"
-* Las filas se generan con "-"
-
-        ColumnaA | ColumnaB | ColumnaC
-        ---------|----------|----------
-        Fila1A   | Fila1B   | Fila1C
-        Fila2A   | Fila2B   | Fila2C
+```md
+ColumnaA|ColumnaB|ColumnaC
+-|-|-
+Fila1A|Fila1B|Fila1C
+Fila2A|Fila2B|Fila2C
+```
+Aquí podemos observar que las columnas se separan con la barra vertical `|`, y la segunda fila no debe tener datos, sino que se debe colocar el símbolo de guión medio `-` de manera obligatoria. Esta nomenclatura distingue la fila de encabezado de la tabla del resto de las filas con datos. Ahora bien, estéticamente no se distingue con facilidad cuando la estamos editando, por lo cual se emplea la siguiente técnica para contar con un mejor marco visual:
+```md
+ColumnaA | ColumnaB | ColumnaC
+-------- | -------- | --------
+Fila1A   | Fila1B   | Fila1C
+Fila2A   | Fila2B   | Fila2C
+```
+En este segundo ejemplo, podemos visualizar mejor los límites de la tabla, así como también la separación de las columnas y la distinción del encabezado. Esta técnica funciona exactamente igual que el ejemplo anterior, y el hecho de agregar espacios o guiones adicionales no interfiere en absoluto en el formato final ya renderizado. A continuación vemos como quedaría este caso:
 
 ColumnaA | ColumnaB | ColumnaC
----------|----------|----------
+-------- | -------- | --------
 Fila1A   | Fila1B   | Fila1C
 Fila2A   | Fila2B   | Fila2C
 
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+### Alineación de columnas<!-- omit in toc -->
+Adicionalmente, contamos con una función para alinear el contenido de las columnas hacia la izquierda, al centro o a la derecha. Esto lo podemos hacer modificando la sintaxis de la segunda fila, agregando el símbolo de `:`, marcando hacia donde queremos alinearlo: 
 
-## Alineación de columnas en tablas
+* __Alineación izquierda__:  `:-----`
+* __Alineación centrada__:   `:----:`
+* __Alineación derecha__:    `-----:`
 
-Dentro de las tablas, tenemos la posibilidad de darle formato a la alineacion de cada columna. El mismo se configura en la segunda linea, luego de la generación del encabezado. 
+Vamos a aplicarlo con un ejemplo para poder visualizarlo mejor:
+```md
+Izquierda | Derecha | Centrado
+:-------- | ------: | :------:
+Fila1A    | Fila1B  | Fila1C
+Fila2A    | Fila2B  | Fila2C
+```
+Una vez renderizado se podrá ver de la siguiente forma:
+Izquierda | Derecha | Centrado
+:-------- | ------: | :------:
+Fila1A    | Fila1B  | Fila1C
+Fila2A    | Fila2B  | Fila2C
+> De esta manera, vemos que con Markdown podemos conseguir tablas de forma simple y efectiva, contando con un formato determinado y con varias opciones de alineación. Si fuera necesario aplicar formatos más enriquecidos o contar con mas opciones, ya tenemos que pensar en una sintaxis en HTML con el etiquetado `<table>`, tema que hablaremos más adelante.
 
-* Alineacion derecha    --> -----:
-* Alineacion izquierda  --> :-----
-* Alineacion centrada   --> :----:
-
-_Ejemplo:_
-
-        Izquierda | Derecha  | Centrado
-        :-------- | -------: |:--------:
-        Fila1A    | Fila1B   | Fila1C
-        Fila2A    | Fila2B   | Fila2C
-
-Izquierda | Derecha  | Centrado
-:-------- |--------: |:--------:
-Fila1A    | Fila1B   | Fila1C
-Fila2A    | Fila2B   | Fila2C
-
-
-## Comentarios tipo codigo 
-
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
+## Líneas de código
 Se puede generar comentarios con formato de codigo. El mismo tienen que estar contenido dento de ``` con la descripción del tipo lenguaje que estamos insertando. 
 
 _Ejemplo:_
@@ -288,11 +293,14 @@ FROM   nombretabla1 AS A
 WHERE  A.numero = 1 
 ```
 
+[🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Archivo README
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
 ## Sintaxis HTML y CSS en Markdown
-Durante todo el documento estuvimos viendo la analogía de Markdown con HMTL, y por lo cierto, no fue un capricho. Esto sucede porque Markdown también puede interpretar sintaxis HTML, pero como no es un estándar definido dentro de Markdown, no todos los rederizadores lo interpretan correctamente, ó directamente no lo interpretan. Esta mezcla de sintaxis suele utilizarse cuando Markdown no nos alcanza para lo que queremos realizar, por lo que se hace uso de esta alternativa con HTML. Si bien no vamos a ver ejemplos del tema en esta sección, es importante tenerlo en cuenta e investigar del tema por si el día de mañana lo necesitemos o nos topemos con documentos de esta manera.
+Durante todo el documento estuvimos viendo la analogía de Markdown con HMTL, y por lo cierto, no fue un capricho. Esto sucede porque la idea original de Markdown partió desde la simpleza del formato estándar de HTML. Además, tenemos la posibilidad de sumar funcionalidad utilizando gran parte de la sintaxis HTML dentro de los propios documentos con Markdown. Ahora bien, la sintaxis HTML no está definida claramente dentro del estándar de Markdown, por lo cual no todos los rederizadores lo interpretan correctamente (_ó directamente no lo interpretan_).
 
-También soporta parte del estándar CSS dentro del documento o vinculando estilos con archivos externos `css`, pero aquí la limitación es aún mas grande que con HTML, y sólo se recomienda su uso en casos muy particulares.
+Si bien no vamos a repasar ejemplos de esta tecnología en el presente documento, es importante saber que contamos con esta posibilidad y así poder investigar más del tema. Esto nos daría la versatilidad de poder aplicarlo cuando fuera necesario o nos topemos con documentos editados de esta manera.
+
+También soporta parte del estándar CSS dentro del mismo documento, o vinculando también estilos con archivos externos `css`, pero aquí la limitación es aún mas grande que con HTML, y consecuentemente se recomienda su uso en casos muy particulares.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)
