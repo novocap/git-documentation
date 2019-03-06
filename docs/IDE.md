@@ -20,7 +20,18 @@ Además del escenario de los editores de texto sumado a la terminal de línea de
 En el caso de los IDE, existen una infinidad de opciones y debemos evaluar una opción u otra dependeniendo del lenguaje y del proyecto que vamos a realizar, por lo cual, en el caso que definamos trabajar con un IDE para documentar bajo Markdown, será necesario analizar que opciones tenemos en el mercado que trabajen con esta tecnología, filtrando por aquellos que se integran con Git y permitan conectarse con GitHub. En las próximas secciones del documento iremos viendo algunas alternativas que recomendamos, aunque igualmente dependerá del gusto de cada uno.
 [🡡 volver al inicio](#Elección-del-IDE)
 ## Visual Studio Code
+[Visual Studio Code](https://code.visualstudio.com/) es un producto desarrollado por Microsoft, siendo uno de los IDE más utilizados hoy día por la comunidad de desarrollo, teniendo en cuenta su integridad con gran cantidad de lenguajes, frameworks y utilidades, además de ser de uso gratuito bajo un desarrollo de software libre; mantenido con una perioricidad de actualización de versiones finales prácticamente mensuales, y además es multiplataforma tanto para sistemas Linux, Windows y MacOS.
 
+Por defecto este editor tiene una alta integración con la instalación local de Git, además de contar con una previsualización en vivo para editar documentos en Markdown, contando con extensiones para comunicarnos directamente con varias funciones de GitHub, por lo cual lo hace uno de las mejores opciones para comenzar con proyectos de esta índole.
+
+### Descarga de Visual Studio Code<!-- omit in toc -->
+Para descargarnos una copia nos dirigimos al su sitio de [descargas](https://code.visualstudio.com/#alt-downloads) y elegimos el sistema operativo que usamos. Podremos notar que su instalador no es de gran tamaño y no necesita de grandes [requerimientos](https://code.visualstudio.com/docs/supporting/requirements) para poder operar con él.
+
+![Descarga de Visual Studio Code](../img/vscode-download.png)
+> __Imagen 1__: _Descarga de Visual Studio Code para diferentes sistemas operativos._
+
+[🡡 volver al inicio](#Elección-del-IDE)
+### Instalación y puesta a punto de Visual Studio Code<!-- omit in toc -->
 [🡡 volver al inicio](#Elección-del-IDE)
 ### Configuración del Terminal Integrado<!-- omit in toc -->
 <!--
