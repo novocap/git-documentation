@@ -29,6 +29,7 @@ Desarrollado por Microsoft, [Visual Studio Code](https://code.visualstudio.com/)
 
 Por defecto este editor tiene una alta integración con la instalación local de Git, además de contar con una previsualización en vivo para editar documentos en Markdown y contando con extensiones para comunicarnos directamente con varias funciones de GitHub, convirtiéndolo en una de las mejores opciones para comenzar a trabajar con proyectos de esta índole.
 
+[🡡 volver al inicio](#Elección-del-IDE)
 ### Descarga de la aplicación<!-- omit in toc -->
 Para descargarnos una copia nos dirigimos a su sitio de [descargas](https://code.visualstudio.com/#alt-downloads) y elegimos el sistema operativo que usamos. Podremos notar que su instalador no es de gran tamaño y no necesita de grandes [requerimientos](https://code.visualstudio.com/docs/supporting/requirements) para poder operar con él.
 
@@ -36,11 +37,13 @@ Para descargarnos una copia nos dirigimos a su sitio de [descargas](https://code
 > __Imagen 2__: _Descarga de Visual Studio Code para diferentes sistemas operativos._
 
 [🡡 volver al inicio](#Elección-del-IDE)
-### Instalación e interfaz de la solución<!-- omit in toc -->
+### Instalación<!-- omit in toc -->
 Las opciones de descarga de Visual Studio Code en su sitio público son archivos auto-instalables, los cuáles podrán ser gestionados por medio de los respectivos administradores de paquetes de instalación que incluye cada sistema operativo, por lo cual no tendremos inconvenientes durante su instalación y esta será prácticamente guíada.
 
 También contamos con la posibilidad de descargarnos el código de desarrollo de la propia aplicación alojada en el [repositorio de Visual Studio Code en GitHub](https://github.com/Microsoft/vscode), y a partir de allí seguir los pasos para compilarlo en nuestras PC poder utilizarlo a partir del ensamblado creado. Esta opción solo es recomendable si queremos aprovechar las nuevas funcionalidades y correcciones que salen a diario (_aunque con poco testeo de las mismas_), o en el caso que directamente queramos contribuir con el desarrollo de la solución.
 
+[🡡 volver al inicio](#Elección-del-IDE)
+### Interfaz de usuario<!-- omit in toc -->
 Una vez instalado, ubicamos el acceso directo a la aplicacion y al inciarla nos dará la bienvenida como se muestra a continuación:
 
 ![Bienvenida VSCode](../img/vscode-welcome.png)
@@ -72,6 +75,24 @@ La interfaz de la aplicación también nos brindará una barra de estado con inf
 > __Imagen 5__: _Barra de estado de Visual Studio Code._
 
 Por ejemplo, si contramos con control de versión con Git, nos mostrará en que rama estamos trabajando, sumado a un estado de cambios en comparación con nuestro repositorio remoto, así como también con botones para sincronizarlos. También nos identificará la cantidad de errores y advertencias en el código, en que línea y columna estamos editando, el tipo de codificación del texto, entre otras opciones que también podrán ir apareciendo a medida que instalemos mas Extensiones.
+
+Nuestro espacio de trabajo se encontrará en el centro de la ventana, y desde la sección de Explorador podremos acceder a editar los archivos, los cuáles se agruparán en pestañas a medida que vayamos abriéndolos.
+
+![VSCode Workspace](../img/vscode-workspace.png)
+> __Imagen 6__: _Espacio de trabajo de Visual Studio Code._
+
+> Si presionamos las teclas `Ctrl` + `N` se nos abrirá un nuevo archivo para comenzar a trabajar, para luego definir donde lo guardaremos.
+
+También podemos dividir nuestro espacio de trabajo en dos o más columnas para trabajar con múltiples archivos abiertos. En el caso de los archivos Markdown, podemos aprovechar la funcionalidad de abrir la previsualización del mismo en una nueva columna con la siguiente funcion:
+
+![Preview en VSCode](../img/vscode-preview.png)
+> __Imagen 7__: _Función de previsualización de documento Markdown._
+
+> Podemos observar que al desplazarnos por la edición del documento en Markdown, la ventana de previsualización acompañará al desplazamiento, y lo mismo si empezamos a desplazar la previsualización, se desplazará del mismo modo el documento que estamos editando.
+
+[🡡 volver al inicio](#Elección-del-IDE)
+### Barra de comandos<!-- omit in toc -->
+La función más potente de Visual Studio Code la encontraremos en su barra de comandos.
 
 [🡡 volver al inicio](#Elección-del-IDE)
 ### Configuración del Terminal Integrado<!-- omit in toc -->
