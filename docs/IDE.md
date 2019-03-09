@@ -92,28 +92,62 @@ También podemos dividir nuestro espacio de trabajo en dos o más columnas para 
 
 [🡡 volver al inicio](#Elección-del-IDE)
 ### Barra de comandos<!-- omit in toc -->
-La función más potente de Visual Studio Code la encontraremos en su barra de comandos. Podemos comparar al uso de esta barra con el uso de comandos desde la terminal, logrando hacer cualquier función de la aplicación desde allí.
+La función más potente de Visual Studio Code la encontraremos en su barra de comandos. Podemos comparar el uso de esta barra con el recurso de la ejecución comandos desde la terminal, logrando ejecutar cualquier función de la propia aplicación desde allí mismo.
 
-Entonces, para hacer uso de la barra debemos usar la combinación de las teclas `Ctrl` + `Shift` + `P` y se abrirá como se muestra en la imagen a continuación:
+Entonces, para hacer uso de la barra debemos usar la combinación de las teclas `Ctrl` + `Shift` + `P` y se abrirá una línea de comandos como se muestra a continuación:
 
 ![Barra de Comandos VSCode](../img/vscode-command-pallete.png)
 > __Imagen 8__: _Barra de comandos de Visual Studio Code._
 
+En la línea de comandos de la barra podremos ver el símbolo `>`, que significa que lo próximo que escribamos allí lo va a ejecutar, y mientras estemos escribiendo, nos irá apareciendo la lista de comandos disponibles basados en el criterio de búsqueda. Lo único que podremos ejecutar son comandos propios de la aplicación, sumado a todas las extensiones que integren comandos desde la barra del editor, por ejemplo, tenemos una gran cantidad de comandos Git que podremos verlo ni bien escribamos `git` luego del símbolo `>`:
+
+![Comandos Git de la barra](../img/vscode-git-command-bar.png)
+> __Imagen 9__: _Comandos Git disponibles en la barra de comandos._
+
+Si borramos el símbolo `>`, podremos acceder a las funciones que no son propias a las ejecuciones de comandos del editor, y a partir de aquí tendremos disponible la ayuda de la barra de comandos utilizando el símbolo `?`, o  en su defecto, podremos buscar e ir a archivos dentro del directorio que estemos trabajando. Además tenemos la opción de ir a una línea específica dentro de nuestros archivos, y acceder a las distintas funciones del menú y de la barra lateral izquierda de la propia aplicación.
+> Si vamos adoptando el uso de la barra de comandos, nos va a permitir disminuir el uso del periférico del mouse, y podremos ser mas eficientes en lo que hagamos dentro del editor.
+
+[🡡 volver al inicio](#Elección-del-IDE)
+### Accesos mediante combinaciones de teclado<!-- omit in toc -->
+Otra de las funciones interesantes del editor de Visual Studio Code, son los accesos mediante el uso de la combinación de teclas del teclado. Si nos dirigimos a ícono de configuración del editor y accedemos a la opción de __Accesos de Teclado__, podremos ver una lista amplia de accesos, así como también modificarlas o agregar nuevas configuraciones a nuestro gusto. Como vimos en la sección anterior con la funcionalidad de la barra de comandos, podemos utilizar cualquiera de las opciones, comandos y utilidades que tenemos disponible en el editor, para asignarle una combinación de teclas y acceder más rápido a ellas. Seguramente nos puede servir de gran utilidad con las opciones que usemos con frecuencia.
+
+![Accesos de teclado](../img/vscode-keyboard-shortcuts.png)
+> __Imagen 10__: _Accesos a la funciones de combinación de teclado._
+
+> En la imagen podemos ver una lista filtrada de combinaciones de teclado disponibles para acceder directamente a comandos de Git por ejemplo.
+
 [🡡 volver al inicio](#Elección-del-IDE)
 ### Configuración del Terminal Integrado<!-- omit in toc -->
-<!--
+En sistemas operativos de Microsoft, podremos acceder a una ventana integrada de la terminal de línea de comandos usando la combinación de teclas de `Ctrl` + `Ñ`, o desde el menú desplegable de __Terminal__. En el caso que lo queramos hacer con Linux, podemos configurar la misma combinación de teclado como vimos en la sección anterior, ya que no viene configurado por defecto.
+
+Antes de acceder a la terminal integrada, es importante configurarla previamente, sobretodo en los sistemas operativos de Microsoft. En el caso de Windows, sabemos que contiene un emulador de consola de MS-DOS desde sus inicios, así como también el terminal de Microsoft Powershell en versiones mas recientes del SO, y salvo que necesitemos utilizar alguna de estas dos opciones, para utilizar comandos de Git desde allí, debemos parametrizar el terminal integrado del editor para que se abra con __Git Bash__ (_según vimos anteriormente en la documentación_). Entonces, nos dirigimos a las Configuraciones del editor, y de allí seleccionamos la opción entre llaves `{}` como se ve en la imagen a continuación:
+
+![Configuraciones JSON](../img/vscode-config-json.png)
+> __Imagen 11__: _Configuraciones JSON del editor._
+
+Aquí podremos observar que se nos abre una nueva pestaña con un archivo denominado `settings.json`, y como su extensión lo indica está codificado con [JSON](https://es.wikipedia.org/wiki/JSON). Brevemente, JSON se edita como un archivo de texto plano donde gestiona todas sus propiedades y valores entre comillas dobles, que se establecen por `:`, separando cada entidad por comas, y finalmente, encerrando entre llaves al documento. Entonces si quisiéramos agregar una nueva línea de `"propiedad" : "valor"`, tenemos que agregar una coma al final de la última propiedad, para agregar la siguiente configuración:
 ```json
-// Command Prompt
+"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+```
+> Tengamos en cuenta que esta opción sólo debemos agregarla en sistemas operativos de Microsoft a partir de la instalación de la aplicación de Git Bash. Veamos también que la doble barra invertida debemos utilizarla así para distinguir una sola barra invertida ya que justamente este símbolo es reservado por JSON. De nuevo, esto sólamente nos va a pasar si nuestro sistema operativo es Windows por el uso de la barra invertida para acceder a su arbol de directorios, y con sistemas basados en Unix como Linux y MacOSX sólo utilizaremos una barra diagonal normal sin ningún tipo de problemas.
+
+Luego de cerrar y abrir el editor, podremos acceder al terminal integrado compatible con los comandos de Git y así poder experimentar el real poder de este sistema de control de versiones desde la línea de comandos :muscle:.
+
+![Terminal integrado VSCode](../img/vscode-integrated-terminal.png)
+> __Imagen 12__: _Terminal integrado en Visual Studio Code._
+
+En el caso que en Windows queramos utilizar el terminal integrado con la línea de comandos del emulador de MS-DOS o con Microsoft Powershell, tenemos que utilizar alguna de las dos opciones en la configuración `settings.json` como se muestra a continuación:
+```json
+// MS-DOS Command Prompt Emulator
 "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
 // PowerShell
 "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-// Git Bash
-"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
-// Bash on Ubuntu (on Windows)
+```
+Con Microsoft Windows 10 podremos hacer uso de [Windows Subsystem for Linux (WSL)](https://es.wikipedia.org/wiki/Windows_Subsystem_for_Linux), que nos brinda la posibilidad de utilizar Linux dentro del propio sistema operativo de Microsoft, brindándonos toda la potencia y rendimiento de sistemas Unix en él. En este caso, la configuración del terminal integrado debería ser así:
+```json
+// Bash into Windows from WSL
 "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe"
 ```
+El recurso de WSL en Windows 10 podremos verlo en un documento aparte para ir mas en detalle con su parametrización, y contar con un entorno de desarrollo optimizado como los sistemas Unix.
 
-```git
-git config --global core.editor "code"
-```
--->
+[🡡 volver al inicio](#Elección-del-IDE)
