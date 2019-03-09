@@ -4,11 +4,11 @@
 
 <details>
     <summary>Tabla de contenido</summary>
-    <a href="#Elección-del-IDE"><strong>Elección del IDE</strong></a><br>
-    <a href="#Visual-Studio-Code">· Visual Studio Code</a><br>
+    <a href="#IDE-con-Visual-Studio-Code"><strong>IDE con Visual Studio Code</strong></a><br>
+    <a href="#Introducción-a-Visual-Studio-Code">· Introducción a Visual Studio Code</a><br>
 </details>
 
-# Elección del IDE
+# IDE con Visual Studio Code
 Indistintamente del proyecto que trabajemos, será necesario definir un marco de trabajo analizando las diferentes alternativas que tengamos para hacerlo. Antes de comenzar es importante tomarse el debido tiempo de análisis para evaluar las ventajas y desventajas de cada modelo, para que tengamos claro que podremos hacer y que no con la opción que definamos.
 
 En el caso de Git, ya hemos configurado desde el terminal de línea de comandos su parametrización inicial de forma local, y también nos conectamos de manera segura con nuestros repositorios remotos en GitHub/GitLab. De esta manera hemos configurado nuestro entorno de trabajo de manera centralizada y distribuida con Git.
@@ -23,26 +23,26 @@ Además de este escenario, tenemos la posibilidad de contar con [Entornos de Des
 
 Actualmente contamos con una infinidad de opciones de IDE's en el mercado, y debemos evaluar una opción u otra dependeniendo del lenguaje y del proyecto que vamos a realizar; por lo cual, en el caso que definamos trabajar con un IDE para documentar, será necesario analizar que opciones existentes trabajan con la tecnología de Markdown, filtrando por aquellos que se integren con Git y permitan conectarse con GitHub. En las próximas secciones del documento iremos viendo algunas alternativas que recomendamos, aunque igualmente la elección dependerá del gusto de cada uno.
 
-[🡡 volver al inicio](#Elección-del-IDE)
-## Visual Studio Code
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
+## Introducción a Visual Studio Code
 Desarrollado por Microsoft, [Visual Studio Code](https://code.visualstudio.com/) es uno de los IDE más utilizados hoy día por su amplio soporte a una gran cantidad de lenguajes de programación, frameworks, librerías y utilidades; además de ser de uso gratuito siguiendo el estandar de desarrollo de software libre, el cual es mantenido periódicamente con actualizaciones de versiones cada mes, y por sobretodo es multiplataforma tanto para sistemas Linux, Windows y MacOS.
 
 Por defecto este editor tiene una alta integración con la instalación local de Git, además de contar con una previsualización en vivo para editar documentos en Markdown y contando con extensiones para comunicarnos directamente con varias funciones de GitHub, convirtiéndolo en una de las mejores opciones para comenzar a trabajar con proyectos de esta índole.
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
 ### Descarga de la aplicación<!-- omit in toc -->
 Para descargarnos una copia nos dirigimos a su sitio de [descargas](https://code.visualstudio.com/#alt-downloads) y elegimos el sistema operativo que usamos. Podremos notar que su instalador no es de gran tamaño y no necesita de grandes [requerimientos](https://code.visualstudio.com/docs/supporting/requirements) para poder operar con él.
 
 ![Descarga de Visual Studio Code](../img/vscode-download.png)
 > __Imagen 2__: _Descarga de Visual Studio Code para diferentes sistemas operativos._
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
 ### Instalación<!-- omit in toc -->
 Las opciones de descarga de Visual Studio Code en su sitio público son archivos auto-instalables, los cuáles podrán ser gestionados por medio de los respectivos administradores de paquetes de instalación que incluye cada sistema operativo, por lo cual no tendremos inconvenientes durante su instalación y esta será prácticamente guíada.
 
 También contamos con la posibilidad de descargarnos el código de desarrollo de la propia aplicación alojada en el [repositorio de Visual Studio Code en GitHub](https://github.com/Microsoft/vscode), y a partir de allí seguir los pasos para compilarlo en nuestras PC poder utilizarlo a partir del ensamblado creado. Esta opción solo es recomendable si queremos aprovechar las nuevas funcionalidades y correcciones que salen a diario (_aunque con poco testeo de las mismas_), o en el caso que directamente queramos contribuir con el desarrollo de la solución.
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
 ### Interfaz de usuario<!-- omit in toc -->
 Una vez instalado, ubicamos el acceso directo a la aplicacion y al inciarla nos dará la bienvenida como se muestra a continuación:
 
@@ -90,7 +90,7 @@ También podemos dividir nuestro espacio de trabajo en dos o más columnas para 
 
 > Podemos observar que al desplazarnos por la edición del documento en Markdown, la ventana de previsualización acompañará al desplazamiento, y lo mismo si empezamos a desplazar la previsualización, se desplazará del mismo modo el documento que estamos editando.
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
 ### Barra de comandos<!-- omit in toc -->
 La función más potente de Visual Studio Code la encontraremos en su barra de comandos. Podemos comparar el uso de esta barra con el recurso de la ejecución comandos desde la terminal, logrando ejecutar cualquier función de la propia aplicación desde allí mismo.
 
@@ -107,7 +107,7 @@ En la línea de comandos de la barra podremos ver el símbolo `>`, que significa
 Si borramos el símbolo `>`, podremos acceder a las funciones que no son propias a las ejecuciones de comandos del editor, y a partir de aquí tendremos disponible la ayuda de la barra de comandos utilizando el símbolo `?`, o  en su defecto, podremos buscar e ir a archivos dentro del directorio que estemos trabajando. Además tenemos la opción de ir a una línea específica dentro de nuestros archivos, y acceder a las distintas funciones del menú y de la barra lateral izquierda de la propia aplicación.
 > Si vamos adoptando el uso de la barra de comandos, nos va a permitir disminuir el uso del periférico del mouse, y podremos ser mas eficientes en lo que hagamos dentro del editor.
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
 ### Accesos mediante combinaciones de teclado<!-- omit in toc -->
 Otra de las funciones interesantes del editor de Visual Studio Code, son los accesos mediante el uso de la combinación de teclas del teclado. Si nos dirigimos a ícono de configuración del editor y accedemos a la opción de __Accesos de Teclado__, podremos ver una lista amplia de accesos, así como también modificarlas o agregar nuevas configuraciones a nuestro gusto. Como vimos en la sección anterior con la funcionalidad de la barra de comandos, podemos utilizar cualquiera de las opciones, comandos y utilidades que tenemos disponible en el editor, para asignarle una combinación de teclas y acceder más rápido a ellas. Seguramente nos puede servir de gran utilidad con las opciones que usemos con frecuencia.
 
@@ -116,7 +116,7 @@ Otra de las funciones interesantes del editor de Visual Studio Code, son los acc
 
 > En la imagen podemos ver una lista filtrada de combinaciones de teclado disponibles para acceder directamente a comandos de Git por ejemplo.
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
 ### Configuración del Terminal Integrado<!-- omit in toc -->
 En sistemas operativos de Microsoft, podremos acceder a una ventana integrada de la terminal de línea de comandos usando la combinación de teclas de `Ctrl` + `Ñ`, o desde el menú desplegable de __Terminal__. En el caso que lo queramos hacer con Linux, podemos configurar la misma combinación de teclado como vimos en la sección anterior, ya que no viene configurado por defecto.
 
@@ -150,4 +150,4 @@ Con Microsoft Windows 10 podremos hacer uso de [Windows Subsystem for Linux (WSL
 ```
 El recurso de WSL en Windows 10 podremos verlo en un documento aparte para ir mas en detalle con su parametrización, y contar con un entorno de desarrollo optimizado como los sistemas Unix.
 
-[🡡 volver al inicio](#Elección-del-IDE)
+[🡡 volver al inicio](#IDE-con-Visual-Studio-Code)
