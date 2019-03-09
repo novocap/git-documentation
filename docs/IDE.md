@@ -92,7 +92,12 @@ También podemos dividir nuestro espacio de trabajo en dos o más columnas para 
 
 [🡡 volver al inicio](#Elección-del-IDE)
 ### Barra de comandos<!-- omit in toc -->
-La función más potente de Visual Studio Code la encontraremos en su barra de comandos.
+La función más potente de Visual Studio Code la encontraremos en su barra de comandos. Podemos comparar al uso de esta barra con el uso de comandos desde la terminal, logrando hacer cualquier función de la aplicación desde allí.
+
+Entonces, para hacer uso de la barra debemos usar la combinación de las teclas `Ctrl` + `Shift` + `P` y se abrirá como se muestra en la imagen a continuación:
+
+![Barra de Comandos VSCode](../img/vscode-command-pallete.png)
+> __Imagen 8__: _Barra de comandos de Visual Studio Code._
 
 [🡡 volver al inicio](#Elección-del-IDE)
 ### Configuración del Terminal Integrado<!-- omit in toc -->
