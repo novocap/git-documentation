@@ -3,7 +3,7 @@
 [Indice del Repositorio](SUMMARY.md)
 
 <details>
-    <summary>Tabla de contenido del documento</summary>
+    <summary>Tabla de contenido</summary>
     <a href="#Conexión-SSH-con-GitHub"><strong>Conexión SSH con GitHub</strong></a><br>
     <a href="#Generar-una-llave-SSH">· Generar una llave SSH</a><br>
     <a href="#Agregar-la-llave-SSH-al-servidor-remoto">· Agregar la llave SSH al servidor remoto</a><br>
@@ -61,6 +61,10 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 En Git Bash con Windows se realiza con el siguiente comando:
 ```bash
 clip < ~/.ssh/id_rsa.pub
+```
+En su defecto se puede usar el siguiente comando para abrir el archivo en modo visor y de ahí seleccionar el contenido para copiarlo al portapapeles:
+```bash
+cat ~/.ssh/id_rsa.pub
 ```
 Al cargar el portapapeles con el contenido de la llave SSH, se deberá pegar su contenido dentro de [Settings / SSH and GPG Keys / New SSH Key](https://github.com/settings/ssh/new) dentro de Github, y [Settings / SSH Key](https://gitlab.com/profile/keys) dentro de GitLab.
 

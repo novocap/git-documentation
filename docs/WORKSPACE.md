@@ -10,6 +10,8 @@ Al finalizar la instalación de Git, se puede comprobar la correcta versión ins
 ```git
 git --version
 ```
+> Los comandos de Git, en Windows debemos ejecutarlos en el programa de __Git Bash__, mientras que en Linux directamente en el terminal.
+
 Como paso siguiente, es necesario configurar Git con la información del usuario:
 El Nombre y Apellido del usuario con el siguiente comando:
 ```git
@@ -25,6 +27,6 @@ git config --global core.editor deepin-editor
 ```
 Para ver las configuraciones globales de Git ya establecidas, se puede realizar de la siguiente forma:
 ```git
-git config --list
+git config --global --list
 ```
 [🡡 volver al inicio](#Guía-de-configuración-del-entorno-de-trabajo)

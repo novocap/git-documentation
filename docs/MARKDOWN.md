@@ -262,10 +262,12 @@ Fila1A    | Fila1B  | Fila1C
 Fila2A    | Fila2B  | Fila2C
 ```
 Una vez renderizado se podrá ver de la siguiente forma:
+
 Izquierda | Derecha | Centrado
 :-------- | ------: | :------:
 Fila1A    | Fila1B  | Fila1C
 Fila2A    | Fila2B  | Fila2C
+
 > De esta manera, vemos que con Markdown podemos conseguir tablas de forma simple y efectiva, contando con un formato determinado y con varias opciones de alineación. Si fuera necesario aplicar formatos más enriquecidos o contar con mas opciones, ya tenemos que pensar en una sintaxis en HTML con el etiquetado `<table>`, tema que hablaremos más adelante.
 
 [🡡 volver al inicio](#Sintaxis-documental-con-Markdown)

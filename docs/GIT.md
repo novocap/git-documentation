@@ -3,7 +3,7 @@
 [Indice del Repositorio](SUMMARY.md)
 
 <details>
-    <summary>Tabla de contenido del documento</summary>
+    <summary>Tabla de contenido</summary>
     <a href="#Fundamentos-de-Git-y-GitHub"><strong>Fundamentos de Git y GitHub</strong></a><br>
     <a href="#Working-Directory">· Working Directory</a><br>
     <a href="#Staging-Area">· Staging Area</a><br>
@@ -158,7 +158,17 @@ Aquí Git nos ayuda a identificar los cambios con colores, dejando el color de t
 > __Imagen 9__: _Sintaxis de cambios en Working Directory._
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
-#### Diferencias entre dos `commit`<!-- omit in toc -->
+#### Diferencias en Staging Area<!-- omit in toc -->
+Siguiendo la misma analogía que en el caso anterior, para ver la diferencias entre los archivos preparados en el Staging Area respecto a la última confirmación (`commit`) en Git Directory, lo podremos hacer agregando el parámtero `--staged` de la siguiente manera:
+```git
+git diff --staged
+```
+De esta manera, este comando nos brinda la posibilidad de analizar los cambios de una forma mas detallada que `git status`, y la sintaxis utilizada se mantiene de la misma manera:
+
+![Git diff staged](../img/git-diff-staged.png)
+> __Imagen 10__: _Sintaxis de cambios en Staging Area._
+
+#### Diferencias entre dos confirmaciones<!-- omit in toc -->
 El comando `git diff` también nos sirve para analizar las diferencias entre un `commit` y otro por medio del uso de parámteros adicionales. Igualmente tenemos dos opciones, analizar todos los archivos modificados entre los `commit` seleccionados, o simplemente ver el detalle de los cambios por archivo. La cantidad de parámetros que le indiquemos a `git diff` nos permitirá trabajar con diferentes niveles de análisis.
 
 Para analizar los cambios de un determinado `commit` comparado con el último `commit` efectuado en el repositorio, necesitaremos el códido `SHA-1` del `commit` elegido mas antiguo, que en este caso puede ser el código de 40 caracteres que nos muestra `git log`, o también podremos utilizar solamente la cabecera que nos muestra `git log --oneline`.  Vamos a utilizar el ejemplo de la __Imagen 7__ seleccionando la cabecera de un `SHA-1`, que en este caso utilizaremos el primer commit del repositorio con el código `2979aea`, para luego compararlo con el último `commit`, simplemente de la siguiente manera:
@@ -172,7 +182,7 @@ git diff 2979aea docs/SUMMARY.md
 En este caso podremos realizar un análisis particular sobre los cambios en el archivo `docs/SUMMARY.md` según se muestra en la siguiente imagen de ejemplo:
 
 ![Git diff ultimo commit](../img/git-diff-last-commit.png)
-> __Imagen 10__: _Git diff con el último `commit` por archivo._
+> __Imagen 11__: _Git diff con el último `commit` por archivo._
 
 Ahora bien, si necesitamos ver las diferencias entre dos `commit` donde ninguno sea el último, necesitaremos agregar el código `SHA-1` de cada uno de ellos como parámetro, seguido del tercer parámetro opcional para limitarlo por archivo si es que así lo quisierámos. De esta manera el comando es el siguiente:
 ```git
@@ -197,9 +207,9 @@ __¿Qué usos podemos darle a esta función?__ Particularmente se puede volver e
 En esta sección vamos a comprender el concepto de ramificación en Git, que resulta una de las funcionalidades mas increíbles de esta tecnología, la cual nos permite seguir un desarrollo no lineal que no nos obliga a mantenernos por un camino predefinido de trabajo. Esto significa que se puede ir ampliando la funcionalidad del repositorio sin seguir una ruta lineal de desarrollo, ramificando en cualquier momento de su historia, otra linea paralela que no interfiera a la ruta original, y que se pueda volver a adjuntar en el momento que se requiera. Además nos brinda la libertad de delegar los cambios sobre el proyecto en varias rutas, con el objetivo de aplicar nuevas funciones, efectuar correcciones, aplicar nuevos requerimientos, etcétera, sin tener que afectar la ruta principal del desarrollo. Una vez finalizados estos cambios se pueden adjuntar nuevamente a la ruta principal, haciendo testeos previos por ejemplo, o las acciones que se consideren realizar.
 
 ![Git branch y merge](../img/git-branch-merge.jpg)
-> __Imagen 11__: _Ramificación con Git._
+> __Imagen 12__: _Ramificación con Git._
 
-El concepto de ramificación en Git se gestiona por medio de la creación de _ramas_ virtuales dentro del repositorio, donde cada una contiene sus propios `commit` que originalmente vienen derivadas de otras ramas, tal y como se puede ver en el ejemplo de la __Imagen 10__. Esto quiere decir que en vez de trabajar en una única rama en nuestro repositorio, podremos crear una nueva rama en el momento de la historia que surja, y a partir de allí comenzar a desarrollar la nueva funcionalidad, corrección, requerimiento, etcétera.
+El concepto de ramificación en Git se gestiona por medio de la creación de _ramas_ virtuales dentro del repositorio, donde cada una contiene sus propios `commit` que originalmente vienen derivadas de otras ramas, tal y como se puede ver en el ejemplo de la __Imagen 12__. Esto quiere decir que en vez de trabajar en una única rama en nuestro repositorio, podremos crear una nueva rama en el momento de la historia que surja, y a partir de allí comenzar a desarrollar la nueva funcionalidad, corrección, requerimiento, etcétera.
 
 __¿Como funcionan las ramas en Git?__ Al comenzar a trabajar con Git, este nos crea una rama por defecto denominada `master`, la cual prácticamente se ha convertido en un estándar como la rama principal del repositorio, aunque de todas maneras se le puede cambiar el nombre o utilizar otra rama como la principal sin ningún tipo de problemas. A partir de allí, cada vez que sea necesario aplicar algún cambio en el repositorio, es conveniente crear una nueva rama para tal fin, y efectuar allí todos los `commit` que sean necesarios antes de aplicarlos a la rama principal.
 
@@ -245,12 +255,12 @@ Entonces para crear un repositorio central, se puede hacer de dos formas, creand
 La plataforma centralizada que elegimos para mantener el repositorio central es [GitHub](https://github.com) (_también puede ser GitLab, Bitbucket, Visual Studio Team Services, servidor propio, etcétera_) y para crear un nuevo reposositorio lo haremos dentro de las opciones del símbolo __+__ ubicado a la derecha de la barra de navegación:
 
 ![GitHub Nav Bar](../img/github-navbar.png)
-> __Imagen 12__: _Barra de navegación de GitHub._
+> __Imagen 13__: _Barra de navegación de GitHub._
 
 En nuestra cuenta de GitHub, tendremos la posibilidad de crear repositorios privados o públicos (_que dependerá del criterio personal  elegir alguna de las dos opciones_), definiendo su nombre sin espacios, y de manera opcional agregar un encabezado descriptivo del mismo, así como también la creación de la documentación principal con el archivo `README.md`, seguido de una licencia y de un archivo de configuración de GitHub denominado `.gitignore`, que al ser opcionales, también podremos agregarlos luego (_Estas opciones las conoceremos más adelante_).
 
 ![GitHub nuevo repositorio](../img/github-new-repo.png)
-> __Imagen 13__: _Crear nuevo repositorio en GitHub._
+> __Imagen 14__: _Crear nuevo repositorio en GitHub._
 
 Una vez creado el repositorio central tenemos dos opciones, una de ellas es conectarnos directamente al repositorio en cuestión con la función de _clonación_, que significa descargar una copia del mismo con el control de versiones de Git activado y con la dirección del repositorio remoto; o en su defecto conectar un repositorio local ya existente con el repositorio creado recientemente en GitHub. Entonces, para clonar el repositorio, nos dirigimos a la cerpeta donde tenemos almacenado todos los repositorios, y de paso lo vamos a hacer con el repositorio actual de la siguiente manera:
 ```git
@@ -284,19 +294,19 @@ En el ejemplo que estábamos trabajando en la sección anterior, vimos algunos c
 Anteriormente vimos que con el comando `git branch -l` podemos ver la lista de ramas que se encuentran en el repositorio, y una de ellas se encuentra marcada con el caracter especial __*__. Sin contar con un gran de nivel de detalle, esto significaría que la rama marcada es la rama activa, pero a nivel mas técnico, esta marca es un apuntador desde una rama oculta denominada `HEAD` hacia la rama indicada. 
 
 ![Git HEAD master](../img/git-head-master.png)
-> __Imagen 14__: _Rama `HEAD` apuntando a `master`._
+> __Imagen 15__: _Rama `HEAD` apuntando a `master`._
 
 Es decir, en realidad la rama activa siempre es la rama oculta, y lo que hace Git cuando queremos ir a otra rama no es cambiar la rama activa, sino que directamente cambia el apuntador de la rama oculta `HEAD`, dando una impresión de que nos hemos trasladado a otra rama.
 
 ![Git HEAD testing](../img/git-head-testing.png)
-> __Imagen 15__: _Rama `HEAD` apuntando a `testing`._
+> __Imagen 16__: _Rama `HEAD` apuntando a `testing`._
 
 [🡡 volver al inicio](#Fundamentos-de-Git-y-GitHub)
 #### Descarga de cambios desde GitHub<!-- omit in toc -->
 Suponiendo que nos encontramos en el caso de que nuestra copia local del repositorio está desactualizada frente a la versión más reciente existente en GitHub, entonces tenemos la tarea de actualizar nuestro repositorio local. También es importante evitar el desarrollo de nuevos cambios sobre una rama que se encuentre desactualizada, ya que vamos a generar conflictos al querer subirlos cuando estén listos. Para lograr esto, debemos estar al tanto de los cambios en el repositorio en GitHub, activando por ejemplo las notificaciones por correo electrónico en las [Configuraciones de notificación de GitHub](https://github.com/settings/notifications), según se muestra en la imagen a continuación:
 
 ![GitHub email notifications](../img/github-notifications.png)
-> __Imagen 16__: _Configuraciones de notificaciones por email en GitHub._
+> __Imagen 17__: _Configuraciones de notificaciones por email en GitHub._
 
 Se puede observar en la imagen que podemos tener una cuenta de email personal para las notificaciones generales de la cuenta, y una cuenta corporativa en el caso que tenegamos acceso a una organización en GitHub.
 
@@ -324,7 +334,7 @@ git push origin <--rama-a-subir-->
 Si no existe ningún conflicto, en GitHub se van a ver los cambios aplicados en la rama que hayamos creado para tal fin, según se ve en la siguiente imagen:
 
 ![Ramas en GitHub](../img/github-branchs.png)
-> __Imagen 17__: _Ver las ramas en GitHub._
+> __Imagen 18__: _Ver las ramas en GitHub._
 
 Ya contamos con los cambios en GitHub, pero la intención es que estos cambios se apliquen en la rama principal del repositorio, en este caso en la rama `master`. En la próxima sección veremos como hacerlo entrando a un circuito de revisión y aprobación de los cambios subidos.
 
@@ -335,26 +345,31 @@ GitHub introdujo una funcionalidad muy interesante para agregar un control de ca
 En términos prácticos, la función __Pull Request__ realiza una comparación de cambios entre dos ramas, mostrando las diferencias acumuladas entre los últimos `commit` de cada una, y los presenta en la interfaz de GitHub, para que una persona con rol de __Revisor__ los analice y los acepte si está de acuerdo con ello. Esta herramienta también le otorga al Revisor la posibilidad de solicitar mas cambios (_explicando el motivo_), ó en el peor de los casos, directamente rechazarlos. Entonces, continuando con el ejemplo, si acepta los cambios irán a la rama principal, y si los rechaza la rama principal no se verá afectada en absoluto.
 
 ![GitHub nuevo Pull Request](../img/github-new-pull-request.png)
-> __Imagen 18__: _Opción de nuevo Pull Request en GitHub._
+> __Imagen 19__: _Opción de nuevo Pull Request en GitHub._
 
 Para crear un __Pull Request__ en GitHub necesitamos contar con los cambios subidos en una rama para tal fin, y a partir de ahí en la opción de la izquierda, seleccionar la rama a la que queremos aplicarle los cambios, y del lado derecho elegir la rama que subimos con los cambios:
 
 ![GitHub comparación de Pull Request](../img/github-compare-pull-request.png)
-> __Imagen 19__: _Interfaz de seleccion de ramas en un Pull Request._
+> __Imagen 20__: _Interfaz de seleccion de ramas en un Pull Request._
 
 A partir de aquí tendremos un título y un mensaje que completar, explicando los cambios y sus motivos, para que luego un Revisor pueda tener una guía de que se trata el __Pull Request__. Hay casos donde contemos con alguna plantilla que nos solicitará información específica a explicar, pero en los casos que no la tengamos, cuanto mas específicos podemos ser, más fácil y rápido será analizar la propuesta de cambio.
 
 Al finalizar la edición del __Pull Request__ tendremos las opciones de __Create Pull Request__ (_crear_) y __Draft Pull Request__ (_borrador_), y la diferencia entre ellas es que la segunda quedará en modo borrador sin poder analizarse por el usuario Revisor, limitando la posibilidad de mezclar los cambios en la rama destino. El usuario que creó el __Pull Request__, puede pasar a modo de revisión cuando considere que terminó de efectuar los cambios, mientras que en la primer opción, ya lo puede analizar el usuario Revisor y emitir su veredicto.
 
 ![GitHub Draft Pull Request](../img/draft-pull-request.png)
-> __Imagen 20__: _Pull Request con opción en modo borrador._
+> __Imagen 21__: _Pull Request con opción en modo borrador._
 
 En el momento de la edición o cuando ya se haya creado el __Pull Request__, tendremos otras opciones a completar sobre la columna lateral derecha, ya sea elegir los usuarios revisores (_Reviewers_), quienes están asignados al mismo (_Assignees_), elegir las etiquetas para catalogarlo (_Labels_), informar a que proyectos pertenece (_Projects_), y cuáles objetivos de fechas estamos manejando (_Milestone_). Pasemos a ver un ejemplo de __Draf Pull Request__ con varias opciones cargadas, donde podremos ver debajo del mensaje que cargamos, cada uno de los `commit` involucrados, la cantidad de líneas adicionadas (_con el símbolo +_) y la cantidad de líneas descartadas (_con el símbolo -_). Este requerimiento de cambios también se convierte en una línea de conversación, y nos encontraremos en las demás pestañas con opciones avanzadas para ver en detalle cada `commit`, y los revisores pasarán a emitir los veredictos que consideren realizar. A partir de allí nos tocará intervenir cada vez que ellos lo soliciten, con el objeto de lograr que se acepte y se mezclen los cambios en la rama destino.
 
 ![GitHub opciones columna lateral](../img/github-pr-added.png)
-> __Imagen 21__: _Opciones de barra lateral derecha del Pull Request._
+> __Imagen 22__: _Opciones de barra lateral derecha del Pull Request._
 
 Al hacer la mezcla o al cancelarlo, podremos borrar la rama que veníamos trabajando, ya que los cambios aceptados ahora forman parte de la rama destino, y los cambios cancelados no serán aplicados.
+
+Un punto importante a verificar con el propietario del repositorio en GitHub/GitLab, es si cuenta con la rama principal protegida, ya que esto implicará que no se podrá realizar el __Merge Pull Request__ hasta que cumpla con ciertas consideraciones, como por ejemplo que cuente con una cantidad determinada de aprobaciones de Revisores, que todos los cambios estén firmados (_se recomienda seguir la [Confirmación de cambios firmados en Git](GPG.md)_), y por ejemplo quienes pueden aceptar los cambios del __Pull Request__, entre otras opciones. Aquí podemos ver un ejemplo de algunas de reglas de proteccion por rama:
+
+![GitHub branch protection rules](../img/github-protection-branch.png)
+> __Imagen 23__: _Ejemplo de reglas de protección de ramas en GitHub._
 
 Hasta aquí hemos realizado un circuito completo de cambios en el repositorio aprovechando un gran abanico de funciones que tenemos con las plataformas de Git y Github.
 
