@@ -5,12 +5,25 @@
 CODEOWNERS              @ChristianGrimberg
 SUPPORT.md              @ChristianGrimberg
 
-# Los cambios en los templates de documentación están protegidos por:
+# Los cambios en las plantillas de documentación están protegidos por:
 *_TEMPLATE.md           @ChristianGrimberg
+.github/PULL_REQUEST_TEMPLATE.md @ChristianGrimberg
+.github/ISSUE_TEMPLATE.md        @ChristianGrimberg
 
-# Los cambios en las configuraciones de los editores de código están protegidos por:
+# Los cambios en la configuración de los editores de código están protegidos por:
 .vscode/*               @ChristianGrimberg
-css/markdown-styles.css @ChristianGrimberg
 
 # Los cambios en los estilos CSS están protegidos por:
 *.css                   @ChristianGrimberg
+css/markdown-styles.css @ChristianGrimberg
+
+# Los cambios en el flujo agentico del repositorio están protegidos por:
+AGENTS.md               @ChristianGrimberg
+.opencode/agent/*       @ChristianGrimberg
+.opencode/skill/*       @ChristianGrimberg
+.opencode/command/*     @ChristianGrimberg
+opencode.json           @ChristianGrimberg
+
+# Los cambios en la configuración del sitio y dependencias están protegidos por:
+mkdocs.yml              @ChristianGrimberg
+requirements.txt        @ChristianGrimberg
