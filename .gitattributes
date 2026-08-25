@@ -11,5 +11,3 @@ opencode.json           export-ignore
 AGENTS.md               export-ignore
 mkdocs.yml              export-ignore
 requirements.txt        export-ignore
-css/markdown-styles.css export-ignore
-css/                    linguist-vendored
