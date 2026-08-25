@@ -1,0 +1,31 @@
+# =============================================================================
+# Dependencias de Python para construir el sitio de MkDocs.
+# Instalación local:
+#   python -m venv .venv
+#   source .venv/bin/activate   (o .venv\Scripts\Activate.ps1 en Windows)
+#   pip install -r requirements.txt
+# =============================================================================
+
+# MkDocs core
+mkdocs>=1.6,<2.0
+
+# Tema Material (incluye sus propias dependencias)
+mkdocs-material>=9.5,<10.0
+
+# Internacionalización (ES / EN con estructura de carpetas)
+mkdocs-static-i18n>=1.2,<2.0
+
+# Extensiones de Markdown (admonitions, tabs, superfences, etc.)
+pymdown-extensions>=10.7,<11.0
+
+# Fecha de última actualización (basada en git)
+mkdocs-git-revision-date-localized-plugin>=1.2,<2.0
+
+# Minificación del HTML de salida
+mkdocs-minify-plugin>=1.0,<2.0
+
+# Pygments (resaltado de sintaxis en code blocks)
+pygments>=2.18,<3.0
+
+# Babel para formateo de fechas
+babel>=2.14,<3.0
