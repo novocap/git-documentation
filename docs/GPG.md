@@ -66,7 +66,7 @@ En GitHub nos dirigimos a [Settings -> SSH and GPG keys -> New GPG Key](https://
 
 [🡡 volver al inicio](#Confirmación-de-cambios-firmados-en-Git)
 ## Vincular la llave GPG a Git
-En este paso necesitaremos indicarle a nuestro entorno local con Git que llave GPG tenemos creada para que podamos firmar y encriptar nuestros ``commit` por ejemplo. Para esto necesitaremos de nuevo el ID de la llave:
+En este paso necesitaremos indicarle a nuestro entorno local con Git que llave GPG tenemos creada para que podamos firmar y encriptar nuestros `commit` por ejemplo. Para esto necesitaremos de nuevo el ID de la llave:
 ```bash
 gpg --list-secret-keys --keyid-format LONG
 ```
