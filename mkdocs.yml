@@ -1,0 +1,204 @@
+# =============================================================================
+# Configuración de MkDocs Material para novocap/git-documentation
+# =============================================================================
+# Documentación: https://www.mkdocs.org
+# Tema:          https://squidfunk.github.io/mkdocs-material
+# i18n:          https://github.com/ultrabug/mkdocs-static-i18n
+# =============================================================================
+
+site_name: Guía de aprendizaje de Git y GitHub
+site_description: >-
+  Documentación bilingüe (español e inglés) sobre Git, GitHub y herramientas
+  asociadas: SSH, GPG, Markdown e IDEs.
+site_author: ChristianGrimberg
+site_url: https://novocap.github.io/git-documentation/
+
+repo_name: novocap/git-documentation
+repo_url: https://github.com/novocap/git-documentation
+edit_uri: edit/master/docs/
+
+copyright: >-
+  Copyright © 2019-2026 Novocap S.A. — Distribuido bajo licencia MIT.
+
+# -----------------------------------------------------------------------------
+# Directorio de documentación
+# -----------------------------------------------------------------------------
+docs_dir: docs
+
+# -----------------------------------------------------------------------------
+# Tema Material
+# -----------------------------------------------------------------------------
+theme:
+  name: material
+  language: es
+  features:
+    # Navegación
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    # Búsqueda
+    - search.suggest
+    - search.highlight
+    - search.share
+    # Contenido
+    - content.code.copy
+    - content.code.annotate
+    - content.code.link
+    - content.tabs.link
+    - content.tooltips
+    - content.action.edit
+    - toc.follow
+  palette:
+    # Esquema claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    # Esquema oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+# -----------------------------------------------------------------------------
+# Plugins
+# -----------------------------------------------------------------------------
+plugins:
+  # Búsqueda bilingüe
+  - search:
+      lang:
+        - es
+        - en
+  # Internacionalización ES / EN con estructura de carpetas
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: es
+          name: Español
+          build: true
+          default: true
+          site_name: Guía de aprendizaje de Git y GitHub
+          nav_translations:
+            - Inicio
+            - Entorno de trabajo
+            - Conexión SSH con GitHub
+            - Fundamentos de Git y GitHub
+            - Confirmación de cambios firmados en Git
+            - Práctica
+            - IDE con Visual Studio Code
+            - Sintaxis documental con Markdown
+            - Glosario
+        - locale: en
+          name: English
+          build: true
+          site_name: Git and GitHub Learning Guide
+          nav_translations:
+            - Home
+            - Workspace
+            - SSH Connection with GitHub
+            - Git and GitHub Fundamentals
+            - Signed commits in Git
+            - Practice
+            - VS Code IDE
+            - Markdown syntax
+            - Glossary
+      fallback_to_default: true
+  # Fecha de última actualización (git-based)
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+# -----------------------------------------------------------------------------
+# Extensiones de Markdown
+# -----------------------------------------------------------------------------
+markdown_extensions:
+  # Estándar de Python-Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Enlace permanente a esta sección
+      toc_depth: 4
+  # PyMdown Extensions (colección oficial de Material)
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: false
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# -----------------------------------------------------------------------------
+# Navegación
+# -----------------------------------------------------------------------------
+nav:
+  - Inicio: index.md
+  - Entorno de trabajo: workspace.md
+  - Conexión SSH con GitHub: ssh.md
+  - Fundamentos de Git y GitHub:
+      - Conceptos: git/index.md
+      - Confirmación de cambios firmados: git/gpg.md
+  - Práctica: practice/index.md
+  - Herramientas:
+      - IDE con Visual Studio Code: tools/ide.md
+      - Sintaxis documental con Markdown: tools/markdown.md
+  - Glosario: glosario.md
+
+# -----------------------------------------------------------------------------
+# Extras (markdown adicional por página)
+# -----------------------------------------------------------------------------
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/novocap
+      name: novocap en GitHub
+  generator: false
+
+# -----------------------------------------------------------------------------
+# Opciones estrictas (recomendado para CI)
+# -----------------------------------------------------------------------------
+strict: true
