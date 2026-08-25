@@ -1,0 +1,57 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md"],
+  "skills": {
+    "paths": [".opencode/skills"]
+  },
+  "agent": {
+    "redactor-es": {
+      "description": "Redacta o edita documentación en español rioplatense siguiendo las convenciones del repositorio.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "allow",
+        "bash": "ask"
+      }
+    },
+    "traductor-en": {
+      "description": "Traduce contenido de español a inglés manteniendo el mirror docs/es/ ↔ docs/en/.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "allow",
+        "bash": "ask"
+      }
+    },
+    "lint-ci": {
+      "description": "Ejecuta markdownlint, lychee y codespell, y reporta los hallazgos en formato tabular.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "allow"
+      }
+    },
+    "mkdocs-builder": {
+      "description": "Valida mkdocs build --strict y sirve el sitio localmente para detectar páginas huérfanas y anchors rotos.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "allow"
+      }
+    },
+    "revisor-pr": {
+      "description": "Prepara Pull Requests en español y en estado draft, completando la plantilla y el checklist.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask"
+      }
+    },
+    "gitmoji-commiter": {
+      "description": "Sugiere mensajes de commit con gitmoji apropiado según los archivos modificados.",
+      "mode": "subagent",
+      "permission": {
+        "edit": "ask",
+        "bash": "ask"
+      }
+    }
+  }
+}

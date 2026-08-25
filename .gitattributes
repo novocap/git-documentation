@@ -6,5 +6,10 @@ SUPPORT.md              export-ignore
 *_TEMPLATE.md           export-ignore
 .github/                export-ignore
 .vscode/                export-ignore
+.opencode/              export-ignore
+opencode.json           export-ignore
+AGENTS.md               export-ignore
+mkdocs.yml              export-ignore
+requirements.txt        export-ignore
 css/markdown-styles.css export-ignore
 css/                    linguist-vendored
