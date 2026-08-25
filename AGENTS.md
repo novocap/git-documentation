@@ -30,9 +30,8 @@ Los agentes de IA que operen aquí deben:
 ```
 git-documentation/
 ├── AGENTS.md                   ← este archivo
-├── CHANGELOG.md                ← historial de versiones
 ├── CODE_OF_CONDUCT.md          ← código de conducta de la comunidad
-├── CONTRIBUTING.md             ← guía para贡献 humanos
+├── CONTRIBUTING.md             ← guía para contribuciones humanas
 ├── LICENSE                     ← MIT
 ├── README.md                   ← entrada al repositorio y al sitio
 ├── mkdocs.yml                  ← configuración de MkDocs Material
@@ -267,7 +266,7 @@ markdownlint-cli2 "docs/**/*.md" "**/*.md" "#site/**" "#node_modules/**"
 lychee --offline --include-fragments docs/ README.md
 
 # Spell check
-codespell docs/ README.md CHANGELOG.md
+codespell docs/ README.md AGENTS.md
 ```
 
 Si alguno falla, **no abrir el PR** hasta corregirlo.
@@ -286,7 +285,7 @@ Si alguno falla, **no abrir el PR** hasta corregirlo.
 | 3c | `feat/fase-3c-fundamentos-en` | `:globe_with_meridians: Fase 3c · Traducir fundamentos (EN)` | Espejo EN de 3a. |
 | 3d | `feat/fase-3d-herramientas-en` | `:globe_with_meridians: Fase 3d · Traducir herramientas (EN)` | Espejo EN de 3b. |
 | 4 | `chore/fase-4-capturas` | `:camera_flash: Fase 4 · Reemplazar capturas obsoletas` | Regenerar `img/` con UI 2024+. |
-| 5 | `ci/fase-5-workflows-y-pages` | `:construction_worker: Fase 5 · Workflows CI/CD + Pages` | `ci.yml`, `deploy.yml`, `.markdownlint.json`, `CHANGELOG.md` v1.0.0. |
+| 5 | `ci/fase-5-workflows-y-pages` | `:construction_worker: Fase 5 · Workflows CI/CD + Pages` | `ci.yml`, `deploy.yml`, `.markdownlint.json`. |
 | 6 | `chore/fase-6-proteccion-master` | `:lock: Fase 6 · Activar protección de master y Pages` | Script `gh api` con reglas, habilitar Pages. |
 
 ---

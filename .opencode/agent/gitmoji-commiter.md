@@ -31,7 +31,7 @@ master..HEAD` o lo que el orquestador te pase), proponer:
 | `img/**` | `:camera_flash:` |
 | `.github/workflows/*`, `Dockerfile`, `*.yml` de infra | `:construction_worker:` |
 | `CODEOWNERS`, protecciones, secrets, `.gitignore` | `:lock:` |
-| `AGENTS.md`, `README.md`, `LICENSE`, `CHANGELOG.md` | `:book:` |
+| `AGENTS.md`, `README.md`, `LICENSE` | `:book:` |
 | Fix de bug evidente | `:bug:` |
 | Borrado de archivo | `:fire:` |
 | Re-formateo sin cambio lógico | `:art:` |

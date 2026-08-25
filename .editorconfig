@@ -1,0 +1,32 @@
+# Estilo de archivo uniforme para todos los editores
+# https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Markdown: dos espacios al final de línea indican <br>, no se recortan
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+# YAML / JSON: indentación de 2 espacios (estándar)
+[*.{yml,yaml}]
+indent_size = 2
+
+[*.{json,jsonc}]
+indent_size = 2
+
+# Bash / shell scripts
+[*.sh]
+indent_size = 4
+
+# Makefile requiere tabs
+[Makefile]
+indent_style = tab

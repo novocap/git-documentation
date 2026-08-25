@@ -126,7 +126,7 @@ Antes de invocar a `revisor-pr`, correr:
 - [ ] `mkdocs build --strict` → exit code 0.
 - [ ] `markdownlint-cli2 "**/*.md"` → sin errores.
 - [ ] `lychee --offline docs/ README.md` → sin enlaces rotos.
-- [ ] `codespell docs/ README.md CHANGELOG.md` → sin typos.
+- [ ] `codespell docs/ README.md AGENTS.md` → sin typos.
 - [ ] Mirror `docs/es/` ↔ `docs/en/` validado con la skill
       `i18n-mirror-check`.
 
