@@ -41,7 +41,7 @@ Convención oficial de commits del repositorio
 | 🐛 | `:bug:` | Corrección de bug | `:bug: Arreglar build en Windows por paths` |
 | 🔥 | `:fire:` | Eliminar código o archivo | `:fire: Eliminar carpeta docs/ legacy` |
 | 🎨 | `:art:` | Mejorar formato o estilo | `:art: Reordenar admonitions en IDE.md` |
-| 📝 | `:memo:` | Documentación menor | `:memo: Actualizar CHANGELOG v1.0.0` |
+| 📝 | `:memo:` | Documentación menor | `:memo: Actualizar notas de release v1.0.0` |
 | 🚀 | `:rocket:` | Deploy, release, publicación | `:rocket: Publicar sitio en GitHub Pages` |
 | ✅ | `:test:` | Tests | `:test: Agregar tests para i18n-mirror-check` |
 | ⬆️ | `:bump:` | Actualizar dependencias | `:bump: Actualizar mkdocs-material a 9.5` |

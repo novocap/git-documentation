@@ -35,7 +35,7 @@ markdownlint-cli2 "docs/**/*.md" "**/*.md" "#site/**" "#node_modules/**"
 lychee --offline --include-fragments docs/ README.md AGENTS.md
 
 # Ortografía
-codespell docs/ README.md CHANGELOG.md AGENTS.md
+codespell docs/ README.md AGENTS.md
 
 # (opcional) vale
 vale --config=.vale.ini docs/

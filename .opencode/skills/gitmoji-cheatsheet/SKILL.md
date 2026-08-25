@@ -30,7 +30,7 @@ Tabla rápida de los gitmojis más frecuentes en
 |---|---|---|---|
 | 🔥 | `:fire:` | Eliminar archivo o código | `:fire: Eliminar docs/ legacy` |
 | 🎨 | `:art:` | Mejorar formato o estilo | `:art: Reordenar admonitions en IDE.md` |
-| 📝 | `:memo:` | Documentación menor | `:memo: Actualizar CHANGELOG v1.0.0` |
+| 📝 | `:memo:` | Documentación menor | `:memo: Actualizar notas de release v1.0.0` |
 | ✅ | `:test:` | Tests | `:test: Agregar tests para i18n-mirror-check` |
 | ⬆️ | `:bump:` | Actualizar dependencias | `:bump: Actualizar mkdocs-material a 9.5` |
 | ⚡ | `:zap:` | Performance | `:zap: Optimizar carga de imágenes` |
@@ -44,7 +44,7 @@ Tabla rápida de los gitmojis más frecuentes en
 ```text
 ¿Estás tocando...?
 
-AGENTS.md, README.md, LICENSE, CHANGELOG.md
+AGENTS.md, README.md, LICENSE
   → :book:
 
 docs/**/*.md (solo documentación)
@@ -104,7 +104,7 @@ Fix de un bug evidente
 :bump: Actualizar mkdocs-material a 9.5
 :fire: Eliminar docs/ legacy tras migración a MkDocs
 :truck: Mover docs/SSH.md a docs/es/ssh.md
-:memo: Actualizar CHANGELOG v1.0.0
+:memo: Actualizar notas de release v1.0.0
 ```
 
 ## Anti-ejemplos (no usar)
