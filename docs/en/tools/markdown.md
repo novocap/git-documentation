@@ -57,7 +57,7 @@ Inline formatting:
 | `_italic_` | _italic_ |
 | `~~strikethrough~~` | ~~strikethrough~~ |
 | `` `code` `` | `code` |
-| `[text](url)` | [text](url) |
+| `[text](url)` | [text](https://example.com) |
 
 !!! tip "Underline"
     Markdown has no underline syntax because editors reserve it for

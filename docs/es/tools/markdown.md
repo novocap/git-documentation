@@ -58,7 +58,7 @@ Formato inline:
 | `_cursiva_` | _cursiva_ |
 | `~~tachado~~` | ~~tachado~~ |
 | `` `código` `` | `código` |
-| `[texto](url)` | [texto](url) |
+| `[texto](url)` | [texto](https://ejemplo.com) |
 
 !!! tip "Subrayado"
     Markdown no tiene sintaxis para subrayado porque los editores lo

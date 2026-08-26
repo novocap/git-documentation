@@ -51,13 +51,14 @@ y está disponible en español e inglés.
    `master`.
 
 Para preguntas o discutir ideas grandes, abrí una
-[Discussion](../../discussions) en lugar de un Issue.
+[Discussion en GitHub](https://github.com/novocap/git-documentation/discussions)
+en lugar de un Issue.
 
 ## Licencia
 
 - **Código y texto**: MIT (ver [LICENSE](LICENSE)).
-- **Imágenes en `img/`**: CC BY 4.0 (ver
-  [`img/ATTRIBUTIONS.md`](img/ATTRIBUTIONS.md)).
+- **Imágenes en `docs/img/`**: CC BY 4.0 (ver
+  [`docs/img/ATTRIBUTIONS.md`](docs/img/ATTRIBUTIONS.md)).
 
 ---
 

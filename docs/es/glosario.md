@@ -111,5 +111,5 @@ su contraparte en inglés y una breve definición.
 
 ## Próximo paso
 
-Volvé al [Inicio](../index.md) para repasar todo el material o
+Volvé al [Inicio](index.md) para repasar todo el material o
 explorar los capítulos específicos desde el menú de navegación.

@@ -21,7 +21,7 @@ guía operativa.
 
 ## Estructura de archivos
 
-```
+```text
 .
 ├── AGENTS.md                  ← Contrato del flujo agentico (LEER)
 ├── CODE_OF_CONDUCT.md         ← Código de conducta
