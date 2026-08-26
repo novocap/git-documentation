@@ -1,0 +1,80 @@
+name: Setup Branch Protection
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: Rama a proteger (default: master)
+        required: false
+        default: master
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  apply-protection:
+    name: Apply master branch protection
+    runs-on: ubuntu-latest
+    environment:
+      name: setup-branch-protection
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup branch
+        id: set-branch
+        run: echo "branch=${{ github.event.inputs.branch }}" >> "$GITHUB_OUTPUT"
+
+      - name: Apply protection rules via gh api
+        env:
+          BRANCH: ${{ steps.set-branch.outputs.branch }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          # Mismos status checks que .github/workflows/ci.yml
+          STATUS_CHECKS=("lint-markdown" "check-links" "spell-check" "build")
+
+          # Construir array JSON inline
+          CONTEXTS=$(printf '"%s",' "${STATUS_CHECKS[@]}" | sed 's/,$//')
+
+          cat > /tmp/payload.json <<EOF
+          {
+            "required_status_checks": {
+              "strict": true,
+              "contexts": [${CONTEXTS}]
+            },
+            "enforce_admins": false,
+            "required_pull_request_reviews": null,
+            "restrictions": null,
+            "required_linear_history": true,
+            "allow_force_pushes": false,
+            "allow_deletions": false,
+            "required_conversation_resolution": true,
+            "block_creations": false,
+            "lock_branch": false,
+            "allow_fork_syncing": false
+          }
+          EOF
+
+          echo "==> Payload:"
+          cat /tmp/payload.json
+          echo
+          echo "==> Applying protection to ${BRANCH}..."
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${GITHUB_REPOSITORY}/branches/${BRANCH}/protection" \
+            --input /tmp/payload.json
+
+          echo "==> Done. Verify with:"
+          echo "    gh api /repos/${GITHUB_REPOSITORY}/branches/${BRANCH}/protection | jq ."
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Branch protection setup" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Branch: \`${{ steps.set-branch.outputs.branch }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "Conclusion: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
