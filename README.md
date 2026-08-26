@@ -21,7 +21,7 @@ y está disponible en español e inglés.
 
 ## Estructura del proyecto
 
-```
+```text
 .
 ├── AGENTS.md              # Contrato operativo agente-humano
 ├── CODE_OF_CONDUCT.md     # Código de conducta (Contributor Covenant v2.1)
