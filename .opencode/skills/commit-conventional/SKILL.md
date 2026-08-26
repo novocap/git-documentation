@@ -6,7 +6,7 @@ description: Tabla completa de gitmojis aprobados en este repositorio y formato 
 # Skill: commit-conventional
 
 Convención oficial de commits del repositorio
-`novocap/git-documentation`. Todo commit debe respetar estas reglas.
+`novocap/Novocap.Learning.Git.Docs`. Todo commit debe respetar estas reglas.
 
 ## Formato obligatorio
 

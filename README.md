@@ -3,21 +3,21 @@
 > Documentación bilingüe (español / inglés) sobre Git, GitHub, SSH,
 > GPG, Markdown y VSCode. Construida con [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
-[![CI](https://img.shields.io/github/actions/workflow/status/novocap/git-documentation/ci.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/novocap/git-documentation/actions/workflows/ci.yml)
-[![Deploy to GitHub Pages](https://img.shields.io/github/actions/workflow/status/novocap/git-documentation/deploy.yml?branch=main&style=flat-square&logo=github&label=Deploy)](https://github.com/novocap/git-documentation/actions/workflows/deploy.yml)
-[![License](https://img.shields.io/github/license/novocap/git-documentation?style=flat-square)](https://github.com/novocap/git-documentation/blob/main/LICENSE)
-[![Latest release](https://img.shields.io/github/v/release/novocap/git-documentation?style=flat-square&sort=semver)](https://github.com/novocap/git-documentation/releases/latest)
+[![CI](https://img.shields.io/github/actions/workflow/status/novocap/Novocap.Learning.Git.Docs/ci.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/novocap/Novocap.Learning.Git.Docs/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://img.shields.io/github/actions/workflow/status/novocap/Novocap.Learning.Git.Docs/deploy.yml?branch=main&style=flat-square&logo=github&label=Deploy)](https://github.com/novocap/Novocap.Learning.Git.Docs/actions/workflows/deploy.yml)
+[![License](https://img.shields.io/github/license/novocap/Novocap.Learning.Git.Docs?style=flat-square)](https://github.com/novocap/Novocap.Learning.Git.Docs/blob/main/LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/novocap/Novocap.Learning.Git.Docs?style=flat-square&sort=semver)](https://github.com/novocap/Novocap.Learning.Git.Docs/releases/latest)
 
 :wave: Bienvenido al repositorio de guía de aprendizaje y práctica
 con Git & GitHub. El sitio se publica en
-**[novocap.github.io/git-documentation](https://novocap.github.io/git-documentation)**
+**[novocap.github.io/Novocap.Learning.Git.Docs](https://novocap.github.io/Novocap.Learning.Git.Docs)**
 y está disponible en español e inglés.
 
 ## Empezá por acá
 
-- 🇪🇸 [Inicio (Español)](https://novocap.github.io/git-documentation/)
-- 🇺🇸 [Home (English)](https://novocap.github.io/git-documentation/en/)
-- 📖 [Repositorio en GitHub](https://github.com/novocap/git-documentation)
+- 🇪🇸 [Inicio (Español)](https://novocap.github.io/Novocap.Learning.Git.Docs/)
+- 🇺🇸 [Home (English)](https://novocap.github.io/Novocap.Learning.Git.Docs/en/)
+- 📖 [Repositorio en GitHub](https://github.com/novocap/Novocap.Learning.Git.Docs)
 
 ## Estructura del proyecto
 
@@ -51,7 +51,7 @@ y está disponible en español e inglés.
    `main`.
 
 Para preguntas o discutir ideas grandes, abrí una
-[Discussion en GitHub](https://github.com/novocap/git-documentation/discussions)
+[Discussion en GitHub](https://github.com/novocap/Novocap.Learning.Git.Docs/discussions)
 en lugar de un Issue.
 
 ## Licencia

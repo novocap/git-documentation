@@ -4,13 +4,13 @@
 Git y GitHub.
 
 Este sitio es el espejo renderizado de la documentación mantenida en el
-repositorio [novocap/git-documentation][repo]. La documentación se
+repositorio [novocap/Novocap.Learning.Git.Docs][repo]. La documentación se
 publica en **dos idiomas**:
 
 - **Español** (idioma por defecto).
 - **English** (traducción paralela).
 
-[repo]: https://github.com/novocap/git-documentation
+[repo]: https://github.com/novocap/Novocap.Learning.Git.Docs
 
 ## ¿Qué vas a encontrar?
 
@@ -38,7 +38,7 @@ herramientas asociadas (SSH, GPG, Markdown e IDEs).
 ## Cómo contribuir
 
 La documentación acepta contribuciones vía Pull Request. El flujo completo
-está documentado en [`AGENTS.md`](https://github.com/novocap/git-documentation/blob/main/AGENTS.md)
+está documentado en [`AGENTS.md`](https://github.com/novocap/Novocap.Learning.Git.Docs/blob/main/AGENTS.md)
 (en español) e incluye:
 
 1. Convención de commits con **gitmoji**.

@@ -3,13 +3,13 @@
 :wave: Welcome to the Git and GitHub learning and practice guide.
 
 This site is the rendered mirror of the documentation maintained in the
-[novocap/git-documentation][repo] repository. The docs are published in
+[novocap/Novocap.Learning.Git.Docs][repo] repository. The docs are published in
 **two languages**:
 
 - **English** (this language).
 - **Spanish** (default language, parallel translation).
 
-[repo]: https://github.com/novocap/git-documentation
+[repo]: https://github.com/novocap/Novocap.Learning.Git.Docs
 
 ## What you'll find
 
@@ -37,7 +37,7 @@ practices with associated tools (SSH, GPG, Markdown, and IDEs).
 ## How to contribute
 
 Documentation accepts contributions via Pull Request. The full workflow
-is documented in [`AGENTS.md`](https://github.com/novocap/git-documentation/blob/main/AGENTS.md)
+is documented in [`AGENTS.md`](https://github.com/novocap/Novocap.Learning.Git.Docs/blob/main/AGENTS.md)
 (in Spanish) and includes:
 
 1. Gitmoji commit convention.

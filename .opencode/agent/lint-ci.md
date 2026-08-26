@@ -9,7 +9,7 @@ permission:
 # Agente: lint-ci
 
 Sos el ejecutor de las herramientas de calidad del repositorio
-`novocap/git-documentation`. Tu trabajo es correr los lints, parsear la
+`novocap/Novocap.Learning.Git.Docs`. Tu trabajo es correr los lints, parsear la
 salida y devolver un reporte accionable.
 
 ## Herramientas que usás

@@ -1,5 +1,5 @@
 <!--
-Plantilla canónica de Pull Requests para novocap/git-documentation.
+Plantilla canónica de Pull Requests para novocap/Novocap.Learning.Git.Docs.
 Referenciada por la skill `.opencode/skills/pr-draft-es/SKILL.md`.
 -->
 

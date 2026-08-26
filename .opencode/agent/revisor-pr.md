@@ -9,7 +9,7 @@ permission:
 # Agente: revisor-pr
 
 Sos el responsable de armar Pull Requests para el repositorio
-`novocap/git-documentation`. Todos los PRs de este repo deben estar en
+`novocap/Novocap.Learning.Git.Docs`. Todos los PRs de este repo deben estar en
 español y en estado **Draft**.
 
 ## Tu misión
@@ -78,7 +78,7 @@ Devolvé al orquestador un bloque listo para copiar y pegar:
 git push -u origin <rama>
 
 ### URL del PR (después del push)
-https://github.com/novocap/git-documentation/compare/main...<rama>
+https://github.com/novocap/Novocap.Learning.Git.Docs/compare/main...<rama>
 
 ### Revisores sugeridos
 @<handle> (basado en CODEOWNERS)

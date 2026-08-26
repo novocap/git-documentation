@@ -3,7 +3,7 @@
 ## Nuestro compromiso
 
 En el interés de fomentar un ambiente abierto y acogedor, nosotros,
-los colaboradores y mantenedores de `novocap/git-documentation`, nos
+los colaboradores y mantenedores de `novocap/Novocap.Learning.Git.Docs`, nos
 comprometemos a hacer de la participación en nuestro proyecto y en
 nuestra comunidad una experiencia libre de acoso para todas las
 personas, sin distinción de edad, aspecto físico, discapacidad, etnia,

@@ -95,7 +95,7 @@ git commit -m "Agregar función de búsqueda"
     - Más detalles en la [skill `commit-conventional`][commit-skill]
       del repositorio (convención con gitmoji).
 
-[commit-skill]: https://github.com/novocap/git-documentation/blob/main/.opencode/skills/commit-conventional/SKILL.md
+[commit-skill]: https://github.com/novocap/Novocap.Learning.Git.Docs/blob/main/.opencode/skills/commit-conventional/SKILL.md
 
 Para revisar lo que va a incluirse antes de commitear:
 

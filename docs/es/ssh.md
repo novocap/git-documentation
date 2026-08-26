@@ -216,7 +216,7 @@ Si ya tenés repositorios clonados por HTTPS y querés pasarlos a SSH,
 solo cambiá el remote:
 
 ```bash
-git remote set-url origin git@github.com:novocap/git-documentation.git
+git remote set-url origin git@github.com:novocap/Novocap.Learning.Git.Docs.git
 ```
 
 Para verificar:
@@ -228,8 +228,8 @@ git remote -v
 Deberías ver:
 
 ```text
-origin  git@github.com:novocap/git-documentation.git (fetch)
-origin  git@github.com:novocap/git-documentation.git (push)
+origin  git@github.com:novocap/Novocap.Learning.Git.Docs.git (fetch)
+origin  git@github.com:novocap/Novocap.Learning.Git.Docs.git (push)
 ```
 
 ## 7. Múltiples cuentas (avanzado)

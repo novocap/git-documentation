@@ -7,7 +7,7 @@ description: Validar la sincronización entre docs/es/ y docs/en/. Detecta archi
 
 Procedimiento para validar el mirror entre los directorios
 `docs/es/` y `docs/en/` del repositorio
-`novocap/git-documentation`.
+`novocap/Novocap.Learning.Git.Docs`.
 
 ## Reglas de mirror
 

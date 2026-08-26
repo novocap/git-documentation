@@ -1,5 +1,5 @@
 <!--
-Plantilla por defecto para nuevos Issues en novocap/git-documentation.
+Plantilla por defecto para nuevos Issues en novocap/Novocap.Learning.Git.Docs.
 Si GitHub detecta esta plantilla, la usará como cuerpo inicial de los
 issues que se abran sin plantilla específica.
 -->

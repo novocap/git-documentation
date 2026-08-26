@@ -6,7 +6,7 @@ description: Payload JSON exacto y comandos gh api para activar la protección d
 # Skill: branch-protection-rules
 
 Procedimiento para configurar la protección de la rama `main` en
-`novocap/git-documentation`. **No se puede hacer con un PR**: requiere
+`novocap/Novocap.Learning.Git.Docs`. **No se puede hacer con un PR**: requiere
 ejecutar `gh api` con permisos de admin desde la terminal del humano,
 o disparar el workflow `setup-branch-protection` desde la UI de
 GitHub Actions.
@@ -20,7 +20,7 @@ GitHub Actions.
 
   ```bash
   gh auth status
-  gh repo set-default novocap/git-documentation
+  gh repo set-default novocap/Novocap.Learning.Git.Docs
   ```
 
 - El repo debe existir y vos debes ser admin o tener la permission
@@ -29,7 +29,7 @@ GitHub Actions.
 ### Vía workflow (recomendada)
 
 1. Mergea el PR de Fase 6 (`chore/fase-6-proteccion-main`) a `main`.
-2. Andá a https://github.com/novocap/git-documentation/actions/workflows/setup-branch-protection.yml
+2. Andá a https://github.com/novocap/Novocap.Learning.Git.Docs/actions/workflows/setup-branch-protection.yml
 3. Click **Run workflow** → **Run**.
 4. Esperá ~30 segundos. El environment `setup-branch-protection` muestra
    el resultado.
@@ -143,7 +143,7 @@ JSON
 gh api \
   --method PUT \
   -H "Accept: application/vnd.github+json" \
-  /repos/novocap/git-documentation/branches/main/protection \
+  /repos/novocap/Novocap.Learning.Git.Docs/branches/main/protection \
   --input /tmp/main-protection.json
 ```
 
@@ -152,7 +152,7 @@ gh api \
 Después de aplicar, confirmá con:
 
 ```bash
-gh api /repos/novocap/git-documentation/branches/main/protection | jq .
+gh api /repos/novocap/Novocap.Learning.Git.Docs/branches/main/protection | jq .
 ```
 
 Deberías ver:
@@ -177,7 +177,7 @@ se desactivó:
 
 ### Vía UI
 
-1. Andá a https://github.com/novocap/git-documentation/settings/pages.
+1. Andá a https://github.com/novocap/Novocap.Learning.Git.Docs/settings/pages.
 2. En **Source**, elegí **GitHub Actions**.
 3. Save.
 
@@ -187,7 +187,7 @@ se desactivó:
 gh api \
   --method POST \
   -H "Accept: application/vnd.github+json" \
-  /repos/novocap/git-documentation/pages \
+  /repos/novocap/Novocap.Learning.Git.Docs/pages \
   --input - <<'JSON'
 {
   "build_type": "workflow"
@@ -211,7 +211,7 @@ cambia, hay que:
 ### 1. Listar las policies actuales
 
 ```bash
-gh api /repos/novocap/git-documentation/environments/github-pages/deployment-branch-policies
+gh api /repos/novocap/Novocap.Learning.Git.Docs/environments/github-pages/deployment-branch-policies
 ```
 
 Devuelve algo como:
@@ -238,7 +238,7 @@ con error 422 `Invalid request`).
 gh api \
   --method POST \
   -H "Accept: application/vnd.github+json" \
-  /repos/novocap/git-documentation/environments/github-pages/deployment-branch-policies \
+  /repos/novocap/Novocap.Learning.Git.Docs/environments/github-pages/deployment-branch-policies \
   -f name=main
 ```
 
@@ -252,7 +252,7 @@ referencia colgante. Limpiarla evita ruido:
 gh api \
   --method DELETE \
   -H "Accept: application/vnd.github+json" \
-  /repos/novocap/git-documentation/environments/github-pages/deployment-branch-policies/<id>
+  /repos/novocap/Novocap.Learning.Git.Docs/environments/github-pages/deployment-branch-policies/<id>
 ```
 
 ### 4. Re-disparar el deploy

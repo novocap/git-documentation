@@ -1,6 +1,6 @@
 # Soporte
 
-Gracias por usar `novocap/git-documentation`. Antes de abrir un issue,
+Gracias por usar `novocap/Novocap.Learning.Git.Docs`. Antes de abrir un issue,
 revisá las siguientes opciones según el tipo de ayuda que necesitás.
 
 ## Preguntas sobre el contenido
