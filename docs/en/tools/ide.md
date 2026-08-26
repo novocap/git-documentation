@@ -214,6 +214,59 @@ commit the changes, and open a PR.
    automatically (see
    [Signed commits with GPG](../git/gpg.md)).
 
+### Forcing signed commits from VS Code
+
+Whether you commit from the integrated terminal or from VS Code's
+Source Control panel, signing is decided by **Git**, not the editor.
+So the global config is enough:
+
+```bash
+git config --global commit.gpgsign true
+git config --global user.signingkey 5F2A8B3C9D4E1F6A
+git config --global tag.gpgsign true
+```
+
+With `commit.gpgsign true`, **every** commit is signed: those made
+from the GUI panel and those made from the terminal. There is **no**
+separate VS Code option to "force signing only in the GUI"; the flag
+applies to all commits system-wide because it is a Git configuration,
+not an editor one.
+
+!!! note "Windows and the GPG path"
+    On Windows with Git Bash, GPG is installed at
+    `C:\Program Files (x86)\GnuPG\bin\gpg.exe`. If committing from
+    VS Code shows `gpg: failed to start...` or `cannot find gpg`,
+    set the path manually:
+
+    ```bash
+    git config --global gpg.program "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+    ```
+
+    Alternative: declare it in VS Code's `settings.json` so the
+    editor uses that path without touching Git:
+
+    ```json
+    {
+        "git.gpg": {
+            "path": "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+        }
+    }
+    ```
+
+!!! tip "Disable signing only in a specific project"
+    If you want to sign commits in most repos but not in one
+    particular project, use the flag without `--global` inside that
+    project:
+
+    ```bash
+    cd my-project-without-signing
+    git config commit.gpgsign false
+    ```
+
+    Team-wide mandatory signing is enabled on GitHub through
+    *branch protection* with **"Require signed commits"**. See
+    [Signed commits with GPG](../git/gpg.md) for details.
+
 ### Push and Pull Request
 
 1. After committing, a **"Sync Changes"** button appears in the

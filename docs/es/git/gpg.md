@@ -271,6 +271,76 @@ filtrado), revocá la llave inmediatamente:
     con expiración (ej. 1 año) y renovarlas antes de que expiren.
     Es disciplina, pero reduce la ventana de exposición.
 
+## 11. Almacenar credenciales GPG (caché de passphrase)
+
+Cada vez que firmás un commit, GPG te pide la **passphrase** para
+desbloquear la llave privada. Si tuvieras que tipearla en cada commit,
+el flujo se vuelve tedioso. La solución es `gpg-agent`, un proceso en
+segundo plano (análogo a `ssh-agent`) que **cachea la passphrase
+desbloqueada** por un tiempo configurable.
+
+### Configurar el TTL del caché
+
+El TTL por defecto suele ser **10 horas** (3600 segundos × 10) tras
+la última vez que usaste la llave. Para modificarlo, editá
+`~/.gnupg/gpg-agent.conf`:
+
+```ini
+default-cache-ttl 3600        # 1 hora desde el último uso
+max-cache-ttl 86400           # tope absoluto de 24 horas
+```
+
+Después de editar, recargá el agente:
+
+```bash
+gpgconf --reload gpg-agent
+```
+
+### Pinentry: la ventana que pide la passphrase
+
+`gpg-agent` delega la captura de la passphrase a un programa llamado
+**pinentry**. El comportamiento cambia según el sistema:
+
+=== "Linux / WSL"
+
+    Por defecto usa `pinentry-tty` (lee la passphrase desde la
+    terminal). Si preferís una GUI, instalá `pinentry-gnome3` (GNOME)
+    o `pinentry-qt` (KDE) y elegilo en `gpg-agent.conf`:
+
+    ```ini
+    pinentry-program /usr/bin/pinentry-gnome3
+    ```
+
+=== "macOS"
+
+    [GPG Suite](https://gpgtools.org/) instala `pinentry-mac`, una
+    ventanita nativa con la opción **"Save in Keychain"** para no
+    volver a pedir la passphrase hasta el TTL configurado.
+
+=== "Windows"
+
+    Gpg4win trae `pinentry-qt` o `pinentry-w32` (elegible desde
+    `gpg-agent.conf`). La passphrase queda cacheada por `gpg-agent`
+    hasta el TTL configurado.
+
+!!! warning "GPG-agent no es lo mismo que Git Credential Manager"
+    `gpg-agent` cachea la **passphrase de tu llave GPG** para firmar
+    commits. **No** cachea credenciales HTTPS. Para autenticarte vía
+    HTTPS usá [Git Credential
+    Manager](https://github.com/git-ecosystem/git-credential-manager)
+    (GCM), que cubre usuario y token pero **no firma commits**. Son
+    dos sistemas independientes.
+
+!!! note "Si VS Code no encuentra `gpg`"
+    En Windows con Git Bash, GPG se instala en
+    `C:\Program Files (x86)\GnuPG\bin\gpg.exe`. Si al firmar un
+    commit desde VS Code ves `gpg: failed to start...`, declarale la
+    ruta manualmente:
+
+    ```bash
+    git config --global gpg.program "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+    ```
+
 ## Próximo paso
 
 Con la firma criptográfica cubierta, podés volver a

@@ -213,6 +213,59 @@ commiteart los cambios y abrir un PR.
 3. Si está activado `commit.gpgsign`, el commit se firma
    automáticamente (ver [Firma criptográfica con GPG](../git/gpg.md)).
 
+### Forzar commits firmados desde VS Code
+
+Independientemente de si commiteás desde la terminal integrada o
+desde el panel Source Control de VS Code, la firma la decide **Git**,
+no el editor. Por eso alcanza con la configuración global:
+
+```bash
+git config --global commit.gpgsign true
+git config --global user.signingkey 5F2A8B3C9D4E1F6A
+git config --global tag.gpgsign true
+```
+
+Con `commit.gpgsign true`, **todo** commit queda firmado: los hechos
+desde el panel GUI y los hechos desde la terminal. **No existe** una
+opción separada en VS Code para "forzar firma solo en el GUI"; el
+flag se aplica a todos los commits del sistema porque es una
+configuración de Git, no del editor.
+
+!!! note "Windows y la ruta de GPG"
+    En Windows con Git Bash, GPG se instala en
+    `C:\Program Files (x86)\GnuPG\bin\gpg.exe`. Si al confirmar un
+    commit desde VS Code ves `gpg: failed to start...` o
+    `cannot find gpg`, declarale la ruta manualmente:
+
+    ```bash
+    git config --global gpg.program "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+    ```
+
+    Alternativa: declaralo en `settings.json` de VS Code para que
+    use esa ruta sin tocar Git:
+
+    ```json
+    {
+        "git.gpg": {
+            "path": "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+        }
+    }
+    ```
+
+!!! tip "Deshabilitar firma solo en un proyecto"
+    Si querés firmar en la mayoría de tus repos pero no en uno
+    puntual, usá el flag sin `--global` dentro de ese proyecto:
+
+    ```bash
+    cd mi-proyecto-sin-firma
+    git config commit.gpgsign false
+    ```
+
+    La firma obligatoria a nivel **equipo** se activa en GitHub
+    desde *branch protection* con **"Require signed commits"**.
+    Más detalles en
+    [Firma criptográfica con GPG](../git/gpg.md).
+
 ### Push y Pull Request
 
 1. Después de commitear, aparece un botón **"Sync Changes"** en la
