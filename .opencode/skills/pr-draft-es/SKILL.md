@@ -101,7 +101,7 @@ esperado:
 
 6. **Calcular la URL del PR**:
 
-   ```
+   ```text
    https://github.com/novocap/git-documentation/compare/master...<rama>
    ```
 

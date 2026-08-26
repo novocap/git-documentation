@@ -44,7 +44,7 @@ master..HEAD` o lo que el orquestador te pase), proponer:
 
 ## Formato del mensaje
 
-```
+```text
 :<emoji>: <verbo en imperativo singular> <alcance breve en español>
 ```
 
@@ -57,7 +57,7 @@ master..HEAD` o lo que el orquestador te pase), proponer:
 
 ## Ejemplos válidos
 
-```
+```text
 :wrench: Corregir typo 'aprendisaje' en README y SUMMARY
 :sparkles: Agregar mkdocs.yml con configuración bilingüe ES/EN
 :globe_with_meridians: Traducir fundamentos de Git a inglés

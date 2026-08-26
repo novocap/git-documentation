@@ -40,7 +40,7 @@ existente:
 seguridad. Escribinos directamente a la dirección de contacto del
 propietario del repositorio (ver `CODEOWNERS`).
 
-##Contacto
+## Contacto
 
 - Organización: [novocap](https://github.com/novocap)
 - Maintainer principal: [@ChristianGrimberg](https://github.com/ChristianGrimberg)

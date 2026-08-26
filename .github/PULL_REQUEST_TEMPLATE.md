@@ -17,6 +17,7 @@ Referenciada por la skill `.opencode/skills/pr-draft-es/SKILL.md`.
 - `img/<sección>/<archivo>`: <qué muestra>.
 
 ## Checklist
+
 - [ ] CI pasa (lint, links, build)
 - [ ] Mirror ES/EN actualizado (si aplica)
 - [ ] Imágenes y rutas relativas verificadas

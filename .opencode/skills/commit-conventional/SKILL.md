@@ -10,7 +10,7 @@ Convención oficial de commits del repositorio
 
 ## Formato obligatorio
 
-```
+```text
 :<emoji>: <verbo en imperativo singular> <alcance breve en español>
 ```
 
@@ -55,7 +55,7 @@ Convención oficial de commits del repositorio
 
 ### Buenos
 
-```
+```text
 :wrench: Corregir typo 'aprendisaje' en README
 :sparkles: Agregar mkdocs.yml con configuración bilingüe ES/EN
 :globe_with_meridians: Traducir fundamentos de Git a inglés

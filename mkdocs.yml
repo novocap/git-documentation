@@ -96,29 +96,31 @@ plugins:
           default: true
           site_name: Guía de aprendizaje de Git y GitHub
           nav_translations:
-            - Inicio
-            - Entorno de trabajo
-            - Conexión SSH con GitHub
-            - Fundamentos de Git y GitHub
-            - Confirmación de cambios firmados en Git
-            - Práctica
-            - IDE con Visual Studio Code
-            - Sintaxis documental con Markdown
-            - Glosario
+            Inicio: Inicio
+            Entorno de trabajo: Entorno de trabajo
+            Conexión SSH con GitHub: Conexión SSH con GitHub
+            Fundamentos de Git y GitHub: Fundamentos de Git y GitHub
+            Conceptos: Conceptos
+            Confirmación de cambios firmados: Confirmación de cambios firmados
+            Práctica: Práctica
+            IDE con Visual Studio Code: IDE con Visual Studio Code
+            Sintaxis documental con Markdown: Sintaxis documental con Markdown
+            Glosario: Glosario
         - locale: en
           name: English
           build: true
           site_name: Git and GitHub Learning Guide
           nav_translations:
-            - Home
-            - Workspace
-            - SSH Connection with GitHub
-            - Git and GitHub Fundamentals
-            - Signed commits in Git
-            - Practice
-            - VS Code IDE
-            - Markdown syntax
-            - Glossary
+            Inicio: Home
+            Entorno de trabajo: Workspace
+            Conexión SSH con GitHub: SSH Connection with GitHub
+            Fundamentos de Git y GitHub: Git and GitHub Fundamentals
+            Conceptos: Concepts
+            Confirmación de cambios firmados: Signed commits in Git
+            Práctica: Practice
+            IDE con Visual Studio Code: VS Code IDE
+            Sintaxis documental con Markdown: Markdown syntax
+            Glosario: Glossary
       fallback_to_default: true
   # Fecha de última actualización (git-based)
   - git-revision-date-localized:
