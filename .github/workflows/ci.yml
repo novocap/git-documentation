@@ -61,18 +61,21 @@ jobs:
         run: pip install codespell
 
       - name: Run codespell
-        # Solo archivos en inglés: docs/en/, README.md (predominantemente EN),
-        # AGENTS.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, img/ATTRIBUTIONS.md,
-        # .opencode/. Excluimos docs/es/ porque codespell usa un diccionario
-        # inglés y produce falsos positivos sobre texto en español.
+        # Cubre archivos predominantemente en inglés: docs/en/, README,
+        # AGENTS.md, CODE_OF_CONDUCT.md, docs/img/ATTRIBUTIONS.md,
+        # .opencode/. El archivo .codespellignore contiene las palabras
+        # comunes en español que aparecen en estos archivos mixtos,
+        # evitando falsos positivos sin perder la verificación de typos
+        # en inglés. Excluimos docs/es/ (100% español) por la misma razón.
         run: |
           codespell \
+            --ignore-words=.codespellignore \
             docs/en/ \
             README.md \
             AGENTS.md \
-            CONTRIBUTING.md \
             CODE_OF_CONDUCT.md \
-            img/ATTRIBUTIONS.md \
+            CONTRIBUTING.md \
+            docs/img/ATTRIBUTIONS.md \
             .opencode/ \
             --skip='*.png,*.jpg,*.gif,*.svg'
 

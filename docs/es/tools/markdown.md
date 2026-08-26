@@ -160,7 +160,7 @@ Para enlaces a otras páginas del mismo sitio:
 ### Imágenes
 
 ```md
-![Texto alternativo](../img/github-branch-dropdown.png)
+![Texto alternativo](../../img/github-branch-dropdown.png)
 ![Logo](https://ejemplo.com/logo.png "Logo de ejemplo")
 ```
 
@@ -173,7 +173,7 @@ no carga).
     redimensionar, usá HTML:
 
     ```md
-    <img src="../img/diagrama.png" alt="Diagrama" width="400">
+    <img src="../../img/github-branch-dropdown.png" alt="Diagrama" width="400">
     ```
 
 ## 6. Código
