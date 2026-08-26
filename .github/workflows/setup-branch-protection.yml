@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: Rama a proteger (default: main)
+        description: "Rama a proteger (default: main)"
         required: false
         default: main
         type: string
