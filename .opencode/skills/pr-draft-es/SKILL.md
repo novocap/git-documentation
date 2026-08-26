@@ -64,8 +64,8 @@ esperado:
    ```bash
    git checkout <rama>
    git status                       # working tree limpio
-   git log master..HEAD --oneline   # lista de commits
-   git diff --name-only master..HEAD
+   git log main..HEAD --oneline   # lista de commits
+   git diff --name-only main..HEAD
    ```
 
 2. **Correr build y lints** (delegar a `mkdocs-builder` y `lint-ci`):
@@ -102,7 +102,7 @@ esperado:
 6. **Calcular la URL del PR**:
 
    ```text
-   https://github.com/novocap/git-documentation/compare/master...<rama>
+   https://github.com/novocap/git-documentation/compare/main...<rama>
    ```
 
 ## Output esperado
@@ -120,7 +120,7 @@ Devolvé un bloque markdown listo para copiar y pegar en la UI de GitHub:
 git push -u origin <rama>
 
 ### URL para abrir el PR
-https://github.com/novocap/git-documentation/compare/master...<rama>
+https://github.com/novocap/git-documentation/compare/main...<rama>
 
 ### Recordatorios para el humano
 - [ ] Marcar como **Draft PR** al abrirlo.
