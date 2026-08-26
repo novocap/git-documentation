@@ -96,6 +96,7 @@ payload de arriba idempotentemente. Corre:
 ```
 
 El script:
+
 - Verifica que `gh` esté autenticada.
 - Hace PUT al endpoint de GitHub con el payload.
 - Reporta éxito y cómo verificar.
@@ -105,6 +106,7 @@ El script:
 `.github/workflows/setup-branch-protection.yml` expone la misma
 funcionalidad via `workflow_dispatch`. Ver la sección "Vía workflow"
 arriba. Útil cuando:
+
 - Querés aplicar la protección después de mergear Fase 6.
 - Querés re-aplicarla si alguien la cambió accidentalmente.
 - No podés correr scripts locales con `gh` autenticada.
