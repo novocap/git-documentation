@@ -148,11 +148,10 @@ create a new repository:
 git config --global init.defaultBranch main
 ```
 
-!!! info "Why `main` and not `master`?"
-    Git historically used `master` as the default name, but the
-    community has been moving toward `main` (more inclusive). GitHub,
-    GitLab, and other platforms adopted `main` in 2020. In this
-    guide we use `main` in all examples.
+!!! info "Default branch: `main`"
+    Throughout this guide we use `main` as the default branch, which
+    is the standard name adopted by GitHub, GitLab, and other platforms
+    since 2020.
 
 ### Other useful configurations
 
