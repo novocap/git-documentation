@@ -5,6 +5,7 @@ on:
     branches: [main]
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,7 +16,7 @@ concurrency:
 
 jobs:
   lint-markdown:
-    name: Lint Markdown
+    name: lint-markdown
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,7 +34,7 @@ jobs:
         run: markdownlint-cli2 --config .markdownlint.json "**/*.md" "#site/**" "#node_modules/**"
 
   check-links:
-    name: Check Links
+    name: check-links
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -46,7 +47,7 @@ jobs:
           fail: true
 
   spell-check:
-    name: Spell Check
+    name: spell-check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -72,7 +73,7 @@ jobs:
         run: codespell docs/en/
 
   build:
-    name: Build Site
+    name: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

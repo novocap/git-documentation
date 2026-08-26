@@ -26,11 +26,18 @@ copyright: >-
 docs_dir: docs
 
 # -----------------------------------------------------------------------------
+# CSS adicional (overrides del tema)
+# -----------------------------------------------------------------------------
+extra_css:
+  - stylesheets/extra.css
+
+# -----------------------------------------------------------------------------
 # Tema Material
 # -----------------------------------------------------------------------------
 theme:
   name: material
   language: es
+  logo: img/novocap-white.png
   features:
     # Navegación
     - navigation.tabs
