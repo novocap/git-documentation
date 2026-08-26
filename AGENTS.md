@@ -306,3 +306,51 @@ curl -fsSL https://opencode.ai/install | bash
 A partir de ese momento, las skills del proyecto estarán disponibles
 mediante el tool `skill` de opencode y los agentes definidos en
 `.opencode/agent/` podrán ser invocados desde la sesión.
+
+---
+
+## 13. Estado del proyecto (Fase 6 · Cierre del plan)
+
+### Sitio público y CI/CD activos
+
+- 🌐 Sitio desplegado en `https://novocap.github.io/git-documentation/`.
+- ✅ Pipeline CI con 4 jobs (lint-markdown, check-links, spell-check, build).
+- ✅ Deploy automático en cada merge a `master`.
+- ✅ Status checks del CI listos para ser declarados obligatorios en la
+  protección de master (ver skill `branch-protection-rules`).
+
+### Reglas de protección de master (Fase 6)
+
+Tras mergear este PR, aplicar la protección con:
+
+```bash
+./scripts/setup-branch-protection.sh
+```
+
+o desde la UI:
+
+1. Actions → Setup Branch Protection → Run workflow.
+
+Las reglas quedan:
+
+- PR obligatorio antes de mergear.
+- 4 status checks obligatorios: `lint-markdown`, `check-links`,
+  `spell-check`, `build` (todos de `.github/workflows/ci.yml`).
+- Sin approvals (control procedural por Draft PR).
+- Linear history (solo rebase o squash).
+- Sin force-push, sin delete branch.
+- `enforce_admins: false`.
+
+### Próximos pasos (modo mantenimiento)
+
+Tras Fase 6 el proyecto entra en modo mantenimiento. Las evoluciones
+naturales a futuro son:
+
+- **MkDocs Insiders**: social cards, versionado SemVer con `mike`,
+  search insights.
+- **Más plugins de Material**: `mermaid2`, `git-committers`,
+  `inline-svg`.
+- **CI extendida**: coverage del código Python de los skills,
+  release-please para automatizar tags y releases.
+- **i18n ampliada**: agregar portugués o francés siguiendo el mismo
+  patrón que ES/EN.
