@@ -195,6 +195,81 @@ gh api \
 JSON
 ```
 
+## Migrar deployment branch policies al renombrar la rama
+
+> **Descubierto en Fase 7**: cuando se renombra la rama por defecto
+> (ej. `master` → `main`), la environment `github-pages` **no se
+> actualiza sola**. Si no se migran las deployment branch policies,
+> el primer push a la rama nueva falla con
+> `Branch "main" is not allowed to deploy to github-pages due to
+> environment protection rules`.
+
+La environment `github-pages` mantiene un `branch_policy` que lista
+explícitamente qué ramas pueden desplegar. Si la rama por defecto
+cambia, hay que:
+
+### 1. Listar las policies actuales
+
+```bash
+gh api /repos/novocap/git-documentation/environments/github-pages/deployment-branch-policies
+```
+
+Devuelve algo como:
+
+```json
+{
+  "total_count": 1,
+  "branch_policies": [
+    {
+      "id": 58271084,
+      "name": "master",
+      "type": "branch"
+    }
+  ]
+}
+```
+
+### 2. Agregar la nueva rama
+
+⚠️ El parámetro es `name`, **no** `branch` (la API rechaza `branch`
+con error 422 `Invalid request`).
+
+```bash
+gh api \
+  --method POST \
+  -H "Accept: application/vnd.github+json" \
+  /repos/novocap/git-documentation/environments/github-pages/deployment-branch-policies \
+  -f name=main
+```
+
+### 3. Borrar la policy obsoleta (opcional pero recomendado)
+
+Una vez borrada la rama vieja de origin, su policy queda como
+referencia colgante. Limpiarla evita ruido:
+
+```bash
+# Reemplazar <id> por el ID de la policy vieja del paso 1
+gh api \
+  --method DELETE \
+  -H "Accept: application/vnd.github+json" \
+  /repos/novocap/git-documentation/environments/github-pages/deployment-branch-policies/<id>
+```
+
+### 4. Re-disparar el deploy
+
+El deploy workflow puede haber fallado silenciosamente durante el
+swap. Re-dispararlo manualmente con `workflow_dispatch`:
+
+```bash
+gh workflow run "Deploy to GitHub Pages" --ref main
+```
+
+Verificar con:
+
+```bash
+gh run list --workflow "Deploy to GitHub Pages" --limit 3
+```
+
 ## Cuándo invocar esta skill
 
 - Cuando se llega a la **Fase 6** del plan (cierre del flujo).
