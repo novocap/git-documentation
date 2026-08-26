@@ -270,6 +270,77 @@ revoke the key immediately:
     keys with expiration (e.g. 1 year) and renew them before they
     expire. It's discipline, but it reduces the window of exposure.
 
+## 11. Storing GPG credentials (passphrase cache)
+
+Every time you sign a commit, GPG asks for your **passphrase** to
+unlock the private key. Typing it on every commit quickly becomes
+tedious. The fix is `gpg-agent`, a background process (analogous to
+`ssh-agent`) that **caches the unlocked passphrase** for a
+configurable amount of time.
+
+### Configuring the cache TTL
+
+The default TTL is usually **10 hours** (3600 seconds × 10) after the
+last time you used the key. To change it, edit
+`~/.gnupg/gpg-agent.conf`:
+
+```ini
+default-cache-ttl 3600        # 1 hour since last use
+max-cache-ttl 86400           # absolute cap of 24 hours
+```
+
+After editing, reload the agent:
+
+```bash
+gpgconf --reload gpg-agent
+```
+
+### Pinentry: the window that asks for the passphrase
+
+`gpg-agent` delegates passphrase capture to a program called
+**pinentry**. The behavior differs per system:
+
+=== "Linux / WSL"
+
+    By default it uses `pinentry-tty` (reads the passphrase from
+    the terminal). If you prefer a GUI, install `pinentry-gnome3`
+    (GNOME) or `pinentry-qt` (KDE) and select it in
+    `gpg-agent.conf`:
+
+    ```ini
+    pinentry-program /usr/bin/pinentry-gnome3
+    ```
+
+=== "macOS"
+
+    [GPG Suite](https://gpgtools.org/) installs `pinentry-mac`, a
+    native window with a **"Save in Keychain"** option so the
+    passphrase is not asked again until the TTL expires.
+
+=== "Windows"
+
+    Gpg4win ships `pinentry-qt` or `pinentry-w32` (selectable from
+    `gpg-agent.conf`). The passphrase is cached by `gpg-agent` until
+    the configured TTL.
+
+!!! warning "gpg-agent is not the same as Git Credential Manager"
+    `gpg-agent` caches the **passphrase of your GPG key** for
+    signing commits. It **does not** cache HTTPS credentials. For
+    HTTPS authentication use [Git Credential
+    Manager](https://github.com/git-ecosystem/git-credential-manager)
+    (GCM), which handles user and token but **does not sign
+    commits**. They are independent systems.
+
+!!! note "If VS Code can't find `gpg`"
+    On Windows with Git Bash, GPG is installed at
+    `C:\Program Files (x86)\GnuPG\bin\gpg.exe`. If signing a commit
+    from VS Code fails with `gpg: failed to start...`, set the path
+    manually:
+
+    ```bash
+    git config --global gpg.program "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+    ```
+
 ## Next step
 
 With cryptographic signing covered, you can return to
