@@ -157,7 +157,7 @@ For links to other pages on the same site:
 ### Images
 
 ```md
-![Alternative text](../img/diagram.png)
+![Alternative text](../img/github-branch-dropdown.png)
 ![Logo](https://example.com/logo.png "Example logo")
 ```
 
