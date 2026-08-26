@@ -19,7 +19,7 @@ Tabla rápida de los gitmojis más frecuentes en
 | 🌐 | `:globe_with_meridians:` | Traducción ES ↔ EN | `:globe_with_meridians: Traducir SSH a inglés` |
 | 📸 | `:camera_flash:` | Capturas e imágenes | `:camera_flash: Reemplazar capturas de VSCode` |
 | 👷 | `:construction_worker:` | CI/CD e infraestructura | `:construction_worker: Agregar workflow de CI` |
-| 🔒 | `:lock:` | Seguridad y protección | `:lock: Activar protección de master` |
+| 🔒 | `:lock:` | Seguridad y protección | `:lock: Activar protección de main` |
 | 📖 | `:book:` | Configuración del proyecto | `:book: Configurar AGENTS.md y agentes` |
 | 🐛 | `:bug:` | Bug fix | `:bug: Arreglar build en Windows` |
 | 🚀 | `:rocket:` | Deploy o release | `:rocket: Publicar sitio en GitHub Pages` |
@@ -100,7 +100,7 @@ Fix de un bug evidente
 :camera_flash: Reemplazar capturas de VSCode con UI 1.85
 :construction_worker: Agregar workflows de CI con markdownlint y lychee
 :book: Configurar flujo agentico con AGENTS.md y agentes
-:lock: Activar protección de rama master y GitHub Pages
+:lock: Activar protección de rama main y GitHub Pages
 :bump: Actualizar mkdocs-material a 9.5
 :fire: Eliminar docs/ legacy tras migración a MkDocs
 :truck: Mover docs/SSH.md a docs/es/ssh.md

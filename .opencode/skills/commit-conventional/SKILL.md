@@ -22,7 +22,7 @@ Convención oficial de commits del repositorio
    "Activar", "Definir", "Establecer", "Migrar", "Reescribir".
 3. **Español** siempre. Excepciones: nombres propios, términos técnicos
    no traducibles (`commit`, `merge`, `pull request`, `main`,
-   `master`, `staging area`, etc.).
+   `staging area`, etc.).
 4. **72 caracteres** como máximo después del gitmoji.
 5. **Una idea por commit.** Si hay varias ideas, varios commits.
 
@@ -36,7 +36,7 @@ Convención oficial de commits del repositorio
 | 🌐 | `:globe_with_meridians:` | i18n, traducción ES ↔ EN | `:globe_with_meridians: Traducir SSH a inglés` |
 | 📸 | `:camera_flash:` | Capturas, imágenes y assets | `:camera_flash: Reemplazar capturas de VSCode` |
 | 👷 | `:construction_worker:` | CI/CD, workflows, infra | `:construction_worker: Agregar CI con markdownlint` |
-| 🔒 | `:lock:` | Seguridad, protección de rama | `:lock: Activar protección de master` |
+| 🔒 | `:lock:` | Seguridad, protección de rama | `:lock: Activar protección de main` |
 | 📖 | `:book:` | Configuración del proyecto | `:book: Configurar AGENTS.md y agentes` |
 | 🐛 | `:bug:` | Corrección de bug | `:bug: Arreglar build en Windows por paths` |
 | 🔥 | `:fire:` | Eliminar código o archivo | `:fire: Eliminar carpeta docs/ legacy` |
@@ -62,7 +62,7 @@ Convención oficial de commits del repositorio
 :camera_flash: Reemplazar capturas de VSCode con UI 1.85
 :construction_worker: Agregar workflow de CI con markdownlint y lychee
 :book: Configurar flujo agentico con AGENTS.md y agentes
-:lock: Activar protección de rama master y GitHub Pages
+:lock: Activar protección de rama main y GitHub Pages
 :bump: Actualizar mkdocs-material a 9.5
 ```
 

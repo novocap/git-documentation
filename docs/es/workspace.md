@@ -148,11 +148,10 @@ creás un repositorio nuevo:
 git config --global init.defaultBranch main
 ```
 
-!!! info "¿`main` o `master`?"
-    Históricamente Git usaba `master` como nombre por defecto, pero la
-    comunidad se ha ido moviendo hacia `main` (más inclusivo).
-    GitHub, GitLab y otras plataformas adoptaron `main` desde 2020.
-    En esta guía usamos `main` en todos los ejemplos.
+!!! info "Rama principal: `main`"
+    En esta guía usamos `main` como rama principal en todos los ejemplos,
+    que es el nombre estándar adoptado por GitHub, GitLab y otras
+    plataformas desde 2020.
 
 ### Configuraciones útiles adicionales
 

@@ -37,7 +37,7 @@ practices with associated tools (SSH, GPG, Markdown, and IDEs).
 ## How to contribute
 
 Documentation accepts contributions via Pull Request. The full workflow
-is documented in [`AGENTS.md`](https://github.com/novocap/git-documentation/blob/master/AGENTS.md)
+is documented in [`AGENTS.md`](https://github.com/novocap/git-documentation/blob/main/AGENTS.md)
 (in Spanish) and includes:
 
 1. Gitmoji commit convention.

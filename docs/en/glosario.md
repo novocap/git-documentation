@@ -19,7 +19,7 @@ counterpart, and a brief definition.
 | Repository | Repositorio | Versioned store of files under Git control. |
 | Remote repository | Repositorio remoto | Replica of the repository hosted on a server (GitHub, GitLab, etc.). |
 | Branch | Rama | Independent development line; a pointer to a commit. |
-| Main / Master branch | Rama principal | Default branch of the repository (`main` on GitHub since 2020, `master` historically). |
+| Main branch | Rama principal | Default branch of the repository (`main` on GitHub, GitLab, and other platforms since 2020). |
 | Commit | Commit | Versioned snapshot of the repository state, identified by a hash. |
 | Hash (SHA-1) | Hash (SHA-1) | Unique 40-character hexadecimal identifier Git assigns to each commit. |
 | Working Directory | Working Directory | Local folder where files are being edited. |

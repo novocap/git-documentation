@@ -94,7 +94,7 @@ git commit -m "Add search function"
       [`commit-conventional` skill][commit-skill] of the repository
       (gitmoji convention).
 
-[commit-skill]: https://github.com/novocap/git-documentation/blob/master/.opencode/skills/commit-conventional/SKILL.md
+[commit-skill]: https://github.com/novocap/git-documentation/blob/main/.opencode/skills/commit-conventional/SKILL.md
 
 To review what will be included before committing:
 
@@ -107,8 +107,7 @@ git diff HEAD           # changes in WD vs last commit (includes staged)
 ## 4. Branches
 
 Branches are pointers to commits that let you work on parallel
-development lines. The default branch is usually called `main`
-(or `master` in older projects).
+development lines. The default branch is called `main`.
 
 ```bash
 # See all local branches

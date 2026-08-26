@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================================
 # Script: setup-branch-protection.sh
-# Descripción: aplica las reglas de protección de la rama `master` con los
+# Descripción: aplica las reglas de protección de la rama `main` con los
 #              status checks del CI (Fase 5) como obligatorios. Equivale a
 #              lo que documenta `.opencode/skills/branch-protection-rules/SKILL.md`
 #              pero aplicado en vivo vía `gh api`.
@@ -15,7 +15,7 @@
 #
 # Idempotente: si la protección ya existe, la sobrescribe con el payload
 # declarado en este script. Para verificar el estado actual sin
-# modificar nada, usar `gh api /repos/:owner/:repo/branches/master/protection`.
+# modificar nada, usar `gh api /repos/:owner/:repo/branches/main/protection`.
 # ============================================================================
 
 set -euo pipefail
@@ -25,7 +25,7 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 OWNER="${GITHUB_REPOSITORY_OWNER:-novocap}"
 REPO="${GITHUB_REPOSITORY_NAME:-git-documentation}"
-BRANCH="${BRANCH:-master}"
+BRANCH="${BRANCH:-main}"
 
 # Status checks = nombres EXACTOS de los jobs en .github/workflows/ci.yml.
 # Ver `.github/workflows/ci.yml` para mantener este array sincronizado.

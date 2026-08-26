@@ -95,7 +95,7 @@ git commit -m "Agregar función de búsqueda"
     - Más detalles en la [skill `commit-conventional`][commit-skill]
       del repositorio (convención con gitmoji).
 
-[commit-skill]: https://github.com/novocap/git-documentation/blob/master/.opencode/skills/commit-conventional/SKILL.md
+[commit-skill]: https://github.com/novocap/git-documentation/blob/main/.opencode/skills/commit-conventional/SKILL.md
 
 Para revisar lo que va a incluirse antes de commitear:
 
@@ -108,8 +108,7 @@ git diff HEAD           # cambios en WD vs último commit (incluye staged)
 ## 4. Ramas (`branch`)
 
 Las ramas son punteros a commits que te permiten trabajar en líneas
-de desarrollo paralelas. La rama por defecto suele llamarse `main`
-(o `master` en proyectos más viejos).
+de desarrollo paralelas. La rama por defecto se llama `main`.
 
 ```bash
 # Ver todas las ramas locales

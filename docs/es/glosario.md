@@ -19,7 +19,7 @@ su contraparte en inglés y una breve definición.
 | Repositorio | Repository | Almacén versionado de archivos bajo control de Git. |
 | Repositorio remoto | Remote repository | Réplica del repositorio alojada en un servidor (GitHub, GitLab, etc.). |
 | Rama | Branch | Línea de desarrollo independiente; un puntero a un commit. |
-| Rama principal | Main / Master branch | Rama por defecto del repositorio (`main` en GitHub desde 2020, `master` históricamente). |
+| Rama principal | Main branch | Rama por defecto del repositorio (`main` en GitHub, GitLab y otras plataformas desde 2020). |
 | Commit | Commit | Instantánea versionada del estado del repositorio, identificada por un hash. |
 | Hash (SHA-1) | Hash (SHA-1) | Identificador único de 40 caracteres hexadecimales que Git asigna a cada commit. |
 | Working Directory | Working Directory | Carpeta local donde están los archivos en edición. |

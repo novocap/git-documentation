@@ -15,7 +15,7 @@ site_url: https://novocap.github.io/git-documentation/
 
 repo_name: novocap/git-documentation
 repo_url: https://github.com/novocap/git-documentation
-edit_uri: edit/master/docs/
+edit_uri: edit/main/docs/
 
 copyright: >-
   Copyright © 2019-2026 Novocap S.A. — Distribuido bajo licencia MIT.
