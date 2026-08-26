@@ -316,7 +316,12 @@ mediante el tool `skill` de opencode y los agentes definidos en
 - **Rama por defecto**: `main`.
 - **Sitio público**: `https://novocap.github.io/Novocap.Learning.Git.Docs/`.
 - **Pipeline CI**: 4 jobs (`lint-markdown`, `check-links`, `spell-check`,
-  `build`) definidos en `.github/workflows/ci.yml`.
+  `build`) definidos en `.github/workflows/ci.yml`. Cada job declara
+  su `name:` en kebab-case para que el status check que reporta
+  GitHub coincida exactamente con el contexto requerido por la
+  branch protection. Si se renombra un job, hay que actualizar
+  `name:` y el `STATUS_CHECKS` del script de protección en el mismo
+  PR.
 - **Deploy a GitHub Pages**: automático en cada push a `main`
   (`.github/workflows/deploy.yml`).
 - **Branch protection**: activa sobre `main` con los 4 status checks
@@ -334,7 +339,8 @@ Reglas activas:
 
 - PR obligatorio antes de mergear.
 - 4 status checks obligatorios: `lint-markdown`, `check-links`,
-  `spell-check`, `build`.
+  `spell-check`, `build`. El nombre del status check viene dado por
+  el `name:` del job en `ci.yml`, no por el ID del YAML.
 - Sin approvals (control procedural por Draft PR).
 - Linear history (solo rebase o squash).
 - Sin force-push, sin delete branch.
