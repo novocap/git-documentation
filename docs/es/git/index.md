@@ -192,6 +192,14 @@ git push -u origin feature/login
 Un **Pull Request** (PR) es una propuesta de cambios que GitHub
 presenta de forma visual, junto con herramientas de revisión.
 
+Después de hacer `git push` de una rama, GitHub muestra un banner
+amarillo arriba de la lista de archivos con el botón **"Compare &
+pull request"**:
+
+![Banner de PR con botón Compare & pull request](../../img/github-pr-compare.png)
+> __Imagen:__ Banner de GitHub para crear un PR desde una rama recién
+> pusheada.
+
 ```mermaid
 sequenceDiagram
     participant Dev as Desarrollador

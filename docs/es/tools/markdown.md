@@ -160,7 +160,7 @@ Para enlaces a otras páginas del mismo sitio:
 ### Imágenes
 
 ```md
-![Texto alternativo](../img/diagrama.png)
+![Texto alternativo](../img/github-branch-dropdown.png)
 ![Logo](https://ejemplo.com/logo.png "Logo de ejemplo")
 ```
 

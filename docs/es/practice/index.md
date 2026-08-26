@@ -289,6 +289,14 @@ UI de GitHub. **Duración estimada**: 10 minutos.
 
 [github.com/TU_USUARIO/practica-pr/settings/branches](https://github.com/TU_USUARIO/practica-pr/settings/branches)
 
+El primer paso es navegar al tab **Settings** del repositorio. En la
+captura siguiente, el tab está resaltado en naranja a la derecha del
+header del repo:
+
+![Tab Settings en el header del repositorio](../../img/github-repo-settings.png)
+> __Imagen:__ Tab **Settings** en el header de un repositorio de
+> GitHub.
+
 ### Paso 2 · Agregar regla para `main`
 
 1. Clic en **Add rule**.
