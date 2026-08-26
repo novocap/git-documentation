@@ -1,0 +1,93 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdownlint-cli2
+        run: npm install -g markdownlint-cli2
+
+      - name: Run markdownlint
+        run: markdownlint-cli2 --config .markdownlint.json "**/*.md" "#site/**" "#node_modules/**"
+
+  check-links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lychee Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --include-fragments --exclude-loopback docs/ README.md AGENTS.md CONTRIBUTING.md CODE_OF_CONDUCT.md
+          fail: true
+
+  spell-check:
+    name: Spell Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install codespell
+        run: pip install codespell
+
+      - name: Run codespell
+        # Solo corre sobre docs/en/ (100% inglés). Los archivos en la
+        # raíz del repo (README, AGENTS, CODE_OF_CONDUCT, CONTRIBUTING)
+        # y en docs/img/ATTRIBUTIONS.md y .opencode/ son predominantemente
+        # en español o bilingües, así que codespell (que usa diccionario
+        # inglés) produciría demasiados falsos positivos. Para esos,
+        # en el futuro se puede usar un spell-checker multilingüe (e.g.
+        # hunspell con diccionario español) o configurar codespell con
+        # un archivo de ignore por idioma.
+        run: codespell docs/en/
+
+  build:
+    name: Build Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build site
+        run: mkdocs build --strict

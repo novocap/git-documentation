@@ -81,7 +81,7 @@ Fix de un bug evidente
 
 ## Formato del mensaje
 
-```
+```text
 :<emoji>: <verbo imperativo singular> <alcance breve>
 ```
 

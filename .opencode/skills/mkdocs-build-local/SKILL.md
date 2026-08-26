@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 `requirements.txt` debe contener (al menos):
 
-```
+```text
 mkdocs-material>=9.5
 mkdocs-static-i18n>=1.2
 pymdown-extensions>=10.7
@@ -107,8 +107,8 @@ sys.exit(1) if missing else print('OK')
 grep -rEho '\]\([^)]*#[^)]+\)' docs/ | sort -u
 ```
 
-Después, comparar contra los encabezados `^#+ ` de cada archivo
-destino.
+Después, comparar contra los encabezados `^#+` (regex para 1 o más
+`#` al inicio) de cada archivo destino.
 
 ### Imágenes rotas
 

@@ -57,7 +57,7 @@ Inline formatting:
 | `_italic_` | _italic_ |
 | `~~strikethrough~~` | ~~strikethrough~~ |
 | `` `code` `` | `code` |
-| `[text](url)` | [text](url) |
+| `[text](url)` | [text](https://example.com) |
 
 !!! tip "Underline"
     Markdown has no underline syntax because editors reserve it for
@@ -157,7 +157,7 @@ For links to other pages on the same site:
 ### Images
 
 ```md
-![Alternative text](../img/github-branch-dropdown.png)
+![Alternative text](../../img/github-branch-dropdown.png)
 ![Logo](https://example.com/logo.png "Example logo")
 ```
 
@@ -170,7 +170,7 @@ image fails to load).
     resize, use HTML:
 
     ```md
-    <img src="../img/diagram.png" alt="Diagram" width="400">
+    <img src="../../img/github-branch-dropdown.png" alt="Diagram" width="400">
     ```
 
 ## 6. Code

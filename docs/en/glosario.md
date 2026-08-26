@@ -112,5 +112,5 @@ counterpart, and a brief definition.
 
 ## Next step
 
-Go back to [Home](../index.md) to review all the material, or
+Go back to [Home](index.md) to review all the material, or
 explore specific chapters from the navigation menu.

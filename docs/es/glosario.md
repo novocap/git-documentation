@@ -8,9 +8,9 @@ su contraparte en inglés y una breve definición.
     - Si tu idioma de trabajo es español: usá la columna **ES** como
       referencia principal y la columna **EN** cuando leas
       documentación externa.
-    - Si tu idioma de trabajo es inglés: el archivo espejo
-      [`docs/en/glosario.md`](../en/glosario.md) invierte el orden
-      de las columnas.
+    - Si tu idioma de trabajo es inglés: usá el selector de idioma en
+      la esquina superior derecha del sitio para abrir la versión
+      espejo, que invierte el orden de las columnas.
 
 ## Conceptos fundamentales
 
@@ -111,5 +111,5 @@ su contraparte en inglés y una breve definición.
 
 ## Próximo paso
 
-Volvé al [Inicio](../index.md) para repasar todo el material o
+Volvé al [Inicio](index.md) para repasar todo el material o
 explorar los capítulos específicos desde el menú de navegación.

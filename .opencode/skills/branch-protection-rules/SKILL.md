@@ -137,7 +137,7 @@ gh api /repos/novocap/git-documentation/pages | jq .
 
 El sitio quedará accesible en:
 
-```
+```text
 https://novocap.github.io/git-documentation/
 ```
 

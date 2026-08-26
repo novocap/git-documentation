@@ -27,7 +27,7 @@ Los agentes de IA que operen aquí deben:
 
 ## 2. Estructura del repositorio
 
-```
+```text
 git-documentation/
 ├── AGENTS.md                   ← este archivo
 ├── CODE_OF_CONDUCT.md          ← código de conducta de la comunidad
@@ -91,7 +91,7 @@ en la Fase 2. No se borran del historial de git pero ya no se editan.
 
 Formato obligatorio:
 
-```
+```text
 :<emoji>: <verbo en imperativo> <alcance breve>
 ```
 
@@ -117,7 +117,7 @@ Tabla de gitmojis aprobados en este repositorio:
 
 Ejemplos válidos:
 
-```
+```text
 :wrench: Corregir typo 'aprendisaje' en README y SUMMARY
 :sparkles: Agregar mkdocs.yml con configuración bilingüe ES/EN
 :globe_with_meridians: Traducir fundamentos de Git a inglés

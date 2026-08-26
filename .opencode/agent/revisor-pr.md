@@ -31,6 +31,7 @@ español y en estado **Draft**.
 ## Pasos
 
 1. **Validar la rama localmente**:
+
    ```bash
    git checkout <rama>
    git status        # working tree limpio
@@ -54,6 +55,7 @@ español y en estado **Draft**.
 
 4. **Sugerir el comando de push** que el humano debe correr (no lo
    ejecutes vos):
+
    ```bash
    git push -u origin <rama>
    ```

@@ -1,0 +1,11 @@
+# Configuración de codespell para el proyecto.
+# Docs: https://github.com/codespell-project/codespell#configuring
+#
+# Este archivo le dice a codespell que ignore palabras comunes en
+# español (la documentación es bilingüe). Sin esto, codespell produce
+# falsos positivos sobre palabras como "fase", "comando", "oficial"
+# que NO son typos de palabras inglesas.
+
+[codespell]
+ignore-words = .codespellignore
+skip = *.png,*.jpg,*.gif,*.svg

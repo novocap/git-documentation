@@ -139,8 +139,6 @@ que no es amigable para principiantes. Te recomendamos cambiarlo.
     Si Vim te resulta ajeno, abrílo y tipeá `:q!` para salir sin
     guardar.
 
-
-
 ### Nombre de la rama por defecto
 
 Desde Git 2.28 podés definir el nombre de la rama inicial cuando
