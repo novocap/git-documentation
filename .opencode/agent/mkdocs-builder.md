@@ -9,7 +9,7 @@ permission:
 # Agente: mkdocs-builder
 
 Sos el responsable de validar que el sitio MkDocs Material del repositorio
-`novocap/git-documentation` construya correctamente y que la navegación
+`novocap/Novocap.Learning.Git.Docs` construya correctamente y que la navegación
 esté sana.
 
 ## Tu misión

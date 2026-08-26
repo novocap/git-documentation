@@ -6,7 +6,7 @@ description: Llenar la plantilla de Pull Request del repositorio en español y e
 # Skill: pr-draft-es
 
 Procedimiento oficial para crear Pull Requests en el repositorio
-`novocap/git-documentation`.
+`novocap/Novocap.Learning.Git.Docs`.
 
 ## Principios
 
@@ -102,7 +102,7 @@ esperado:
 6. **Calcular la URL del PR**:
 
    ```text
-   https://github.com/novocap/git-documentation/compare/main...<rama>
+   https://github.com/novocap/Novocap.Learning.Git.Docs/compare/main...<rama>
    ```
 
 ## Output esperado
@@ -120,7 +120,7 @@ Devolvé un bloque markdown listo para copiar y pegar en la UI de GitHub:
 git push -u origin <rama>
 
 ### URL para abrir el PR
-https://github.com/novocap/git-documentation/compare/main...<rama>
+https://github.com/novocap/Novocap.Learning.Git.Docs/compare/main...<rama>
 
 ### Recordatorios para el humano
 - [ ] Marcar como **Draft PR** al abrirlo.

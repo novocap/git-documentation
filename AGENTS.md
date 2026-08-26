@@ -9,7 +9,7 @@
 
 ## 1. Propósito del repositorio
 
-`novocap/git-documentation` es una guía de aprendizaje en **dos idiomas
+`novocap/Novocap.Learning.Git.Docs` es una guía de aprendizaje en **dos idiomas
 (español e inglés)** sobre Git, GitHub y herramientas asociadas (SSH, GPG,
 Markdown, IDEs). El sitio se publica con **MkDocs Material** y se aloja en
 **GitHub Pages** desde la rama `main`.
@@ -28,7 +28,7 @@ Los agentes de IA que operen aquí deben:
 ## 2. Estructura del repositorio
 
 ```text
-git-documentation/
+Novocap.Learning.Git.Docs/
 ├── AGENTS.md                   ← este archivo
 ├── CODE_OF_CONDUCT.md          ← código de conducta de la comunidad
 ├── CONTRIBUTING.md             ← guía para contribuciones humanas
@@ -314,7 +314,7 @@ mediante el tool `skill` de opencode y los agentes definidos en
 ### Datos de un vistazo
 
 - **Rama por defecto**: `main`.
-- **Sitio público**: `https://novocap.github.io/git-documentation/`.
+- **Sitio público**: `https://novocap.github.io/Novocap.Learning.Git.Docs/`.
 - **Pipeline CI**: 4 jobs (`lint-markdown`, `check-links`, `spell-check`,
   `build`) definidos en `.github/workflows/ci.yml`.
 - **Deploy a GitHub Pages**: automático en cada push a `main`

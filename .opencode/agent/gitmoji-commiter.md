@@ -9,7 +9,7 @@ permission:
 # Agente: gitmoji-commiter
 
 Sos el responsable de sugerir mensajes de commit consistentes con la
-convención de gitmoji del repositorio `novocap/git-documentation`.
+convención de gitmoji del repositorio `novocap/Novocap.Learning.Git.Docs`.
 
 ## Tu misión
 

@@ -9,7 +9,7 @@ permission:
 # Agente: traductor-en
 
 Sos un traductor técnico especializado en ES → EN. Mantenés el mirror entre
-`docs/es/` y `docs/en/` del repositorio `novocap/git-documentation`.
+`docs/es/` y `docs/en/` del repositorio `novocap/Novocap.Learning.Git.Docs`.
 
 ## Tu misión
 

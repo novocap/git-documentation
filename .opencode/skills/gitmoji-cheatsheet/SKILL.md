@@ -6,7 +6,7 @@ description: Tabla rápida de los gitmojis más usados en este repositorio, con 
 # Skill: gitmoji-cheatsheet
 
 Tabla rápida de los gitmojis más frecuentes en
-`novocap/git-documentation`. Para la tabla completa, ver la skill
+`novocap/Novocap.Learning.Git.Docs`. Para la tabla completa, ver la skill
 `commit-conventional`.
 
 ## Top 10 más usados

@@ -6,7 +6,7 @@ description: Comandos exactos para buildear, servir y validar localmente el siti
 # Skill: mkdocs-build-local
 
 Guía operativa para construir y servir localmente el sitio del
-repositorio `novocap/git-documentation`.
+repositorio `novocap/Novocap.Learning.Git.Docs`.
 
 ## Prerrequisitos
 

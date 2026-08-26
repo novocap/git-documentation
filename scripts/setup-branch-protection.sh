@@ -24,7 +24,7 @@ set -euo pipefail
 # Configuración
 # ---------------------------------------------------------------------------
 OWNER="${GITHUB_REPOSITORY_OWNER:-novocap}"
-REPO="${GITHUB_REPOSITORY_NAME:-git-documentation}"
+REPO="${GITHUB_REPOSITORY_NAME:-Novocap.Learning.Git.Docs}"
 BRANCH="${BRANCH:-main}"
 
 # Status checks = nombres EXACTOS de los jobs en .github/workflows/ci.yml.

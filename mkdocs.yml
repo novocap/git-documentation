@@ -1,5 +1,5 @@
 # =============================================================================
-# Configuración de MkDocs Material para novocap/git-documentation
+# Configuración de MkDocs Material para novocap/Novocap.Learning.Git.Docs
 # =============================================================================
 # Documentación: https://www.mkdocs.org
 # Tema:          https://squidfunk.github.io/mkdocs-material
@@ -11,10 +11,10 @@ site_description: >-
   Documentación bilingüe (español e inglés) sobre Git, GitHub y herramientas
   asociadas: SSH, GPG, Markdown e IDEs.
 site_author: ChristianGrimberg
-site_url: https://novocap.github.io/git-documentation/
+site_url: https://novocap.github.io/Novocap.Learning.Git.Docs/
 
-repo_name: novocap/git-documentation
-repo_url: https://github.com/novocap/git-documentation
+repo_name: novocap/Novocap.Learning.Git.Docs
+repo_url: https://github.com/novocap/Novocap.Learning.Git.Docs
 edit_uri: edit/main/docs/
 
 copyright: >-
