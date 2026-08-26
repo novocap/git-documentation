@@ -12,7 +12,7 @@
 `novocap/git-documentation` es una guía de aprendizaje en **dos idiomas
 (español e inglés)** sobre Git, GitHub y herramientas asociadas (SSH, GPG,
 Markdown, IDEs). El sitio se publica con **MkDocs Material** y se aloja en
-**GitHub Pages** desde la rama `master`.
+**GitHub Pages** desde la rama `main`.
 
 Los agentes de IA que operen aquí deben:
 
@@ -65,7 +65,7 @@ en la Fase 2. No se borran del historial de git pero ya no se editan.
 
 ## 3. Reglas duras (todo agente debe respetarlas)
 
-1. **Nunca pushear directo a `master`.** Todo cambio va en una rama feature
+1. **Nunca pushear directo a `main`.** Todo cambio va en una rama feature
    y se mergea vía PR.
 2. **Todo PR se crea en estado Draft.** El autor (humano) es quien lo marca
    como "Ready for review" cuando termina de revisarlo.
@@ -82,7 +82,7 @@ en la Fase 2. No se borran del historial de git pero ya no se editan.
    nuevo, ese algo debe existir en el PR.
 9. **No incluir credenciales, tokens ni llaves privadas** en commits,
    capturas, ejemplos o logs.
-10. **No destruir el historial de `master`.** No se hace `force push` ni
+10. **No destruir el historial de `main`.** No se hace `force push` ni
     `reset --hard` sobre la rama por defecto.
 
 ---
@@ -124,7 +124,7 @@ Ejemplos válidos:
 :camera_flash: Reemplazar capturas de VSCode con UI 1.85
 :construction_worker: Agregar workflows de CI con markdownlint y lychee
 :book: Configurar flujo agentico con AGENTS.md, agentes y skills
-:lock: Activar protección de rama master y GitHub Pages
+:lock: Activar protección de rama main y GitHub Pages
 ```
 
 Ejemplos **inválidos** (no usar):
@@ -192,7 +192,7 @@ tiene asignado un agente y las skills que debe invocar.
 | 3d | `feat/fase-3d-herramientas-en` | `traductor-en` | `commit-conventional`, `i18n-mirror-check` |
 | 4 | `chore/fase-4-capturas` | `redactor-es` | `commit-conventional` |
 | 5 | `ci/fase-5-workflows-y-pages` | `mkdocs-builder` | `commit-conventional`, `mkdocs-build-local` |
-| 6 | `chore/fase-6-proteccion-master` | `gitmoji-commiter` | `branch-protection-rules`, `commit-conventional` |
+| 6 | `chore/fase-6-proteccion-main` | `gitmoji-commiter` | `branch-protection-rules`, `commit-conventional` |
 
 Antes de mergear cada PR, se debe correr la skill `mkdocs-build-local` para
 verificar que el sitio sigue construyendo sin warnings.
@@ -224,7 +224,7 @@ Definidas en `.opencode/skills/<nombre>/SKILL.md`:
 | `pr-draft-es` | Llenar la plantilla de PR en español y en draft. |
 | `mkdocs-build-local` | Comandos para build y preview local de MkDocs. |
 | `i18n-mirror-check` | Validar sincronización entre `docs/es/` y `docs/en/`. |
-| `branch-protection-rules` | Payload JSON y comandos para proteger `master`. |
+| `branch-protection-rules` | Payload JSON y comandos para proteger `main`. |
 | `gitmoji-cheatsheet` | Tabla rápida de gitmojis más usados. |
 
 ---
@@ -239,7 +239,7 @@ Definidas en `.opencode/skills/<nombre>/SKILL.md`:
 | "Corré los lints" / "Arreglá lo que reporte CI" | `lint-ci` | — |
 | "Armá el PR" / "Subí esto" | `revisor-pr` | `pr-draft-es` |
 | "¿Qué gitmoji uso?" / "Sugerí el commit" | `gitmoji-commiter` | `commit-conventional`, `gitmoji-cheatsheet` |
-| "Activá la protección de master" | `gitmoji-commiter` | `branch-protection-rules` |
+| "Activá la protección de main" | `gitmoji-commiter` | `branch-protection-rules` |
 
 Si un pedido no encaja claramente con un agente, primero invocar a
 `mkdocs-builder` o `lint-ci` para entender el contexto antes de derivar.
@@ -286,13 +286,13 @@ Si alguno falla, **no abrir el PR** hasta corregirlo.
 | 3d | `feat/fase-3d-herramientas-en` | `:globe_with_meridians: Fase 3d · Traducir herramientas (EN)` | Espejo EN de 3b. |
 | 4 | `chore/fase-4-capturas` | `:camera_flash: Fase 4 · Reemplazar capturas obsoletas` | Regenerar `img/` con UI 2024+. |
 | 5 | `ci/fase-5-workflows-y-pages` | `:construction_worker: Fase 5 · Workflows CI/CD + Pages` | `ci.yml`, `deploy.yml`, `.markdownlint.json`. |
-| 6 | `chore/fase-6-proteccion-master` | `:lock: Fase 6 · Activar protección de master y Pages` | Script `gh api` con reglas, habilitar Pages. |
+| 6 | `chore/fase-6-proteccion-main` | `:lock: Fase 6 · Activar protección de main y Pages` | Script `gh api` con reglas, habilitar Pages. |
 
 ---
 
 ## 12. Activación del flujo
 
-Tras mergear este PR a `master`, los colaboradores (humanos o agentes) deben
+Tras mergear este PR a `main`, los colaboradores (humanos o agentes) deben
 ejecutar localmente antes de empezar a trabajar:
 
 ```bash
@@ -309,42 +309,38 @@ mediante el tool `skill` de opencode y los agentes definidos en
 
 ---
 
-## 13. Estado del proyecto (Fase 6 · Cierre del plan)
+## 13. Estado del proyecto (modo mantenimiento)
 
-### Sitio público y CI/CD activos
+### Datos de un vistazo
 
-- 🌐 Sitio desplegado en `https://novocap.github.io/git-documentation/`.
-- ✅ Pipeline CI con 4 jobs (lint-markdown, check-links, spell-check, build).
-- ✅ Deploy automático en cada merge a `master`.
-- ✅ Status checks del CI listos para ser declarados obligatorios en la
-  protección de master (ver skill `branch-protection-rules`).
+- **Rama por defecto**: `main`.
+- **Sitio público**: `https://novocap.github.io/git-documentation/`.
+- **Pipeline CI**: 4 jobs (`lint-markdown`, `check-links`, `spell-check`,
+  `build`) definidos en `.github/workflows/ci.yml`.
+- **Deploy a GitHub Pages**: automático en cada push a `main`
+  (`.github/workflows/deploy.yml`).
+- **Branch protection**: activa sobre `main` con los 4 status checks
+  como obligatorios (ver skill `branch-protection-rules`).
 
-### Reglas de protección de master (Fase 6)
-
-Tras mergear este PR, aplicar la protección con:
+### Cómo re-aplicar la protección de `main`
 
 ```bash
 ./scripts/setup-branch-protection.sh
 ```
 
-o desde la UI:
+o desde la UI: Actions → Setup Branch Protection → Run workflow.
 
-1. Actions → Setup Branch Protection → Run workflow.
-
-Las reglas quedan:
+Reglas activas:
 
 - PR obligatorio antes de mergear.
 - 4 status checks obligatorios: `lint-markdown`, `check-links`,
-  `spell-check`, `build` (todos de `.github/workflows/ci.yml`).
+  `spell-check`, `build`.
 - Sin approvals (control procedural por Draft PR).
 - Linear history (solo rebase o squash).
 - Sin force-push, sin delete branch.
 - `enforce_admins: false`.
 
-### Próximos pasos (modo mantenimiento)
-
-Tras Fase 6 el proyecto entra en modo mantenimiento. Las evoluciones
-naturales a futuro son:
+### Evoluciones naturales a futuro
 
 - **MkDocs Insiders**: social cards, versionado SemVer con `mike`,
   search insights.

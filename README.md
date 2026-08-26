@@ -3,9 +3,9 @@
 > Documentación bilingüe (español / inglés) sobre Git, GitHub, SSH,
 > GPG, Markdown y VSCode. Construida con [MkDocs Material](https://squidfunk.github.io/mkdocs-material/).
 
-[![CI](https://img.shields.io/github/actions/workflow/status/novocap/git-documentation/ci.yml?branch=master&style=flat-square&logo=github&label=CI)](https://github.com/novocap/git-documentation/actions/workflows/ci.yml)
-[![Deploy to GitHub Pages](https://img.shields.io/github/actions/workflow/status/novocap/git-documentation/deploy.yml?branch=master&style=flat-square&logo=github&label=Deploy)](https://github.com/novocap/git-documentation/actions/workflows/deploy.yml)
-[![License](https://img.shields.io/github/license/novocap/git-documentation?style=flat-square)](https://github.com/novocap/git-documentation/blob/master/LICENSE)
+[![CI](https://img.shields.io/github/actions/workflow/status/novocap/git-documentation/ci.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/novocap/git-documentation/actions/workflows/ci.yml)
+[![Deploy to GitHub Pages](https://img.shields.io/github/actions/workflow/status/novocap/git-documentation/deploy.yml?branch=main&style=flat-square&logo=github&label=Deploy)](https://github.com/novocap/git-documentation/actions/workflows/deploy.yml)
+[![License](https://img.shields.io/github/license/novocap/git-documentation?style=flat-square)](https://github.com/novocap/git-documentation/blob/main/LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/novocap/git-documentation?style=flat-square&sort=semver)](https://github.com/novocap/git-documentation/releases/latest)
 
 :wave: Bienvenido al repositorio de guía de aprendizaje y práctica
@@ -40,7 +40,7 @@ y está disponible en español e inglés.
 
 1. Leé [`AGENTS.md`](AGENTS.md) — el contrato del flujo agentico del
    repositorio.
-2. Hacé fork o creá una rama desde `master`:
+2. Hacé fork o creá una rama desde `main`:
    `git switch -c chore/mi-cambio`.
 3. Commiteá con la convención gitmoji (`<emoji> <verbo imperativo>`).
 4. Abrí un PR en **Draft**. Cuando termines de revisarlo, marcalo como
@@ -48,7 +48,7 @@ y está disponible en español e inglés.
 5. El CI valida lint, enlaces, ortografía y build estricto. Todos los
    checks deben pasar antes del merge.
 6. El deploy a GitHub Pages se dispara automáticamente al mergear a
-   `master`.
+   `main`.
 
 Para preguntas o discutir ideas grandes, abrí una
 [Discussion en GitHub](https://github.com/novocap/git-documentation/discussions)

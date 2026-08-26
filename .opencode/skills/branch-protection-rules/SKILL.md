@@ -1,11 +1,11 @@
 ---
 name: branch-protection-rules
-description: Payload JSON exacto y comandos gh api para activar la protección de la rama master con los status checks del CI como obligatorios. Usar durante la Fase 6 (proteger master) o cuando el usuario pida "activá la protección".
+description: Payload JSON exacto y comandos gh api para activar la protección de la rama main con los status checks del CI como obligatorios. Usar durante la Fase 6 (proteger main) o cuando el usuario pida "activá la protección".
 ---
 
 # Skill: branch-protection-rules
 
-Procedimiento para configurar la protección de la rama `master` en
+Procedimiento para configurar la protección de la rama `main` en
 `novocap/git-documentation`. **No se puede hacer con un PR**: requiere
 ejecutar `gh api` con permisos de admin desde la terminal del humano,
 o disparar el workflow `setup-branch-protection` desde la UI de
@@ -28,17 +28,17 @@ GitHub Actions.
 
 ### Vía workflow (recomendada)
 
-1. Mergea el PR de Fase 6 (`chore/fase-6-proteccion-master`) a `master`.
+1. Mergea el PR de Fase 6 (`chore/fase-6-proteccion-main`) a `main`.
 2. Andá a https://github.com/novocap/git-documentation/actions/workflows/setup-branch-protection.yml
 3. Click **Run workflow** → **Run**.
 4. Esperá ~30 segundos. El environment `setup-branch-protection` muestra
    el resultado.
 
-## Reglas de protección de `master` (Fase 6)
+## Reglas de protección de `main` (Fase 6)
 
 ### Política decidida por el equipo
 
-- **PR obligatorio** antes de mergear a `master`.
+- **PR obligatorio** antes de mergear a `main`.
 - **Status checks obligatorios** (los nombres exactos de los jobs de
   `.github/workflows/ci.yml`):
   - `lint-markdown`
@@ -116,7 +116,7 @@ arriba. Útil cuando:
 Si preferís invocar el comando a mano:
 
 ```bash
-cat > /tmp/master-protection.json <<'JSON'
+cat > /tmp/main-protection.json <<'JSON'
 {
   "required_status_checks": {
     "strict": true,
@@ -143,8 +143,8 @@ JSON
 gh api \
   --method PUT \
   -H "Accept: application/vnd.github+json" \
-  /repos/novocap/git-documentation/branches/master/protection \
-  --input /tmp/master-protection.json
+  /repos/novocap/git-documentation/branches/main/protection \
+  --input /tmp/main-protection.json
 ```
 
 ## Verificación
@@ -152,7 +152,7 @@ gh api \
 Después de aplicar, confirmá con:
 
 ```bash
-gh api /repos/novocap/git-documentation/branches/master/protection | jq .
+gh api /repos/novocap/git-documentation/branches/main/protection | jq .
 ```
 
 Deberías ver:
@@ -198,7 +198,7 @@ JSON
 ## Cuándo invocar esta skill
 
 - Cuando se llega a la **Fase 6** del plan (cierre del flujo).
-- Cuando el usuario pide "activá la protección de master".
+- Cuando el usuario pide "activá la protección de main".
 - Cuando el usuario quiere re-aplicar las reglas tras cambios
   accidentales.
 

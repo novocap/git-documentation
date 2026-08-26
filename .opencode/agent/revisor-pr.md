@@ -35,7 +35,7 @@ español y en estado **Draft**.
    ```bash
    git checkout <rama>
    git status        # working tree limpio
-   git log master..HEAD --oneline
+   git log main..HEAD --oneline
    ```
 
 2. **Correr el build y los lints** (invocando `mkdocs-builder` y
@@ -78,7 +78,7 @@ Devolvé al orquestador un bloque listo para copiar y pegar:
 git push -u origin <rama>
 
 ### URL del PR (después del push)
-https://github.com/novocap/git-documentation/compare/master...<rama>
+https://github.com/novocap/git-documentation/compare/main...<rama>
 
 ### Revisores sugeridos
 @<handle> (basado en CODEOWNERS)
@@ -93,6 +93,6 @@ https://github.com/novocap/git-documentation/compare/master...<rama>
   PR**.
 - **Si el branch protection exige status checks**, recordale al humano
   que el PR queda en Draft hasta que CI pase.
-- **Si el PR es para Fase 6 (protección de master)**, advertí que la
+- **Si el PR es para Fase 6 (protección de main)**, advertí que la
   protección no se puede activar con un PR; requiere ejecutar `gh api`
   desde el local del humano con permisos de admin.

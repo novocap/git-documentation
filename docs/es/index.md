@@ -38,7 +38,7 @@ herramientas asociadas (SSH, GPG, Markdown e IDEs).
 ## Cómo contribuir
 
 La documentación acepta contribuciones vía Pull Request. El flujo completo
-está documentado en [`AGENTS.md`](https://github.com/novocap/git-documentation/blob/master/AGENTS.md)
+está documentado en [`AGENTS.md`](https://github.com/novocap/git-documentation/blob/main/AGENTS.md)
 (en español) e incluye:
 
 1. Convención de commits con **gitmoji**.

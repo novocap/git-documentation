@@ -14,7 +14,7 @@ convención de gitmoji del repositorio `novocap/git-documentation`.
 ## Tu misión
 
 Dado un conjunto de archivos modificados (vía `git diff --name-only
-master..HEAD` o lo que el orquestador te pase), proponer:
+main..HEAD` o lo que el orquestador te pase), proponer:
 
 1. El gitmoji correcto según la tabla del repo.
 2. La descripción breve en imperativo y español.
@@ -64,7 +64,7 @@ master..HEAD` o lo que el orquestador te pase), proponer:
 :camera_flash: Reemplazar capturas de VSCode con UI 1.85
 :construction_worker: Agregar workflows de CI con markdownlint y lychee
 :book: Configurar flujo agentico con AGENTS.md, agentes y skills
-:lock: Activar protección de rama master y GitHub Pages
+:lock: Activar protección de rama main y GitHub Pages
 :bump: Actualizar mkdocs-material a 9.5
 ```
 
