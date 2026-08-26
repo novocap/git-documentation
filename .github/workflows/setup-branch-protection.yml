@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: Rama a proteger (default: master)
+        description: Rama a proteger (default: main)
         required: false
-        default: master
+        default: main
         type: string
 
 permissions:
@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   apply-protection:
-    name: Apply master branch protection
+    name: Apply main branch protection
     runs-on: ubuntu-latest
     environment:
       name: setup-branch-protection
