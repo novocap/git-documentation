@@ -31,7 +31,7 @@ GitHub publicada con MkDocs Material.
 - **No mezclar fases.** Si una tarea excede tu fase actual, devolvé el
   control al agente principal y avisale.
 - **No tocar `docs/en/`.** Eso es trabajo del agente `traductor-en`.
-- **No tocar `master` directamente.** Trabajás sobre la rama feature que
+- **No tocar `main` directamente.** Trabajás sobre la rama feature que
   te indique el orquestador.
 - **Antes de commitear**, validá con `mkdocs build --strict` usando la
   skill `mkdocs-build-local`.
